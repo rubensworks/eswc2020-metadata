@@ -1,0 +1,33 @@
+{
+  "name": "eswc2019-metadata",
+  "version": "1.0.0",
+  "description": "Metadata generator for ESWC 2019: https://metadata.2019.eswc-conferences.org/",
+  "main": "src/main/",
+  "scripts": {
+    "build": "npx emk",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Blake Regalia",
+    "email": "blake.regalia@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@graphy/content.ttl.read": "^3.2.2",
+    "@graphy/content.ttl.write": "^3.2.2",
+    "cheerio": "^1.0.0-rc.3",
+    "content-type": "^1.0.4",
+    "he": "^1.2.0",
+    "latex-parser": "^0.6.2",
+    "nth": "^1.0.0",
+    "progress": "^2.0.3",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "stream-json": "^1.2.1",
+    "unzipper": "^0.9.15"
+  },
+  "devDependencies": {
+    "emk": "^1.7.2"
+  }
+}

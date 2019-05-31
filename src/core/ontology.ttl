@@ -1,0 +1,320 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix conference: <https://w3id.org/scholarlydata/ontology/conference-ontology.owl#> .
+@prefix role: <https://w3id.org/scholarlydata/role/> .
+@prefix eswc2019: <https://metadata.2019.eswc-conferences.org/rdf/ontology/> .
+@prefix eswc2019-persons: <https://metadata.2019.eswc-conferences.org/rdf/persons/> .
+@prefix eswc2019-affiliations: <https://metadata.2019.eswc-conferences.org/rdf/affiliations/> .
+@prefix eswc2019-organizations: <https://metadata.2019.eswc-conferences.org/rdf/organizations/> .
+@prefix eswc2019-sites: <https://metadata.2019.eswc-conferences.org/rdf/sites/> .
+@prefix eswc2019-proceedings: <https://metadata.2019.eswc-conferences.org/rdf/proceedings/> .
+@prefix eswc2019-submissions: <https://metadata.2019.eswc-conferences.org/rdf/submissions/> .
+@prefix eswc2019-object: <https://metadata.2019.eswc-conferences.org/rdf/object/> .
+@prefix eswc2019-datatype: <https://metadata.2019.eswc-conferences.org/rdf/datatype/> .
+@prefix fr: <http://purl.org/spar/fr/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix bido: <http://purl.org/spar/bido/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+
+eswc2019:Conference a conference:Conference ;
+	rdfs:label "ESWC 2019"@en ;
+	conference:description "The ESWC is a major venue for discussing the latest scientific results and technology innovations around semantic technologies. Building on its past success, ESWC is seeking to broaden its focus to span other relevant related research areas in which Web semantics plays an important role."@en ;
+	conference:hasSite eswc2019-sites:Hotel_Bernardin ;
+	conference:startDate "2019-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-06:15:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+eswc2019-sites:Hotel_Bernardin a conference:Site ;
+	rdfs:label "Hotel Bernardin"@en ;
+	.
+
+fr:ReviewVersion rdfs:label "Review Version"@en ;
+	.
+
+<https://easychair.org/> rdfs:label "EasyChair"@en ;
+	.
+
+<https://2019.eswc-conferences.org/> rdfs:label "ESWC 2019"@en ;
+	.
+
+<http://www.lexvo.org/page/iso639-3/eng> rdfs:label "English"@en ;
+	.
+
+eswc2019:Paper a owl:Class ;
+	rdfs:label "Paper"@en ;
+	.
+
+eswc2019:Track a owl:Class ;
+	rdfs:label "Track"@en ;
+	.
+
+eswc2019:ProceedingsPaper a owl:Class ;
+	rdfs:label "Proceedings Paper"@en ;
+	rdfs:subClassOf eswc2019:Paper ;
+	.
+
+eswc2019:SubmissionPaper a owl:Class ;
+	rdfs:label "Submission Paper"@en ;
+	rdfs:subClassOf eswc2019:Paper ;
+	.
+
+
+eswc2019:ReviewRatingScale a bido:ReviewRatingScale ;
+	rdfs:label "ESWC 2019 Review Rating Scale [-3, 3]"@en ;
+	.
+
+eswc2019:ReviewRatingValue a owl:Class ;
+	rdfs:subClassOf bido:ReviewRatingValue ;
+	rdfs:label "Review Rating"@en ;
+	eswc2019:scale eswc2019:ReviewRatingScale;
+	owl:equivalentClass [
+		a owl:Class ;
+		owl:oneOf (
+			eswc2019:ReviewRating.3
+			eswc2019:ReviewRating.2
+			eswc2019:ReviewRating.1
+			eswc2019:ReviewRating.0
+			eswc2019:ReviewRating.-1
+			eswc2019:ReviewRating.-2
+			eswc2019:ReviewRating.-3
+		) ;
+	] ;
+	.
+
+eswc2019:ReviewRating.3 a eswc2019:ReviewRatingValue ;
+	rdfs:label "3: Strong Accept"@en ;
+	.
+
+eswc2019:ReviewRating.2 a eswc2019:ReviewRatingValue ;
+	rdfs:label "2: Accept"@en ;
+	.
+
+eswc2019:ReviewRating.1 a eswc2019:ReviewRatingValue ;
+	rdfs:label "1: Weak Accept"@en ;
+	.
+
+eswc2019:ReviewRating.0 a eswc2019:ReviewRatingValue ;
+	rdfs:label "0: Borderline Paper"@en ;
+	.
+
+eswc2019:ReviewRating.-1 a eswc2019:ReviewRatingValue ;
+	rdfs:label "-1: Weak Reject"@en ;
+	.
+
+eswc2019:ReviewRating.-2 a eswc2019:ReviewRatingValue ;
+	rdfs:label "-2: Reject"@en ;
+	.
+
+eswc2019:ReviewRating.-3 a eswc2019:ReviewRatingValue ;
+	rdfs:label "-3: Strong Reject"@en ;
+	.
+
+
+
+eswc2019:ReviewerConfidenceScale a bido:ReviewerConfidenceScale ;
+	rdfs:label "ESWC 2019 Reviewer Confidence Scale [-3, 3]"@en ;
+	.
+
+eswc2019:ReviewerConfidenceValue a owl:Class ;
+	rdfs:subClassOf bido:ReviewerConfidenceValue ;
+	rdfs:label "Reviewer Confidence"@en ;
+	eswc2019:scale eswc2019:ReviewerConfidenceScale ;
+	owl:equivalentClass [
+		a owl:Class ;
+		owl:oneOf (
+			eswc2019:ReviewerConfidence.5
+			eswc2019:ReviewerConfidence.4
+			eswc2019:ReviewerConfidence.3
+			eswc2019:ReviewerConfidence.2
+			eswc2019:ReviewerConfidence.1
+		) ;
+	] ;
+	.
+
+eswc2019:ReviewerConfidence.3 a eswc2019:ReviewerConfidenceValue ;
+	rdfs:label "5: Expert"@en ;
+	.
+
+eswc2019:ReviewerConfidence.4 a eswc2019:ReviewerConfidenceValue ;
+	rdfs:label "4: High"@en ;
+	.
+
+eswc2019:ReviewerConfidence.3 a eswc2019:ReviewerConfidenceValue ;
+	rdfs:label "3: Medium"@en ;
+	.
+
+eswc2019:ReviewerConfidence.2 a eswc2019:ReviewerConfidenceValue ;
+	rdfs:label "2: Low"@en ;
+	.
+
+eswc2019:ReviewerConfidence.1 a eswc2019:ReviewerConfidenceValue ;
+	rdfs:label "1: None"@en ;
+	.
+
+
+# -----------------------------------------------------------------------------
+# Predicates; Domain & Range Restrictions
+# -----------------------------------------------------------------------------
+
+eswc2019:doi a owl:DatatypeProperty ;
+	rdfs:label "DOI"@en ;
+	rdfs:domain eswc2019:ProceedingsPaper ;
+	rdfs:range eswc2019-datatype:doi ;
+	.
+
+eswc2019:pdf a owl:DatatypeProperty ;
+	rdfs:label "PDF"@en ;
+	rdfs:domain eswc2019:ProceedingsPaper ;
+	rdfs:range xsd:anyUri ;
+	.
+
+eswc2019:submissionTime a owl:DatatypeProperty ;
+	rdfs:label "Time of Submission"@en ;
+	rdfs:domain eswc2019:SubmissionPaper ;
+	rdfs:range xsd:dateTime ;
+	.
+
+eswc2019:authorList a owl:ObjectProperty ;
+	rdfs:label "Author List"@en ;
+	rdfs:domain eswc2019:Paper ;
+	rdfs:range rdf:List ;
+	.
+
+eswc2019:submission a owl:ObjectProperty ;
+	rdfs:label "Submission"@en ;
+	rdfs:domain eswc2019:ProceedingsPaper ;
+	rdfs:range eswc2019:SubmissionPaper ;
+	.
+
+eswc2019:rebuts a owl:ObjectProperty ;
+	rdfs:label "Rebuts"@en ;
+	rdfs:domain eswc2019:Rebuttal ;
+	rdfs:range eswc2019:SubmissionPaper ;
+	.
+
+eswc2019:transparentReviewer a owl:DatatypeProperty ;
+	rdfs:label "Transparent Reviewer"@en ;
+	rdfs:domain fr:ReviewVersion ;
+	rdfs:range xsd:boolean ;
+	.
+
+eswc2019:track a owl:ObjectProperty ;
+	rdfs:label "Track"@en ;
+	rdfs:domain eswc2019:Paper ;
+	rdfs:range eswc2019:Track ;
+	.
+
+eswc2019:correspondingAuthor a owl:DatatypeProperty ;
+	rdfs:label "Corresponding Author"@en ;
+	rdfs:domain conference:RoleDuringEvent ;
+	rdfs:range xsd:boolean ;
+	.
+
+eswc2019:submissionsList a owl:ObjectProperty ;
+	rdfs:label "List of Submissions"@en ;
+	rdfs:domain eswc2019:Conference ;
+	rdfs:range rdfs:List ;
+	.
+
+eswc2019:tracksInclude a owl:ObjectProperty ;
+	rdfs:label "Set of Tracks"@en ;
+	rdfs:domain eswc2019:Conference ;
+	rdfs:range eswc2019:Track ;
+	.
+
+
+# -----------------------------------------------------------------------------
+# Custom Datatypes
+# -----------------------------------------------------------------------------
+
+eswc2019-datatype:doi a rdfs:Datatype
+	.
+
+
+# -----------------------------------------------------------------------------
+# Organizing Committee Roles
+# -----------------------------------------------------------------------------
+
+eswc2019:General_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "General Chair"@en ;
+	conference:withRole role:general-chair ;
+	.
+
+eswc2019:Program_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Program Chair"@en ;
+	conference:withRole role:programme-chair ;
+	.
+
+eswc2019:Workshops_and_Tutorials_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Workshops and Tutorials Chair"@en ;
+	conference:withRole role:workshops-chair, role:tutorials-chair ;
+	.
+
+eswc2019:Posters_and_Demos_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Posters and Demos Chair"@en ;
+	conference:withRole role:posters-chair, role:demos-chair ;
+	.
+
+eswc2019:PhD_Symposium a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "PhD Symposium Chair"@en ;
+	conference:withRole role:phd-symposium-chair ;
+	.
+
+eswc2019:Challenges_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Challenges Chair"@en ;
+	conference:withRole role:challengs-chair ;
+	.
+
+eswc2019:Sponsorship_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Sponsorship Chair"@en ;
+	conference:withRole role:sponsorship-chair ;
+	.
+
+eswc2019:EU_Project_Networking_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "EU Project Networking Chair"@en ;
+	.
+
+eswc2019:Industry_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Industry Chair"@en ;
+	conference:withRole role:industry-chair ;
+	.
+
+eswc2019:Publicity_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Publicity Chair"@en ;
+	conference:withRole role:publicity-chair ;
+	.
+
+eswc2019:Webmaster a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Webmaster"@en ;
+	conference:withRole role:webmaster ;
+	.
+
+eswc2019:Semantic_Technologies_Coordinator a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Semantic Technologies Coordinator"@en ;
+	conference:withRole role:metadata-chair ;
+	.
+
+eswc2019:Proceedings_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Proceedings Chair"@en ;
+	conference:withRole role:proceedings-chair ;
+	.
+
+eswc2019:Local_Chair a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Local Chair"@en ;
+	conference:withRole role:local-organiser ;
+	.
+
+eswc2019:Local_Organizer a conference:OrganisationalRoleDuringEvent ;
+	rdfs:label "Local Organizer"@en ;
+	conference:withRole role:local-organiser ;
+	.

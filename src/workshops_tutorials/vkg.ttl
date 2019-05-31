@@ -1,0 +1,127 @@
+@base <https://tutorials.oeg-upm.net/vkg2019/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eswc2019: <https://metadata.2019.eswc-conferences.org/rdf/ontology/> .
+@prefix conference: <https://w3id.org/scholarlydata/ontology/conference-ontology.owl#> .
+@prefix role: <https://w3id.org/scholarlydata/role/> .
+@prefix hoteli-bernardin: <https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/> .
+
+
+# -------------------------------------
+# Location (informative)
+# -------------------------------------
+<https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/aurora#section-2> a conference:Site ;
+	conference:description "Section II of the Aurora Hall conference room" ;
+	.
+
+# -------------------------------------
+# the Tutorial itself
+# -------------------------------------
+<#Tutorial> a conference:Tutorial ;
+	conference:isSubEventOf eswc2019:Conference ;
+	conference:hasLocation <https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/aurora#section-2> ;
+	rdfs:label "Generating and querying (Virtual) Knowledge Graphs from heterogeneous data sources (VKG)"@en ;
+	conference:description "In this tutorial, we explain how to use a suite of tools to manage and exploit data in heterogeneous formats (CSV, RDB, JSON or REST API) without the need to load the resulting RDF in a triple store for querying it. First, we present TADA, a tool for automatically annotating CSV files using existing Knowledge Graphs. Second, we present HELIO, a Linked Data publisher that provides unified access in real-time to multiple heterogeneous data sources. Finally, we present an OBDA approach to exploit CSV published on the Web providing access via SPARQL or GraphQL."@en ;
+	conference:hasSubEvent <#Part_1>, <#Break>, <#Part_2> ;
+	.
+
+# -------------------------------------
+# Persons associated with the Tutorial
+# -------------------------------------
+<https://ahmad88me.github.io/> a conference:Person ;
+	conference:givenName "Ahmad" ;
+	conference:familyName "Alobaid" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#OEG_UPM> ;
+	.
+
+<http://dchaves.oeg-upm.net/> a conference:Person ;
+	conference:givenName "David" ;
+	conference:familyName "Chaves Fraga" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#OEG_UPM> ;
+	.
+
+<#Andrea_Cimmino> a conference:Person ;
+	conference:givenName "Andrea" ;
+	conference:familyName "Cimmino" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#OEG_UPM> ;
+	.
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/index.php/en/teachers/11-ocorcho/> a conference:Person ;
+	conference:givenName "Oscar" ;
+	conference:familyName "Corcho" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#OEG_UPM> ;
+	.
+
+<http://www.oeg-upm.net/index.php/es/phd/50-fpriyatna/index.html> a conference:Person ;
+	conference:givenName "Freddy" ;
+	conference:familyName "Priyatna" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#OEG_UPM> ;
+	.
+
+# -------------------------------------
+# Temporal-bound affiliations of persons associated with the Workshop
+<#OEG_UPM> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://www.oeg-upm.net/> ;
+	.
+
+# -------------------------------------
+# Organizations of affiliations
+# -------------------------------------
+<http://www.oeg-upm.net/> a conference:Organisation ;
+	conference:name "Ontology Engineering Group, Technical University of Madrid, Spain"@en ;
+	.
+
+# -------------------------------------
+# Roles of persons associated with the Tutorial
+# -------------------------------------
+<#Organizer> a conference:OrganisationalRoleDuringEvent ;
+	conference:during <#Tutorial> ;
+	conference:withRole role:tutorial-organiser ;
+	.
+
+# -------------------------------------
+# Tutorial sessions
+# -------------------------------------
+<#Part_1> a conference:Session ;
+	rdfs:label "Part I: Semantic Annotation And Efficient Knowledge Graph Generation"@en ;
+	conference:startDate "2019-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T10:30:00.000+02:00"^^xsd:dateTime ;
+	conference:hasSubEvent <#Automatic>, <#Real-Time> ;
+	.
+
+<#Automatic> a conference:Session ;
+	rdfs:label "Automatic Tabular Data Annotation"@en ;
+	.
+
+<#Real-Time> a conference:Session ;
+	rdfs:label "Real-time Link Data Generation"@en ;
+	.
+
+<#Break> a conference:Break ;
+	rdfs:label "Break"@en ;
+	conference:startDate "2019-06-02T10:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Part_2> a conference:Session ;
+	rdfs:label "Part II: Obda Approach For Querying Heterogeneous Data"@en ;
+	conference:startDate "2019-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
+	conference:hasSubEvent <#Querying>, <#Semantic> ;
+	.
+
+<#Querying> a conference:Session ;
+	rdfs:label "Querying Csv From Obda"@en ;
+	.
+
+<#Semantic> a conference:Session ;
+	rdfs:label "Semantic Web For Developers"@en ;
+	.

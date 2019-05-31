@@ -1,0 +1,156 @@
+@base <http://streamreasoning.org/tutorial-eswc19> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eswc2019: <https://metadata.2019.eswc-conferences.org/rdf/ontology/> .
+@prefix conference: <https://w3id.org/scholarlydata/ontology/conference-ontology.owl#> .
+@prefix role: <https://w3id.org/scholarlydata/role/> .
+@prefix hoteli-bernardin: <https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/> .
+
+
+# -------------------------------------
+# Location (informative)
+# -------------------------------------
+<https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/aurora#section-2> a conference:Site ;
+	conference:description "Section II of the Aurora Hall conference room" ;
+	.
+
+# -------------------------------------
+# the Tutorial itself
+# -------------------------------------
+<#Tutorial> a conference:Tutorial ;
+	conference:isSubEventOf eswc2019:Conference ;
+	conference:hasLocation <https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/aurora#section-2> ;
+	rdfs:label "Continuous Analytics of Linked Data Streams"@en ;
+	conference:description "The goal of the tutorial is to outline how to develop and deploy a stream processing application in a web environment in a reproducible way. To this extent, we intend to (1) survey existing research outcomes from the Stream Reasoning /RDF Stream Processing that arise in querying and reasoning on a variety of highly dynamic data, (2) introduce stream reasoning techniques as powerful tools to use when addressing a data-centric problem characterised both by variety and velocity (such as those typically found on the modern Web), (3) present a relevant Web-centric use-case that requires to address simultaneously data velocity and variety, and (4) guide the participants through the development of a Web stream processing application."@en ;
+	conference:hasSubEvent <#Background>, <#Web>, <#Anatomy>, <#Break>, <#Building>, <#Discussion> ;
+	.
+
+# -------------------------------------
+# Persons associated with the Tutorial
+# -------------------------------------
+<http://jeanpi.org/wp/> a conference:Person ;
+	conference:givenName "Jean-Paul" ;
+	conference:familyName "Calbimonte" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#HES-SO> ;
+	.
+
+<http://riccardotommasini.com/> a conference:Person ;
+	conference:givenName "Riccardo" ;
+	conference:familyName "Tommasini" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#PoliMi> ;
+	.
+
+<https://www.ida.liu.se/~robke04/> a conference:Person ;
+	conference:givenName "Robin" ;
+	conference:familyName "Keskisärkkä" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#LIU> ;
+	.
+
+<https://www.ida.liu.se/~evabl45/> a conference:Person ;
+	conference:givenName "Eva" ;
+	conference:familyName "Blomqvist" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#LIU> ;
+	.
+
+<http://emanueledellavalle.org/> a conference:Person ;
+	conference:givenName "Emanuele" ;
+	conference:familyName "Della Valle" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#PoliMi> ;
+	.
+
+# -------------------------------------
+# Temporal-bound affiliations of persons associated with the Workshop
+# -------------------------------------
+<#HES-SO> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://www.hes-so.ch/> ;
+	.
+
+<#PoliMi> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.polimi.it/> ;
+	.
+
+<#LIU> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://www.liu.se/> ;
+	.
+
+# -------------------------------------
+# Organizations of affiliations
+# -------------------------------------
+<http://www.hes-so.ch/> a conference:Organisation ;
+	conference:name "University of Applied Sciences and Arts, Western Switzerland (HES-SO)"@en ;
+	.
+
+<https://www.polimi.it/> a conference:Organisation ;
+	conference:name "Polytechnic University of Milan, Italy"@en ;
+	.
+
+<http://www.liu.se/> a conference:Organisation ;
+	conference:name "Linköping University, Sweden"@en ;
+	.
+
+
+# -------------------------------------
+# Roles of persons associated with the Tutorial
+# -------------------------------------
+<#Organizer> a conference:OrganisationalRoleDuringEvent ;
+	conference:during <#Tutorial> ;
+	conference:withRole role:tutorial-organiser ;
+	.
+
+# -------------------------------------
+# Tutorial sessions
+# -------------------------------------
+<#Background> a conference:Session ;
+	rdfs:label "Background for Web Stream Processing"@en ;
+	conference:startDate "2019-06-03T14:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T14:15:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Web> a conference:Session ;
+	rdfs:label "Web Stream Processing: From Challenges to Opportunities"@en ;
+	conference:startDate "2019-06-03T14:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T14:45:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Anatomy> a conference:Session ;
+	rdfs:label "Anatomy of Web Stream Processing Applications"@en ;
+	conference:hasSubEvent <#Publishing>, <#Processing> ;
+	.
+
+<#Publishing> a conference:Session ;
+	rdfs:label "Publishing and describing streams on the Web"@en ;
+	conference:startDate "2019-06-03T14:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T15:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Break> a conference:Break ;
+	rdfs:label "Break"@en ;
+	conference:startDate "2019-06-03T15:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T16:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Processing> a conference:Session ;
+	rdfs:label "Processing Web Streams"@en ;
+	conference:startDate "2019-06-03T16:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T16:45:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Building> a conference:Session ;
+	rdfs:label "Building a Web Streams Application"@en ;
+	conference:startDate "2019-06-03T16:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T17:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Discussion> a conference:Panel ;
+	rdfs:label "Wrap-up and discussion"@en ;
+	.

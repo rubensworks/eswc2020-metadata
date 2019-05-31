@@ -1,0 +1,133 @@
+@base <https://ew-shopp.github.io/eswc2019-tutorial/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eswc2019: <https://metadata.2019.eswc-conferences.org/rdf/ontology/> .
+@prefix conference: <https://w3id.org/scholarlydata/ontology/conference-ontology.owl#> .
+@prefix role: <https://w3id.org/scholarlydata/role/> .
+@prefix hoteli-bernardin: <https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/> .
+
+
+# -------------------------------------
+# Location (informative)
+# -------------------------------------
+<https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/aurora#section-3> a conference:Site ;
+	conference:description "Section III of the Aurora Hall conference room" ;
+	.
+
+# -------------------------------------
+# the Tutorial itself
+# -------------------------------------
+<#Tutorial> a conference:Tutorial ;
+	conference:isSubEventOf eswc2019:Conference ;
+	conference:hasLocation <https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/aurora#section-3> ;
+	rdfs:label "Semantic Data Enrichment for Data Scientists"@en ;
+	conference:description "Data science is in the hot spot today because data analyses play a fundamental role in scientific studies and business decisions. However, it was estimated that about 80% of the effort in a data science project has to be dedicated to data preparation 1. A data preparation task that is common in different industry-driven and science-driven application domains is data enrichment. Data enrichment is the task of enriching one main dataset, which describes a phenomenon of interest (usually by means of an initial set of variables), with information from third-party data sources, which contain additional variables to feed an analytical model. By using the enriched data, a data scientist can analyze the phenomenon under observation using a larger number of dimensions or train a predictive model using a richer set of features."@en ;
+	conference:hasSubEvent <#Data_Enrichment>, <#Semantic_Data_Enrichment>, <#Break>, <#Toolkit>, <#Hands-on_Session> ;
+	.
+
+# -------------------------------------
+# Persons associated with the Tutorial
+# -------------------------------------
+<https://www.unimib.it/matteo-luigi-palmonari> a conference:Person ;
+	conference:givenName "Matteo" ;
+	conference:familyName "Palmonari" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#MIB> ;
+	.
+
+<https://www.unimib.it/vincenzo-cutrona> a conference:Person ;
+	conference:givenName "Vincenzo" ;
+	conference:familyName "Cutrona" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#MIB> ;
+	.
+
+<https://www.sintef.no/en/all-employees/employee/?empId=5177> a conference:Person ;
+	conference:givenName "Nikolay" ;
+	conference:familyName "Nikolov" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#SINTEF> ;
+	.
+
+<#Aljaž_Košmerlj> a conference:Person ;
+	conference:givenName "Aljaž" ;
+	conference:familyName "Košmerlj" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Jožef_Stefan> ;
+	.
+
+# -------------------------------------
+# Temporal-bound affiliations of persons associated with the Workshop
+# -------------------------------------
+<#MIB> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.unimib.it/> ;
+	.
+
+<#SINTEF> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.sintef.no/en/digital/> ;
+	.
+
+<#Jožef_Stefan> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.ijs.si/ijsw/JSI> ;
+	.
+
+# -------------------------------------
+# Organizations of affiliations
+# -------------------------------------
+<https://www.unimib.it/> a conference:Organisation ;
+	conference:name "University of Milano, Bicocca, Italy"@en ;
+	.
+
+<https://www.sintef.no/en/digital/> a conference:Organisation ;
+	conference:name "SINTEF Digital"@en ;
+	.
+
+<https://www.ijs.si/ijsw/JSI> a conference:Organisation ;
+	conference:name "Jožef Stefan Institute"@en ;
+	.
+
+# -------------------------------------
+# Roles of persons associated with the Tutorial
+# -------------------------------------
+<#Organizer> a conference:OrganisationalRoleDuringEvent ;
+	conference:during <#Tutorial> ;
+	conference:withRole role:tutorial-organiser ;
+	.
+
+# -------------------------------------
+# Tutorial sessions
+# -------------------------------------
+<#Data_Enrichment> a conference:Session ;
+	rdfs:label "Data enrichment for data science"@en ;
+	conference:startDate "2019-06-02T14:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T14:45:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Semantic_Data_Enrichment> a conference:Session ;
+	rdfs:label "State-of-the-art: semantic data enrichment for data science"@en ;
+	conference:startDate "2019-06-02T14:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T15:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Break> a conference:Break ;
+	rdfs:label "Break"@en ;
+	conference:startDate "2019-06-02T15:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T16:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Toolkit> a conference:Session ;
+	rdfs:label "A toolkit for user-driven data enrichment at scale endowed with robust analytical modeling"@en ;
+	conference:startDate "2019-06-02T16:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T16:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Hands-on_Session> a conference:Session ;
+	rdfs:label "Hands-on session: digital marketing data enrichment with weather data and analytical modelling"@en ;
+	conference:startDate "2019-06-02T16:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-02T17:30:00.000+02:00"^^xsd:dateTime ;
+	.

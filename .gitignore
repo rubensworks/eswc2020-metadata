@@ -1,0 +1,39 @@
+# Logs
+/logs
+*.log
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# auxillary git repositories
+.git-*
+
+# compiled distributions
+build
+
+# dependencies
+node_modules
+.npm-packages
+package-lock.json
+
+# developer scrap files
+/scrap
+/serd
+/docs/examples/
+
+# ignore files
+*.ignore
+*.dev
+
+# developer utilities
+debug
+/fixed
+.devtoolrc
+/publish.*
+
+# auxillary
+/test/main/linked.js
+
+# performance data
+/performance/data/*
+/data/

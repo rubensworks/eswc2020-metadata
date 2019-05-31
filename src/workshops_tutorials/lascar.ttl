@@ -1,0 +1,185 @@
+@base <http://lascar.sda.tech/schedule/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eswc2019: <https://metadata.2019.eswc-conferences.org/rdf/ontology/> .
+@prefix conference: <https://w3id.org/scholarlydata/ontology/conference-ontology.owl#> .
+@prefix role: <https://w3id.org/scholarlydata/role/> .
+@prefix hoteli-bernardin: <https://www.hoteli-bernardin.si/mice/bernardin/congress-halls/> .
+
+
+# -------------------------------------
+# Location (informative)
+# -------------------------------------
+hoteli-bernardin:daphnia a conference:Site ;
+	conference:description "The Daphnia Hall conference room" ;
+	.
+
+# -------------------------------------
+# the Workshop itself
+# -------------------------------------
+<#Workshop> a conference:Workshop ;
+	conference:isSubEventOf eswc2019:Conference ;
+	conference:hasLocation hoteli-bernardin:daphnia ;
+	rdfs:label "Large Scale RDF Analytics (LASCAR)"@en ;
+	conference:description "This workshop on Large Scale RDF Analytics (LASCAR) invites papers and posters related to the problems faced when dealing with the enormous growth of linked datasets, and by the advancement of semantic web technologies in the domain of large scale and distributed computing. We will particularly welcome research efforts exploring the use of generic big data frameworks like Apache Spark, Apache Flink, or specialized libraries like Giraph, Tinkerpop, SparkSQL etc. for Semantic Web technologies. The goal is to demonstrate the use of existing frameworks and libraries to exploit Knowledge Graph processing and to discuss the solutions to the challenges and issues arising therein. Moreover, we will organize a related talk by an expert speaker, and also arrange a panel discussion among experts and scientists working in the area of distributed semantic analytics. LASCAR targets a range of interesting research areas in large scale processing of Knowledge Graphs, like querying, inference, and analytics, therefore we expect a wider audience interested in attending the workshop."@en ;
+	conference:hasSubEvent <#Welcome>, <#Keynote>, <#Coffee_Break_1>, <#Session>, <#Coffee_Break_2>, <#Discussion> ;
+	.
+
+# -------------------------------------
+# Persons associated with the Workshop
+# -------------------------------------
+<http://sda.cs.uni-bonn.de/people/dr-hajira-jabeen/> a conference:Person ;
+	conference:givenName "Hajira" ;
+	conference:familyName "Jabeen" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#SDA> ;
+	.
+
+<http://sda.cs.uni-bonn.de/people/dr-damien-graux/> a conference:Person ;
+	conference:givenName "Damien" ;
+	conference:familyName "Graux" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#IAIS> ;
+	.
+
+<https://gezimsejdiu.github.io/> a conference:Person ;
+	conference:givenName "Gezim" ;
+	conference:familyName "Sedjiu" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#SDA> ;
+	.
+
+<#Mohammed_Saleem> a conference:Person ;
+	conference:givenName "Mohammed" ;
+	conference:familyName "Saleem" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#AKSW> ;
+	.
+
+<http://www.jens-lehmann.org> a conference:Person ;
+	conference:givenName "Jens" ;
+	conference:familyName "Lehmann" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#SDA> ;
+	.
+
+<http://igm.univ-mlv.fr/~ocure> a conference:Person ;
+	conference:givenName "Olivier" ;
+	conference:familyName "Curé" ;
+	conference:holdsRole <#Keynote_Speaker> ;
+	conference:hasAffiliation <#UPEM> ;
+	.
+
+# -------------------------------------
+# Temporal-bound affiliations of persons associated with the Workshop
+# -------------------------------------
+<#SDA> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://sda.cs.uni-bonn.de/> ;
+	.
+
+<#IAIS> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.iais.fraunhofer.de/> ;
+	.
+
+<#AKSW> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://aksw.org/> ;
+	.
+
+<#UPEM> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://www.u-pem.fr/> ;
+	.
+
+# -------------------------------------
+# Organizations of affiliations
+# -------------------------------------
+<http://sda.cs.uni-bonn.de/> a conference:Organisation ;
+	conference:name "Smart Data Analytics, Uni Bonn, Germany"@en ;
+	.
+
+<https://www.iais.fraunhofer.de/> a conference:Organisation ;
+	conference:name "Fraunhofer IAIS, Germany"@en ;
+	.
+
+<http://aksw.org/> a conference:Organisation ;
+	conference:name "AKSW, University Leipzig, Germany"@en ;
+	.
+
+<http://www.u-pem.fr/> a conference:Organisation ;
+	conference:name "University of Paris-Est Marne la Vallée (UPEM), France"@en ;
+	.
+
+# -------------------------------------
+# Roles of persons associated with the Workshop
+# -------------------------------------
+<#Organizer> a conference:OrganisationalRoleDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withRole role:workshop-organiser ;
+	.
+
+<#Keynote_Speaker> a conference:PublishingRoleDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withRole role:presenter ;
+	.
+
+# -------------------------------------
+# Workshop schedule
+# -------------------------------------
+<#Welcome> a conference:Session ;
+	rdfs:label "Welcome"@en ;
+	conference:startDate "2019-06-03T09:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T09:15:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Keynote> a conference:Talk ;
+	rdfs:label "Keynote: Analytical processing and reasoning in RDF stores"@en ;
+	conference:startDate "2019-06-03T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T10:00:00.000+02:00"^^xsd:dateTime ;
+	eswc2019:presenter <http://igm.univ-mlv.fr/~ocure/LIGM_LIKE/> ;
+	.
+
+<#Coffee_Break_1> a conference:Break ;
+	rdfs:label "Coffee Break"@en ;
+	conference:startDate "2019-06-03T10:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T11:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Session> a conference:Session ;
+	rdfs:label "Session"@en ;
+	conference:startDate "2019-06-03T11:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T11:45:00.000+02:00"^^xsd:dateTime ;
+	eswc2019:sessionContent (
+		[
+			a conference:Talk ;
+			rdfs:label "Extending LiteMat toward RDFS++"@en ;
+			eswc2019:paperAuthors "Olivier Curé <http://igm.univ-mlv.fr/~ocure> | *Weiqin Xu* | Hubert Naacke | Philippe Calvez" ;
+		]
+		[
+			a conference:Talk ;
+			rdfs:label "Unsupervised Hierarchical Grouping of Knowledge Graph Entities"@en ;
+			eswc2019:paperAuthors "*Sameh Mohamed* <http://samehkamaleldin.github.io/>" ;
+		]
+		[
+			a conference:Talk ;
+			rdfs:label "Towards Enforceable Usage Policies for Industry 4.0"@en ;
+			eswc2019:paperAuthors "Sebastian Bader | Maria Maleshkova <http://sda.cs.uni-bonn.de/people/dr-maria-maleshkova/>" ;
+		]
+	) ;
+	.
+
+<#Coffee_Break_2> a conference:Break ;
+	rdfs:label "Coffee Break"@en ;
+	conference:startDate "2019-06-03T11:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T12:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Discussion> a conference:Panel ;
+	rdfs:label "Wrap-up + Panel discussion"@en ;
+	conference:startDate "2019-06-03T12:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2019-06-03T12:30:00.000+02:00"^^xsd:dateTime ;
+	.
