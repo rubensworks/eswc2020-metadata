@@ -403,9 +403,12 @@ const h_rebuttal_cleaner = {
 
 	for(let [sc1_track, s_track] of hm_tracks) {
 		ds_out.write({
-			[sc1_track]: {
-				a: 'eswc2019:Track',
-				'rdfs:label': '@en"'+s_track,
+			type: 'c3',
+			value: {
+				[sc1_track]: {
+					a: 'eswc2019:Track',
+					'rdfs:label': '@en"'+s_track,
+				},
 			},
 		});
 	}
