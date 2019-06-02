@@ -334,7 +334,7 @@ const h_rebuttal_cleaner = {
 		let g_submission = extract_table($_submission, $_submission('table[id="ec:table1"]>tbody>tr').toArray().slice(1), h_submission_cleaner);
 
 		let sc1_track = `eswc2019:Track.${g_submission.track.replace(/ /g, '_').replace(/_?[Tt]rack$/, '')}`;
-		hm_tracks.set(sc1_track, g_submission.track.replace(/ /g, '_').replace(/_?[Tt]rack$/, ''));
+		hm_tracks.set(sc1_track, g_submission.track.replace(/ ?[Tt]rack$/, ''));
 		ds_out.write({
 			type: 'c3',
 			value: {
