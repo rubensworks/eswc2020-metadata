@@ -226,12 +226,17 @@ eswc2019:submissionsList a owl:ObjectProperty ;
 	rdfs:range rdfs:List ;
 	.
 
+eswc2019:proceedingsList a owl:ObjectProperty ;
+	rdfs:label "List of Proceedings"@en ;
+	rdfs:domain eswc2019:Conference ;
+	rdfs:range rdfs:List ;
+	.
+
 eswc2019:tracksInclude a owl:ObjectProperty ;
 	rdfs:label "Set of Tracks"@en ;
 	rdfs:domain eswc2019:Conference ;
 	rdfs:range eswc2019:Track ;
 	.
-
 
 # -----------------------------------------------------------------------------
 # Custom Datatypes
