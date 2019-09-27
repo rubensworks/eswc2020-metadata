@@ -25,6 +25,7 @@
 	rdfs:label "SANSA’s Leap of Faith: Scalable RDF and Heterogeneous Data Lakes"@en ;
 	conference:description "Scalable processing of Knowledge Graphs (KG) is an important requirement for today’s KG engineers.  Scalable Semantic Analytics Stack (SANSA) is a library built on top of Apache Spark and it offers several APIs tackling various facets of scalable KG processing. SANSA is organized into several layers: (1) RDF data handling e.g. filtering, computation of RDF statistics, and quality assessment (2) SPARQL querying (3) inference reasoning (4) analytics over KGs. In addition to processing native RDF, SANSA also allows users to query a wide range of heterogeneous data sources (e.g. files stored in Hadoop or other popular NoSQL stores) uniformly using SPARQL. This tutorial, aims to provide an overview, detailed discussion, and a hands-on session on SANSA, covering all the aforementioned layers using simple use-cases."@en ;
 	conference:hasSubEvent <#Part_1>, <#Break>, <#Part_2> ;
+	eswc2019:day eswc2019:Day.Monday ;
 	.
 
 # -------------------------------------

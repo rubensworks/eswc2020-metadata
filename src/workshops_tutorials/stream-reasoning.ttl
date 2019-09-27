@@ -25,6 +25,7 @@
 	rdfs:label "Continuous Analytics of Linked Data Streams"@en ;
 	conference:description "The goal of the tutorial is to outline how to develop and deploy a stream processing application in a web environment in a reproducible way. To this extent, we intend to (1) survey existing research outcomes from the Stream Reasoning /RDF Stream Processing that arise in querying and reasoning on a variety of highly dynamic data, (2) introduce stream reasoning techniques as powerful tools to use when addressing a data-centric problem characterised both by variety and velocity (such as those typically found on the modern Web), (3) present a relevant Web-centric use-case that requires to address simultaneously data velocity and variety, and (4) guide the participants through the development of a Web stream processing application."@en ;
 	conference:hasSubEvent <#Background>, <#Web>, <#Anatomy>, <#Break>, <#Building>, <#Discussion> ;
+	eswc2019:day eswc2019:Day.Monday ;
 	.
 
 # -------------------------------------

@@ -25,6 +25,7 @@
 	rdfs:label "Semantic Data Enrichment for Data Scientists"@en ;
 	conference:description "Data science is in the hot spot today because data analyses play a fundamental role in scientific studies and business decisions. However, it was estimated that about 80% of the effort in a data science project has to be dedicated to data preparation 1. A data preparation task that is common in different industry-driven and science-driven application domains is data enrichment. Data enrichment is the task of enriching one main dataset, which describes a phenomenon of interest (usually by means of an initial set of variables), with information from third-party data sources, which contain additional variables to feed an analytical model. By using the enriched data, a data scientist can analyze the phenomenon under observation using a larger number of dimensions or train a predictive model using a richer set of features."@en ;
 	conference:hasSubEvent <#Data_Enrichment>, <#Semantic_Data_Enrichment>, <#Break>, <#Toolkit>, <#Hands-on_Session> ;
+	eswc2019:day eswc2019:Day.Sunday ;
 	.
 
 # -------------------------------------

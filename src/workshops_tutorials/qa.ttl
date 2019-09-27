@@ -26,6 +26,7 @@
 	rdfs:label "Build a Question Answering System Overnight"@en ;
 	conference:description "With this tutorial, we aim to provide the participants with an overview of the field of Question Answering over Knowledge Graphs, insights into commonly faced problems, its recent trends and developments. In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their own QA systems. At the end of the tutorial, the audience would have hands-on experience of developing a working deep learning based QA system."@en ;
 	conference:hasSubEvent <#Introduction>, <#Break>, <#Hands-on_Session> ;
+	eswc2019:day eswc2019:Day.Sunday ;
 	.
 
 # -------------------------------------

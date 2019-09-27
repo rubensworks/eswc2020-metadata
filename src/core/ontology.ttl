@@ -15,6 +15,11 @@
 @prefix eswc2019-sites: <https://metadata.2019.eswc-conferences.org/rdf/sites/> .
 @prefix eswc2019-proceedings: <https://metadata.2019.eswc-conferences.org/rdf/proceedings/> .
 @prefix eswc2019-submissions: <https://metadata.2019.eswc-conferences.org/rdf/submissions/> .
+@prefix eswc2019-talks: <https://metadata.2019.eswc-conferences.org/rdf/talks/> .
+@prefix eswc2019-program: <https://metadata.2019.eswc-conferences.org/rdf/program/> .
+@prefix eswc2019-tuesday: <https://metadata.2019.eswc-conferences.org/rdf/program/tuesday/> .
+@prefix eswc2019-wednesday: <https://metadata.2019.eswc-conferences.org/rdf/program/wednesday/> .
+@prefix eswc2019-thursday: <https://metadata.2019.eswc-conferences.org/rdf/program/thursday/> .
 @prefix eswc2019-object: <https://metadata.2019.eswc-conferences.org/rdf/object/> .
 @prefix eswc2019-datatype: <https://metadata.2019.eswc-conferences.org/rdf/datatype/> .
 @prefix fr: <http://purl.org/spar/fr/> .
@@ -32,6 +37,29 @@ eswc2019:Conference a conference:Conference ;
 	conference:hasSite eswc2019-sites:Hotel_Bernardin ;
 	conference:startDate "2019-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
 	conference:endDate "2019-06-06:15:00:00.000+02:00"^^xsd:dateTime ;
+	eswc2019:days (
+		eswc2019:Day.Sunday
+		eswc2019:Day.Monday
+		eswc2019:Day.Tuesday
+		eswc2019:Day.Wednesday
+		eswc2019:Day.Thursday
+	)
+	.
+
+eswc2019:Talk a owl:Class ;
+	rdfs:label "Talk"@en ;
+	.
+
+eswc2019:Day a owl:Class ;
+	rdfs:label "Day"@en ;
+	.
+
+eswc2019:Day.Sunday a eswc2019:Day ;
+	rdfs:label "Sunday"@en ;
+	.
+
+eswc2019:Day.Monday a eswc2019:Day ;
+	rdfs:label "Monday"@en ;
 	.
 
 eswc2019-sites:Hotel_Bernardin a conference:Site ;
@@ -166,6 +194,12 @@ eswc2019:ReviewerConfidence.1 a eswc2019:ReviewerConfidenceValue ;
 # Predicates; Domain & Range Restrictions
 # -----------------------------------------------------------------------------
 
+eswc2019:day a owl:ObjectProperty ;
+	rdfs:label "Day of Event"@en ;
+	rdfs:domain conference:Event ;
+	rdfs:range eswc2019:Day ;
+	.
+
 eswc2019:doi a owl:DatatypeProperty ;
 	rdfs:label "DOI"@en ;
 	rdfs:domain eswc2019:ProceedingsPaper ;
@@ -194,6 +228,12 @@ eswc2019:submission a owl:ObjectProperty ;
 	rdfs:label "Submission"@en ;
 	rdfs:domain eswc2019:ProceedingsPaper ;
 	rdfs:range eswc2019:SubmissionPaper ;
+	.
+
+eswc2019:coversPaper a owl:ObjectProperty ;
+	rdfs:label "Covers Paper"@en ;
+	rdfs:domain eswc2019:Talk ;
+	rdfs:range eswc2019:ProceedingsPaper ;
 	.
 
 eswc2019:rebuts a owl:ObjectProperty ;

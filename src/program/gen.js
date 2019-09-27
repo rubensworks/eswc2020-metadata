@@ -1,6 +1,8 @@
+const ttl_read = require('@graphy/content.ttl.read');
 const ttl_write = require('@graphy/content.ttl.write');
 const {
 	prefixes: H_PREFIXES,
+	org_suffix,
 } = require('../common/share.js');
 
 const people = require('../common/people.js');
@@ -8,6 +10,8 @@ const people = require('../common/people.js');
 let ds_out = ttl_write({
 	prefixes: H_PREFIXES,
 });
+
+let s_day = process.argv[2];
 
 ds_out.pipe(process.stdout);
 
@@ -21,15 +25,50 @@ let h_dates = {
 	thursday: 6,
 };
 
-const namify = s => s.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+let h_papers = {
+	...Object.entries({
+		aligning_metadata_with_ontology_terms_using_clustering_and_embeddings: 'Paper.161',
+		shacl_constraint_validation_over_ontology_enhanced_kgs_via_rewriting: 'Paper.119',
+		mini_me_swift_the_first_owl_reasoner_for_ios: 'Paper.124',
+		// using_knowledge_graphs_to_search_an_enterprise_data_lake: '',
+	}).reduce((h_out, [s_match, s_paper]) => ({
+		...h_out,
+		[s_match]: `${H_PREFIXES['eswc2019-proceedings']}${s_paper}`,
+	}), {}),
+};
 
-const event = s_type => ({
-	a: `conference:${s_type[0].toUpperCase()}${s_type.slice(1)}`,
-	'conference:isSubEventOf': 'eswc2019:Conference',
-});
+(async() => {
+	await new Promise((fk_read) => {
+		process.stdin.pipe(ttl_read({
+			prefixes: H_PREFIXES,
+
+			data({subject:yt_subject, predicate:yt_predicate, object:yt_object}) {
+				if(yt_subject.value.startsWith(H_PREFIXES['eswc2019-proceedings']+'Paper.') && (H_PREFIXES.rdfs+'label') === yt_predicate.value) {
+					h_papers[yt_object.value.toLowerCase().trim().replace(/([^A-Za-z0-9])+/g, '_')] = yt_subject.value;
+				}
+			},
+
+			eof() {
+				fk_read();
+			},
+		}));
+	});
+
+	const namify = s => s.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
 
 
-for(let [s_day, n_date] of Object.entries(h_dates)) {
+// for(let [s_day, n_date] of Object.entries(h_dates)) {
+	let n_date = h_dates[s_day];
+
+	let s_day_proper = `${s_day[0].toUpperCase()}${s_day.slice(1)}`;
+	let sc1_day = `eswc2019:Day.${s_day_proper}`;
+
+	const event = s_type => ({
+		a: `conference:${s_type[0].toUpperCase()}${s_type.slice(1)}`,
+		'conference:isSubEventOf': 'eswc2019:Conference',
+		'eswc2019:day': sc1_day,
+	});
+
 	const hour = x_hour => `^xsd:dateTime"2019-06-0${n_date}:${(Math.ceil(x_hour)+'').padStart(2, '0')}:${(((x_hour % 1)*60)+'').padStart(2, '0')}:00.000+02:00`;
 
 	const time = (x_start, x_end) => ({
@@ -63,11 +102,33 @@ for(let [s_day, n_date] of Object.entries(h_dates)) {
 				? {
 					'eswc2019:sessionContent': [g_info.talks.map((s_talk) => {
 						let [s_title, s_authors] = s_talk.split(/\s*\n+\s*/);
-						return {
+
+						let sc1_talk = `eswc2019-talks:${org_suffix(s_title)}`;
+
+						let hc2_talk = {
 							a: 'conference:Talk',
 							'rdfs:label': '@en"'+s_title,
-							'eswc2019:paperAuthors': [...people.within(s_authors)],
+							// 'eswc2019:paper': ``,
+							// 'eswc2019:paperAuthors': [...people.within(s_authors)],
 						};
+
+						let s_match = s_title.toLowerCase().trim().replace(/([^A-Za-z0-9])+/g, '_');
+						if(!(s_match in h_papers)) {
+							debugger;
+							console.error(`could not find matching paper for talk: "${s_title}"`);
+						}
+						else {
+							hc2_talk['eswc2019:coversPaper'] = '>'+h_papers[s_match];
+						}
+
+						ds_out.write({
+							type: 'c3',
+							value: {
+								[sc1_talk]: hc2_talk,
+							},
+						});
+
+						return sc1_talk;
 					})],
 				}
 				: {}),
@@ -92,6 +153,16 @@ for(let [s_day, n_date] of Object.entries(h_dates)) {
 	});
 
 	let sc1_keynote_speaker = `eswc2019-${s_day}:Keynote_Speaker`;
+
+	ds_out.write({
+		type: 'c3',
+		value: {
+			[sc1_day]: {
+				a: 'eswc2019:Day',
+				'rdfs:label': '@en"'+s_day_proper,
+			},
+		},
+	});
 
 	switch(s_day.toLowerCase()) {
 		case 'tuesday': {
@@ -126,12 +197,12 @@ for(let [s_day, n_date] of Object.entries(h_dates)) {
 					...session('Best of Resources', 11, 12.5, {
 						location: SC1_EMERALD_1,
 						talks: [
-							`Deontic reasoning for legal ontologies
-								Cheikh Kacfah Emani | Yannis Haralambous`,
-							`A Decentralized Architecture for Sharing and Querying Semantic Data
-								Christian Aebeloe | Gabriela Montoya | Katja Hose`,
-							`A Recommender System for Complex Real-World Applications with Nonlinear Dependencies and Knowledge Graph Context
-								Marcel Hildebrandt | Swathi Shyam Sunder | Serghei Mogoreanu | Mitchell Joblin | Ingo Thon | Akhil Mehta | Volker Tresp`,
+							`AYNEC: All You Need for Evaluating Completion Techniques in Knowledge Graphs
+								Daniel Ayala, Agustin Borrego, Inma Hernandez, Carlos R. Rivero and David Ruiz`,
+							`EVENTSKG: A 5-Star Dataset of Top-ranked Events in Eight Computer Science Communities
+								Said Fathalla, Christoph Lange and Sören Auer`,
+							`A Software Framework and Datasets for the Analysis of Graph Measures on RDF Graphs
+								Matthäus Zloch, Maribel Acosta, Daniel Hienert, Stefan Dietze and Stefan Conrad`,
 						],
 					}),
 
@@ -351,15 +422,27 @@ for(let [s_day, n_date] of Object.entries(h_dates)) {
 
 					...lunch(),
 
+					// ...session('Ontologies: Reasoning and Learning', 14, 15.5, {
+					// 	location: SC1_EMERALD_1,
+					// 	talks: [
+					// 		`Deontic reasoning for legal ontologies
+					// 			Cheikh Kacfah Emani | Yannis Haralambous`,
+					// 		`GConsent: A Consent Ontology based on the GDPR
+					// 			Harshvardhan J. Pandit | Christophe Debruyne | Declan O’sullivan | Dave Lewis`,
+					// 		`A Hybrid Graph Model for Distant Supervision Relation Extraction
+					// 			Shangfu Duan | Huan Gao | Bing Liu | Guilin Qi`,
+					// 	],
+					// }),
+
 					...session('Ontologies: Reasoning and Learning', 14, 15.5, {
 						location: SC1_EMERALD_1,
 						talks: [
 							`Deontic reasoning for legal ontologies
 								Cheikh Kacfah Emani | Yannis Haralambous`,
-							`GConsent: A Consent Ontology based on the GDPR
-								Harshvardhan J. Pandit | Christophe Debruyne | Declan O’sullivan | Dave Lewis`,
-							`A Hybrid Graph Model for Distant Supervision Relation Extraction
-								Shangfu Duan | Huan Gao | Bing Liu | Guilin Qi`,
+							`A Decentralized Architecture for Sharing and Querying Semantic Data
+								Christian Aebeloe | Gabriela Montoya | Katja Hose`,
+							`A Recommender System for Complex Real-World Applications with Nonlinear Dependencies and Knowledge Graph Context
+								Marcel Hildebrandt | Swathi Shyam Sunder | Serghei Mogoreanu | Mitchell Joblin | Ingo Thon | Akhil Mehta | Volker Tresp`,
 						],
 					}),
 
@@ -401,6 +484,7 @@ for(let [s_day, n_date] of Object.entries(h_dates)) {
 
 		default: break;
 	}
-}
+// }
 
-ds_out.end();
+	ds_out.end();
+})();

@@ -25,6 +25,7 @@
 	rdfs:label "Generating and querying (Virtual) Knowledge Graphs from heterogeneous data sources (VKG)"@en ;
 	conference:description "In this tutorial, we explain how to use a suite of tools to manage and exploit data in heterogeneous formats (CSV, RDB, JSON or REST API) without the need to load the resulting RDF in a triple store for querying it. First, we present TADA, a tool for automatically annotating CSV files using existing Knowledge Graphs. Second, we present HELIO, a Linked Data publisher that provides unified access in real-time to multiple heterogeneous data sources. Finally, we present an OBDA approach to exploit CSV published on the Web providing access via SPARQL or GraphQL."@en ;
 	conference:hasSubEvent <#Part_1>, <#Break>, <#Part_2> ;
+	eswc2019:day eswc2019:Day.Sunday ;
 	.
 
 # -------------------------------------

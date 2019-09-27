@@ -28,6 +28,7 @@
     "unzipper": "^0.9.15"
   },
   "devDependencies": {
-    "emk": "^1.7.2"
+    "emk": "^1.7.2",
+    "graphy": "^3.2.2"
   }
 }

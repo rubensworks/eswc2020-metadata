@@ -25,6 +25,7 @@
 	rdfs:label "Comunica"@en ;
 	conference:description "Querying Linked Data on the Web is a non-trivial endeavour because..."@en ;
 	conference:hasSubEvent <#Part_1>, <#Break>, <#Part_2> ;
+	eswc2019:day eswc2019:Day.Monday ;
 	.
 
 # -------------------------------------

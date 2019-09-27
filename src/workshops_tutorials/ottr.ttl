@@ -25,6 +25,7 @@
 	rdfs:label "Practical and Scalable Pattern-based Ontology Engineering with Reasonable Ontology Templates (OTTR)"@en ;
 	conference:description "Learn how to build, maintain and interact with knowledge bases via higher level abstractions and modelling patterns using the OTTR templating framework."@en ;
 	conference:hasSubEvent <#Part_1>, <#Break>, <#Part_2> ;
+	eswc2019:day eswc2019:Day.Sunday ;
 	.
 
 # -------------------------------------

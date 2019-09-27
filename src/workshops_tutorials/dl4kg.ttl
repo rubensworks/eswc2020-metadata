@@ -25,6 +25,7 @@
 	rdfs:label "Deep Learning for Knowledge Graphs (DL4KG)"@en ;
 	conference:description "Over the past years there has been a rapid growth in the use and the importance of Knowledge Graphs (KGs) along with their application to many important tasks. KGs are large networks of real-world entities described in terms of their semantic types and their relationships to each other. On the other hand, Deep Learning methods have also become an important area of research, achieving some important breakthrough in various research fields, especially Natural Language Processing (NLP) and Image Recognition. In order to pursue more advanced methodologies, it has become critical that the communities related to Deep Learning, Knowledge Graphs, and NLP join their forces in order to develop more effective algorithms and applications. This workshop aims to reinforce the relationships between these communities and intends to be at the center of shared works around topics such as Deep Learning, Knowledge Graphs, Natural Language Processing, Computational Linguistics, Big Data, and so on."@en ;
 	conference:hasSubEvent <#Welcome>, <#Keynote>, <#Morning_Coffee_Break>, <#Session_1>, <#Lunch_Break>, <#Session_2>, <#Afternoon_Coffee_Break>, <#Session_3> ;
+	eswc2019:day eswc2019:Day.Sunday ;
 	.
 
 # -------------------------------------

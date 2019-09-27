@@ -17,6 +17,7 @@ module.exports = {
 	'eswc2019-sites': P_IRI_ESWC2019+'/sites/',
 	'eswc2019-proceedings': P_IRI_ESWC2019+'/proceedings/',
 	'eswc2019-submissions': P_IRI_ESWC2019+'/submissions/',
+	'eswc2019-talks': P_IRI_ESWC2019+'/talks/',
 	'eswc2019-object': P_IRI_ESWC2019.replace(/\/rdf$/, '/object/'),
 	'eswc2019-datatype': P_IRI_ESWC2019+'/datatype/',
 	'eswc2019-tuesday': P_IRI_ESWC2019+'/program/tuesday/',

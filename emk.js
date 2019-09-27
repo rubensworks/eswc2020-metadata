@@ -27,6 +27,18 @@ module.exports = {
 
 	outputs: {
 		build: {
+			'union.ttl': () => ({
+				deps: [
+					'build/core/*',
+					'build/workshops_tutorials/*',
+					'build/program/*',
+					'build/papers/*',
+				],
+				run: /* syntax: bash */ `
+					npx graphy content.ttl.read --pipe util.dataset.tree --union --pipe content.ttl.write > union.ttl --inputs **/*.ttl
+				`,
+			}),
+
 			core: {
 				'ontology.ttl': () => ({
 					link: path.join(PD_SRC_CORE, 'ontology.ttl'),
@@ -48,9 +60,12 @@ module.exports = {
 
 			program: {
 				':day.ttl': ({day:s_day}) => ({
-					deps: [path.join(PD_SRC_PROGRAM, 'gen.js')],
+					deps: [
+						path.join(PD_SRC_PROGRAM, 'gen.js'),
+						'build/papers/proceedings.ttl',
+					],
 					run: /* syntax: bash */ `
-						node $1 '${s_day}' > $@
+						node $1 '${s_day}' < $2 > $@
 					`,
 				}),
 			},
