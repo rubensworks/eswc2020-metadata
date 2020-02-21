@@ -310,8 +310,8 @@ const extract_latex = (a_tokens) => {
 		}
 
 		let s_paper_id = si_paper.replace(/^paper_/, '');
-		let sc1_paper = `eswc2019-proceedings:Paper.${s_paper_id}`;
-		let sc1_author_list = `eswc2019-proceedings:Authors.${s_paper_id}`;
+		let sc1_paper = `eswc2020-proceedings:Paper.${s_paper_id}`;
+		let sc1_author_list = `eswc2020-proceedings:Authors.${s_paper_id}`;
 
 		let a_author_items = $_paper('table[id="ec:table2"] tbody>tr.cyan').toArray()
 			.map((d_row, i_row) => {
@@ -319,10 +319,10 @@ const extract_latex = (a_tokens) => {
 
 				let s_full_name = a_row[0]+' '+a_row[1];
 				let sc1_person = person_c1(s_full_name);
-				let sc1_author = `eswc2019-proceedings:Author.${s_paper_id}.${i_row+1}`;
-				let sc1_affiliation = `eswc2019-affiliations:${person_suffix(s_full_name)}.${org_suffix(a_row[4])}`;
-				let sc1_organization = `eswc2019-organizations:${org_suffix(a_row[4])}`;
-				let sc1_organization_site = `eswc2019-sites:${a_row[4].replace(/ /g, '_')}.${a_row[3].replace(/ /g, '_')}`;
+				let sc1_author = `eswc2020-proceedings:Author.${s_paper_id}.${i_row+1}`;
+				let sc1_affiliation = `eswc2020-affiliations:${person_suffix(s_full_name)}.${org_suffix(a_row[4])}`;
+				let sc1_organization = `eswc2020-organizations:${org_suffix(a_row[4])}`;
+				let sc1_organization_site = `eswc2020-sites:${a_row[4].replace(/ /g, '_')}.${a_row[3].replace(/ /g, '_')}`;
 
 				return {
 					c1: sc1_author,
@@ -343,7 +343,7 @@ const extract_latex = (a_tokens) => {
 							'rdfs:label': `@en"${s_full_name}, ${nth.appendSuffix(i_row+1)} Author for Proceedings Paper ${s_paper_id}`,
 							'conference:isHeldBy': sc1_person,
 							'conference:withRole': 'conference:PublishingRole',
-							'eswc2019:correspondingAuthor': !!a_row[6],
+							'eswc2020:correspondingAuthor': !!a_row[6],
 						},
 						[sc1_affiliation]: {
 							a: 'conference:AffiliationDuringEvent',
@@ -371,16 +371,16 @@ const extract_latex = (a_tokens) => {
 			type: 'c3',
 			value: {
 				[sc1_paper]: {
-					a: ['eswc2019:ProceedingsPaper', 'conference:InProceedings'],
+					a: ['eswc2020:ProceedingsPaper', 'conference:InProceedings'],
 					'rdfs:label': '@en"'+$_paper('td#ptitle').text(),
 					'conference:title': '@en"'+$_paper('td#ptitle').text(),
-					'conference:isPartOf': 'eswc2019:Proceedings',
-					'eswc2019:pdf': `^xsd:anyUri"${H_PREFIXES['eswc2019-object']}${si_paper}.pdf`,
+					'conference:isPartOf': 'eswc2020:Proceedings',
+					'eswc2020:pdf': `^xsd:anyUri"${H_PREFIXES['eswc2020-object']}${si_paper}.pdf`,
 					'bibo:numPages': '^xsd:integer"'+$_paper('td#pages').text(),
 					'dct:issued': new Date($_paper('#time').text()+'Z'),
-					...(s_comment? {'eswc2019:comment':'@en"'+s_comment}: {}),
-					'eswc2019:authorList': [a_author_items.map(g => g.c1)],
-					'eswc2019:submission': `eswc2019-submissions:Paper.${s_paper_id}`,
+					...(s_comment? {'eswc2020:comment':'@en"'+s_comment}: {}),
+					'eswc2020:authorList': [a_author_items.map(g => g.c1)],
+					'eswc2020:submission': `eswc2020-submissions:Paper.${s_paper_id}`,
 				},
 
 				...a_author_items.reduce((g_out, g_item) => ({
@@ -394,8 +394,8 @@ const extract_latex = (a_tokens) => {
 	ds_out.write({
 		type: 'c3',
 		value: {
-			'eswc2019:Conference': {
-				'eswc2019:proceedings': [a_proceedings.sort(F_SORT_PAPER_INDEX)],
+			'eswc2020:Conference': {
+				'eswc2020:proceedings': [a_proceedings.sort(F_SORT_PAPER_INDEX)],
 			},
 		},
 	});

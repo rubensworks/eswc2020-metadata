@@ -14,15 +14,15 @@ let ds_out = ttl_write({
 let s_day = process.argv[2];
 
 ds_out.pipe(process.stdout);
-
-const SC1_EMERALD_1 = 'hoteli-bernardin:emerald-ballroom#section-1';
-const SC1_EMERALD_2 = 'hoteli-bernardin:emerald-ballroom#section-2';
-const SC1_ADRIA = 'hoteli-bernardin:adria';
+// TODO: update all below once program has been defined.
+const SC1_EMERALD_1 = 'hotel-knossos:emerald-ballroom#section-1';
+const SC1_EMERALD_2 = 'hotel-knossos:emerald-ballroom#section-2';
+const SC1_ADRIA = 'hotel-knossos:adria';
 
 let h_dates = {
-	tuesday: 4,
-	wednesday: 5,
-	thursday: 6,
+	tuesday: 2,
+	wednesday: 3,
+	thursday: 4,
 };
 
 let h_papers = {
@@ -33,7 +33,7 @@ let h_papers = {
 		// using_knowledge_graphs_to_search_an_enterprise_data_lake: '',
 	}).reduce((h_out, [s_match, s_paper]) => ({
 		...h_out,
-		[s_match]: `${H_PREFIXES['eswc2019-proceedings']}${s_paper}`,
+		[s_match]: `${H_PREFIXES['eswc2020-proceedings']}${s_paper}`,
 	}), {}),
 };
 
@@ -43,7 +43,7 @@ let h_papers = {
 			prefixes: H_PREFIXES,
 
 			data({subject:yt_subject, predicate:yt_predicate, object:yt_object}) {
-				if(yt_subject.value.startsWith(H_PREFIXES['eswc2019-proceedings']+'Paper.') && (H_PREFIXES.rdfs+'label') === yt_predicate.value) {
+				if(yt_subject.value.startsWith(H_PREFIXES['eswc2020-proceedings']+'Paper.') && (H_PREFIXES.rdfs+'label') === yt_predicate.value) {
 					h_papers[yt_object.value.toLowerCase().trim().replace(/([^A-Za-z0-9])+/g, '_')] = yt_subject.value;
 				}
 			},
@@ -61,15 +61,15 @@ let h_papers = {
 	let n_date = h_dates[s_day];
 
 	let s_day_proper = `${s_day[0].toUpperCase()}${s_day.slice(1)}`;
-	let sc1_day = `eswc2019:Day.${s_day_proper}`;
+	let sc1_day = `eswc2020:Day.${s_day_proper}`;
 
 	const event = s_type => ({
 		a: `conference:${s_type[0].toUpperCase()}${s_type.slice(1)}`,
-		'conference:isSubEventOf': 'eswc2019:Conference',
-		'eswc2019:day': sc1_day,
+		'conference:isSubEventOf': 'eswc2020:Conference',
+		'eswc2020:day': sc1_day,
 	});
 
-	const hour = x_hour => `^xsd:dateTime"2019-06-0${n_date}:${(Math.ceil(x_hour)+'').padStart(2, '0')}:${(((x_hour % 1)*60)+'').padStart(2, '0')}:00.000+02:00`;
+	const hour = x_hour => `^xsd:dateTime"2020-06-0${n_date}:${(Math.ceil(x_hour)+'').padStart(2, '0')}:${(((x_hour % 1)*60)+'').padStart(2, '0')}:00.000+02:00`;
 
 	const time = (x_start, x_end) => ({
 		'conference:startDate': hour(x_start),
@@ -77,7 +77,7 @@ let h_papers = {
 	});
 
 	const talk = (s_label, x_start, x_end) => ({
-		[`eswc2019-${s_day}:${namify(s_label)}`]: {
+		[`eswc2020-${s_day}:${namify(s_label)}`]: {
 			'rdfs:label': `@en"${s_label}`,
 			...event('talk'),
 			...time(x_start, x_end),
@@ -85,7 +85,7 @@ let h_papers = {
 	});
 
 	const coffee = (s_type, x_start, x_end) => ({
-		[`eswc2019-${s_day}:${namify(`${s_type[0].toUpperCase()}${s_type.slice(1)} Coffee Break`)}`]: {
+		[`eswc2020-${s_day}:${namify(`${s_type[0].toUpperCase()}${s_type.slice(1)} Coffee Break`)}`]: {
 			'rdfs:label': `@en"Coffee Break`,
 			...event('break'),
 			...time(x_start, x_end),
@@ -93,23 +93,23 @@ let h_papers = {
 	});
 
 	const session = (s_label, x_start, x_end, g_info) => ({
-		[`eswc2019-${s_day}:${namify(s_label)}`]: {
+		[`eswc2020-${s_day}:${namify(s_label)}`]: {
 			'rdfs:label': `@en"${s_label}`,
 			...event('session'),
 			...time(x_start, x_end),
 			'conference:hasLocation': g_info.location,
 			...(g_info.talks
 				? {
-					'eswc2019:sessionContent': [g_info.talks.map((s_talk) => {
+					'eswc2020:sessionContent': [g_info.talks.map((s_talk) => {
 						let [s_title, s_authors] = s_talk.split(/\s*\n+\s*/);
 
-						let sc1_talk = `eswc2019-talks:${org_suffix(s_title)}`;
+						let sc1_talk = `eswc2020-talks:${org_suffix(s_title)}`;
 
 						let hc2_talk = {
 							a: 'conference:Talk',
 							'rdfs:label': '@en"'+s_title,
-							// 'eswc2019:paper': ``,
-							// 'eswc2019:paperAuthors': [...people.within(s_authors)],
+							// 'eswc2020:paper': ``,
+							// 'eswc2020:paperAuthors': [...people.within(s_authors)],
 						};
 
 						let s_match = s_title.toLowerCase().trim().replace(/([^A-Za-z0-9])+/g, '_');
@@ -118,7 +118,7 @@ let h_papers = {
 							console.error(`could not find matching paper for talk: "${s_title}"`);
 						}
 						else {
-							hc2_talk['eswc2019:coversPaper'] = '>'+h_papers[s_match];
+							hc2_talk['eswc2020:coversPaper'] = '>'+h_papers[s_match];
 						}
 
 						ds_out.write({
@@ -145,20 +145,20 @@ let h_papers = {
 	});
 
 	const lunch = () => ({
-		[`eswc2019-${s_day}:Lunch`]: {
+		[`eswc2020-${s_day}:Lunch`]: {
 			'rdfs:label': `@en"Lunch`,
 			...event('meal'),
 			...time(12.5, 14),
 		},
 	});
 
-	let sc1_keynote_speaker = `eswc2019-${s_day}:Keynote_Speaker`;
+	let sc1_keynote_speaker = `eswc2020-${s_day}:Keynote_Speaker`;
 
 	ds_out.write({
 		type: 'c3',
 		value: {
 			[sc1_day]: {
-				a: 'eswc2019:Day',
+				a: 'eswc2020:Day',
 				'rdfs:label': '@en"'+s_day_proper,
 			},
 		},
@@ -166,7 +166,7 @@ let h_papers = {
 
 	switch(s_day.toLowerCase()) {
 		case 'tuesday': {
-			let sc1_keynote = '>https://2019.eswc-conferences.org/keynote-peter-haase/';
+			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-peter-haase/';
 
 			ds_out.write({
 				type: 'c3',
@@ -189,7 +189,7 @@ let h_papers = {
 						'rdfs:description': '@en"In this talk I will provide a perspective on the history, current state and trends of Knowledge Graphs.  This perspective will range from personal experience in academic research in the Semantic Web community  to applications and uptake of knowledge graphs in industry. The talk will be presented as a knowledge graph itself –  with real-life data and examples to be interactively explored and to see what is possible with knowledge graph technology today.',
 						...event('talk'),
 						...time(9.5, 10.5),
-						'eswc2019:presenter': 'eswc2019-persons:Peter_Haase',
+						'eswc2020:presenter': 'eswc2020-persons:Peter_Haase',
 					},
 
 					...coffee('morning', 10.5, 11),
@@ -262,7 +262,7 @@ let h_papers = {
 						],
 					}),
 
-					[`eswc2019-${s_day}:Welcome_Reception`]: {
+					[`eswc2020-${s_day}:Welcome_Reception`]: {
 						a: 'conference:SocialEvent',
 						'rdfs:label': `@en"Welcome reception with poster & demo session`,
 						...time(19, 22),
@@ -273,7 +273,7 @@ let h_papers = {
 		}
 
 		case 'wednesday': {
-			let sc1_keynote = '>https://2019.eswc-conferences.org/keynote-diana-maynard/';
+			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-diana-maynard/';
 
 			ds_out.write({
 				type: 'c3',
@@ -294,7 +294,7 @@ let h_papers = {
 						'rdfs:description': '@en"Natural language processing technology is now ubiquitous, even if there are still many challenges to be faced in its development. From sentiment analysis to machine translation to chatbots; from medical systems to online shopping to fake news; even if not visibly apparent, NLP tools are now lurking hidden in the depths of an enormous number and range of real-world systems and applications. Techniques have advanced in many directions in the last 20 years thanks primarily to developments in machine learning and deep learning technologies, and to the concomitant creation of and attention to language resources. In this talk, I shall examine the role of semantics in NLP applications. It is perhaps surprising that despite recent advances in Semantic Web technology and NLP, researchers and practitioners in domains ranging from journalism to rocket science have yet to grasp their potential, and are still manually grappling feral spreadsheets and databases. I shall discuss how NLP infused with even small amounts of semantics can be a drastic game-changer in fields as diverse as crisis communication, politics, journalism, medicine, literature, and history, using examples from some of our recent projects and applications.',
 						...event('talk'),
 						...time(9.5, 10.5),
-						'eswc2019:presenter': 'eswc2019-persons:Diana_Maynard',
+						'eswc2020:presenter': 'eswc2020-persons:Diana_Maynard',
 					},
 
 					...coffee('morning', 10.5, 11),
@@ -371,7 +371,7 @@ let h_papers = {
 						location: SC1_ADRIA,
 					}),
 
-					[`eswc2019-${s_day}:Gala_Dinner`]: {
+					[`eswc2020-${s_day}:Gala_Dinner`]: {
 						a: ['conference:SocialEvent', 'conference:Meal'],
 						'rdfs:label': `@en"Gala_Dinner`,
 						...time(19, 22),
@@ -382,7 +382,7 @@ let h_papers = {
 		}
 
 		case 'thursday': {
-			let sc1_keynote = '>https://2019.eswc-conferences.org/keynote-daniele-quercia/';
+			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-daniele-quercia/';
 
 			ds_out.write({
 				type: 'c3',
@@ -403,7 +403,7 @@ let h_papers = {
 						// 'rdfs:description': '@en"Natural language processing technology is now ubiquitous, even if there are still many challenges to be faced in its development. From sentiment analysis to machine translation to chatbots; from medical systems to online shopping to fake news; even if not visibly apparent, NLP tools are now lurking hidden in the depths of an enormous number and range of real-world systems and applications. Techniques have advanced in many directions in the last 20 years thanks primarily to developments in machine learning and deep learning technologies, and to the concomitant creation of and attention to language resources. In this talk, I shall examine the role of semantics in NLP applications. It is perhaps surprising that despite recent advances in Semantic Web technology and NLP, researchers and practitioners in domains ranging from journalism to rocket science have yet to grasp their potential, and are still manually grappling feral spreadsheets and databases. I shall discuss how NLP infused with even small amounts of semantics can be a drastic game-changer in fields as diverse as crisis communication, politics, journalism, medicine, literature, and history, using examples from some of our recent projects and applications.',
 						...event('talk'),
 						...time(9.5, 10.5),
-						'eswc2019:presenter': 'eswc2019-persons:Daniele_Quercia',
+						'eswc2020:presenter': 'eswc2020-persons:Daniele_Quercia',
 					},
 
 					...coffee('morning', 10.5, 11),
@@ -470,7 +470,7 @@ let h_papers = {
 						],
 					}),
 
-					[`eswc2019-${s_day}:Closing_Ceremony`]: {
+					[`eswc2020-${s_day}:Closing_Ceremony`]: {
 						a: ['conference:SocialEvent'],
 						'rdfs:label': `@en"Closing Ceremony`,
 						...time(15.5, 14),

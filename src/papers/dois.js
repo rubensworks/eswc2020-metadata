@@ -27,7 +27,7 @@ process.stdin.pipe(ttl_read({
 					type: 'c3',
 					value: {
 						[g_quad.subject]: {
-							'eswc2019:doi': '^eswc2019-datatype:doi"'+h_dois[s_title],
+							'eswc2020:doi': '^eswc2020-datatype:doi"'+h_dois[s_title],
 						},
 					},
 				});

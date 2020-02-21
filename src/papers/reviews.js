@@ -29,7 +29,7 @@ const texts = a_keys => a_keys.reduce((h_out, s_key) => ({
 
 const dates = a_keys => a_keys.reduce((h_out, s_key) => ({
 	...h_out,
-	[s_key]: q => ({[s_key.replace(/ /g, '_')]:q.text().split(/, /).join(' 2019, ')}),
+	[s_key]: q => ({[s_key.replace(/ /g, '_')]:q.text().split(/, /).join(' 2020, ')}),
 }), {});
 
 const extract_table = ($_doc, a_rows, h_cleaner) => {
@@ -65,7 +65,7 @@ const h_submission_cleaner = {
 
 const h_review_cleaner = {
 	'pc member': q => ({reviewer:q.text()}),
-	time: q => ({time:q.text().split(/, /).join(' 2019, ')}),
+	time: q => ({time:q.text().split(/, /).join(' 2020, ')}),
 	'open and transparent review policy': q => ({transparent:'✔' === q.text()}),
 	'reviewer\'s confidence': q => ({confidence:q.find('b').text()}),
 	'overall evaluation': q => ({
@@ -182,7 +182,7 @@ const h_rebuttal_cleaner = {
 		let si_submission = $_reviews('.pagetitle').text().replace(/^.*?(\d+)$/, '$1');
 		let s_paper_id = si_submission;
 
-		let sc1_submission = `eswc2019-submissions:Paper.${si_submission}`;
+		let sc1_submission = `eswc2020-submissions:Paper.${si_submission}`;
 		a_submissions.push(sc1_submission);
 
 		// let s_decision = $_reviews('.ct_table').eq(0).find('tr:last-child>td:last-child>b').text().toLowerCase();
@@ -201,8 +201,8 @@ const h_rebuttal_cleaner = {
 
 					let s_index = q_event.find('tr').eq(0).text().replace(/^Review (\d+)$/, '$1');
 
-					let sc1_review = `eswc2019-submissions:Review.${si_submission}.${s_index}`;
-					let sc1_reviewer = `eswc2019-submissions:Reviewer.${si_submission}.${s_index}`;
+					let sc1_review = `eswc2020-submissions:Review.${si_submission}.${s_index}`;
+					let sc1_reviewer = `eswc2020-submissions:Reviewer.${si_submission}.${s_index}`;
 
 					ds_out.write({
 						type: 'c3',
@@ -214,14 +214,14 @@ const h_rebuttal_cleaner = {
 								'dct:issued': new Date(g_review.time),
 								'dct:language': '>http://www.lexvo.org/page/iso639-3/eng',
 								// 'dct:license': '',
-								'fr:hasRating': `eswc2019:ReviewRating.${g_review.rating}`,
-								'fr:hasReviewerConfidence': `eswc2019:ReviewerConfidence.${g_review.confidence}`,
+								'fr:hasRating': `eswc2020:ReviewRating.${g_review.rating}`,
+								'fr:hasReviewerConfidence': `eswc2020:ReviewerConfidence.${g_review.confidence}`,
 								'cito:reviews': sc1_submission,
-								'fr:issuedFor': '>https://2019.eswc-conferences.org',
-								'fr:releasedBy': 'eswc2019:Metadata',
+								'fr:issuedFor': '>https://2020.eswc-conferences.org',
+								'fr:releasedBy': 'eswc2020:Metadata',
 								'c4o:hasContent': '"'+g_review.content,
 								'frbr:creator': sc1_reviewer,
-								'eswc2019:transparentReviewer': g_review.transparent,
+								'eswc2020:transparentReviewer': g_review.transparent,
 							},
 
 							[sc1_reviewer]: {
@@ -245,19 +245,19 @@ const h_rebuttal_cleaner = {
 				case 'rebuttal': {
 					let g_rebuttal = extract_table($_reviews, q_event.find('tr').toArray().slice(1), h_rebuttal_cleaner);
 
-					let sc1_rebuttal = `eswc2019-submissions:Rebuttal.${si_submission}`;
+					let sc1_rebuttal = `eswc2020-submissions:Rebuttal.${si_submission}`;
 
 					ds_out.write({
 						type: 'c3',
 						value: {
 							[sc1_rebuttal]: {
-								a: 'eswc2019:Rebuttal',
+								a: 'eswc2020:Rebuttal',
 								'fr:issuedAt': '>https://easychair.org',
 								'dct:issued': new Date(g_rebuttal.time),
 								'dct:language': '>http://www.lexvo.org/page/iso639-3/eng',
-								'eswc2019:rebuts': sc1_submission,
-								'fr:issuedFor': '>https://2019.eswc-conferences.org',
-								'fr:releasedBy': 'eswc2019:Metadata',
+								'eswc2020:rebuts': sc1_submission,
+								'fr:issuedFor': '>https://2020.eswc-conferences.org',
+								'fr:releasedBy': 'eswc2020:Metadata',
 								'c4o:hasContent': '"'+g_rebuttal.response,
 								// 'frbr:creator': ,
 							},
@@ -277,17 +277,17 @@ const h_rebuttal_cleaner = {
 			}
 		}
 
-		let sc1_author_list = `eswc2019-submissions:Authors.${si_submission}`;
+		let sc1_author_list = `eswc2020-submissions:Authors.${si_submission}`;
 		let a_author_items = $_submission('table[id="ec:table2"]>tbody>tr').slice(2).toArray()
 			.map((d_row, i_row) => {
 				let a_row = $_submission(d_row).find('td').toArray().map(d => $_submission(d).text().trim().replace(/&nbsp;/g, ''));
 
 				let s_full_name = a_row[0]+' '+a_row[1];
 				let sc1_person = person_c1(s_full_name);
-				let sc1_author = `eswc2019-submissions:Author.${s_paper_id}.${i_row+1}`;
-				let sc1_affiliation = `eswc2019-affiliations:${person_suffix(s_full_name)}.${org_suffix(a_row[4])}`;
-				let sc1_organization = `eswc2019-organizations:${org_suffix(a_row[4])}`;
-				let sc1_organization_site = `eswc2019-sites:${a_row[4].replace(/ /g, '_')}.${a_row[3].replace(/ /g, '_')}`;
+				let sc1_author = `eswc2020-submissions:Author.${s_paper_id}.${i_row+1}`;
+				let sc1_affiliation = `eswc2020-affiliations:${person_suffix(s_full_name)}.${org_suffix(a_row[4])}`;
+				let sc1_organization = `eswc2020-organizations:${org_suffix(a_row[4])}`;
+				let sc1_organization_site = `eswc2020-sites:${a_row[4].replace(/ /g, '_')}.${a_row[3].replace(/ /g, '_')}`;
 
 				return {
 					c1: sc1_author,
@@ -308,7 +308,7 @@ const h_rebuttal_cleaner = {
 							'rdfs:label': `@en"${s_full_name}, ${nth.appendSuffix(i_row+1)} Author for Submissions Paper ${s_paper_id}`,
 							'conference:isHeldBy': sc1_person,
 							'conference:withRole': 'conference:PublishingRole',
-							'eswc2019:correspondingAuthor': !!a_row[6],
+							'eswc2020:correspondingAuthor': !!a_row[6],
 						},
 						[sc1_affiliation]: {
 							a: 'conference:AffiliationDuringEvent',
@@ -333,20 +333,20 @@ const h_rebuttal_cleaner = {
 
 		let g_submission = extract_table($_submission, $_submission('table[id="ec:table1"]>tbody>tr').toArray().slice(1), h_submission_cleaner);
 
-		let sc1_track = `eswc2019:Track.${g_submission.track.replace(/ /g, '_').replace(/_?[Tt]rack$/, '')}`;
+		let sc1_track = `eswc2020:Track.${g_submission.track.replace(/ /g, '_').replace(/_?[Tt]rack$/, '')}`;
 		hm_tracks.set(sc1_track, g_submission.track.replace(/ ?[Tt]rack$/, ''));
 		ds_out.write({
 			type: 'c3',
 			value: {
 				[sc1_submission]: {
-					a: ['eswc2019:SubmissionPaper', 'conference:Document'],
+					a: ['eswc2020:SubmissionPaper', 'conference:Document'],
 
 					'rdfs:label': '@en"'+g_submission.title,
 					'conference:title': '@en"'+g_submission.title,
-					'eswc2019:track': sc1_track,
+					'eswc2020:track': sc1_track,
 					'conference:abstract': '@en"'+g_submission.abstract,
-					'eswc2019:authorList': [a_author_items.map(g => g.c1)],
-					'eswc2019:decision': `eswc2019:Decision.${g_submission.decision}`,
+					'eswc2020:authorList': [a_author_items.map(g => g.c1)],
+					'eswc2020:decision': `eswc2020:Decision.${g_submission.decision}`,
 
 					'dct:issued': new Date(g_submission.submitted),
 					// ...g_submission.last_update
@@ -358,11 +358,11 @@ const h_rebuttal_cleaner = {
 					// 'rdfs:label': '@en"'+$_submission('#stitle').text(),
 					// 'conference:title': '@en"'+$_submission('#stitle').text(),
 					// 'conference:abstract': '@en"'+$_submission('tr#row18').text(),
-					// 'eswc2019:authorList': [a_author_items.map(g => g.c1)],
-					// 'eswc2019:decision': `eswc2019:Decision.${s_decision}`,
+					// 'eswc2020:authorList': [a_author_items.map(g => g.c1)],
+					// 'eswc2020:decision': `eswc2020:Decision.${s_decision}`,
 
-					// 'eswc2019:pdf': 'eswc2019-object:'+s_paper_id,
-					// ...(s_comment? {'eswc2019:comment':'@en"'+s_comment}: {}),
+					// 'eswc2020:pdf': 'eswc2020-object:'+s_paper_id,
+					// ...(s_comment? {'eswc2020:comment':'@en"'+s_comment}: {}),
 					// 'conference:hasAuthorList': sc1_author_list,
 				},
 				// [sc1_author_list]: {
@@ -394,9 +394,9 @@ const h_rebuttal_cleaner = {
 	ds_out.write({
 		type: 'c3',
 		value: {
-			'eswc2019:Conference': {
-				'eswc2019:submissionsList': [a_submissions.sort(F_SORT_PAPER_INDEX)],
-				'eswc2019:tracksInclude': [...hm_tracks].map(a => a[0]),
+			'eswc2020:Conference': {
+				'eswc2020:submissionsList': [a_submissions.sort(F_SORT_PAPER_INDEX)],
+				'eswc2020:tracksInclude': [...hm_tracks].map(a => a[0]),
 			},
 		},
 	});
@@ -406,7 +406,7 @@ const h_rebuttal_cleaner = {
 			type: 'c3',
 			value: {
 				[sc1_track]: {
-					a: 'eswc2019:Track',
+					a: 'eswc2020:Track',
 					'rdfs:label': '@en"'+s_track,
 				},
 			},

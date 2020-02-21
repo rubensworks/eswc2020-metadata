@@ -98,16 +98,16 @@ module.exports = {
 				...(g_person.affiliations
 					? {
 						'conference:hasAffiliation': g_person.affiliations
-							.map(s => `eswc2019-affiliations:${person_suffix(g_person.name)}.${org_suffix(s)}`),
+							.map(s => `eswc2020-affiliations:${person_suffix(g_person.name)}.${org_suffix(s)}`),
 					}
 					: {}),
 			};
 
 			if(g_person.affiliations) {
 				for(let s_affiliation of g_person.affiliations) {
-					let sc1_affiliation = `eswc2019-affiliations:${person_suffix(g_person.name)}.${org_suffix(s_affiliation)}`;
-					let sc1_organization = `eswc2019-organizations:${org_suffix(s_affiliation)}`;
-					let sc1_site = `eswc2019-sites:${org_suffix(s_affiliation)}`;
+					let sc1_affiliation = `eswc2020-affiliations:${person_suffix(g_person.name)}.${org_suffix(s_affiliation)}`;
+					let sc1_organization = `eswc2020-organizations:${org_suffix(s_affiliation)}`;
+					let sc1_site = `eswc2020-sites:${org_suffix(s_affiliation)}`;
 					let s_site = s_affiliation.split(/\s*,\s+/g).slice(0, -1);
 
 					Object.assign(hc3_persons, {

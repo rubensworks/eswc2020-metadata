@@ -1,5 +1,5 @@
-# eswc2019-metadata
-ESWC 2019 metadata generator scripts
+# eswc2020-metadata
+ESWC 2020 metadata generator scripts
 
 ## Build
 
@@ -7,5 +7,5 @@ From project root:
 
 ```bash
 $ npm i
-$ npx emk
+$ ESWC_EASYCHAIR_COOKIE=MY_COOKIE_ npx emk
 ```

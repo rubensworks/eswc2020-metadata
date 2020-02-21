@@ -31,11 +31,11 @@ module.exports = {
 				deps: [
 					'build/core/*',
 					'build/workshops_tutorials/*',
-					'build/program/*',
-					'build/papers/*',
+					//'build/program/*', // TODO
+					//'build/papers/*', // TODO
 				],
 				run: /* syntax: bash */ `
-					npx graphy content.ttl.read --pipe util.dataset.tree --union --pipe content.ttl.write > union.ttl --inputs **/*.ttl
+					npx graphy content.ttl.read --pipe util.dataset.tree --union --pipe content.ttl.write > union.ttl --inputs build/*/*.ttl
 				`,
 			}),
 
@@ -58,50 +58,50 @@ module.exports = {
 				}),
 			},
 
-			program: {
-				':day.ttl': ({day:s_day}) => ({
-					deps: [
-						path.join(PD_SRC_PROGRAM, 'gen.js'),
-						'build/papers/proceedings.ttl',
-					],
-					run: /* syntax: bash */ `
-						node $1 '${s_day}' < $2 > $@
-					`,
-				}),
+			program: { // TODO
+//				':day.ttl': ({day:s_day}) => ({
+//					deps: [
+//						path.join(PD_SRC_PROGRAM, 'gen.js'),
+//						'build/papers/proceedings.ttl',
+//					],
+//					run: /* syntax: bash */ `
+//						node $1 '${s_day}' < $2 > $@
+//					`,
+//				}),
 			},
 
-			papers: {
-				'proceedings.ttl': () => ({
-					deps: [
-						'proceedings.js',
-						'proceedings-list.json',
-					].map(s => path.join(PD_SRC_PAPERS, s)),
-					run: /* syntax: bash */ `
-						mkdir -p build/download/pdfs build/download/zips
-						node $1 < $2 > $@
-					`,
-				}),
-
-				'reviews.ttl': () => ({
-					deps: [
-						'reviews.js',
-						'submissions-tracks.json',
-					].map(s => path.join(PD_SRC_PAPERS, s)),
-					run: /* syntax: bash */ `
-						node $1 < $2 > $@
-					`,
-				}),
-
-				'dois.ttl': () => ({
-					deps: [
-						'src/papers/dois.js',
-						'build/papers/proceedings.ttl',
-						'src/papers/dois.json',
-					],
-					run: /* syntax: bash */ `
-						node $1 < $2 > $@
-					`,
-				}),
+			papers: { // TODO
+//				'proceedings.ttl': () => ({
+//					deps: [
+//						'proceedings.js',
+//						'proceedings-list.json',
+//					].map(s => path.join(PD_SRC_PAPERS, s)),
+//					run: /* syntax: bash */ `
+//						mkdir -p build/download/pdfs build/download/zips
+//						node $1 < $2 > $@
+//					`,
+//				}),
+//
+//				'reviews.ttl': () => ({
+//					deps: [
+//						'reviews.js',
+//						'submissions-tracks.json',
+//					].map(s => path.join(PD_SRC_PAPERS, s)),
+//					run: /* syntax: bash */ `
+//						node $1 < $2 > $@
+//					`,
+//				}),
+//
+//				'dois.ttl': () => ({
+//					deps: [
+//						'src/papers/dois.js',
+//						'build/papers/proceedings.ttl',
+//						'src/papers/dois.json',
+//					],
+//					run: /* syntax: bash */ `
+//						node $1 < $2 > $@
+//					`,
+//				}),
 			},
 		},
 	},
