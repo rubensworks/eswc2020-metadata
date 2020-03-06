@@ -1,4 +1,4 @@
-@base <https://alammehwish.github.io/dl4kg-eswc/> .
+@base <https://knod2020.wordpress.com/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,8 +22,8 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
+	rdfs:label "Beyond Facts – International Workshop on Knowledge Graphs for Online Discourse (KnOD)"@en ;
+	conference:description """Expressing opinions and interacting with others on the Web has led to the production of an abundance of Online Discourse Data (ODD), such as claims and viewpoints on controversial topics, their sources and contexts (events, entities). ODD are a valuable source of insights for studies into misinformation spread, bias reinforcement, echo chambers or political agenda setting. While knowledge graphs (KGs) promise to provide the key to a Web of structured information, they are mainly focused on facts without keeping track of the diversity, connection or temporal evolution of ODD. As opposed to facts, claims are inherently more complex. Their interpretation strongly depends on the context and a variety of intentional or unintended meanings, where terminology and conceptual understandings strongly diverge across communities from computational social science, to argumentation mining, fact-checking, or viewpoint/stance detection. This workshop aims at strengthening the relations between the aforementioned communities providing a forum for shared works on the modeling, extraction and analysis of ODD from diverse fields. It will address the need for a shared understanding and structured knowledge about ODD in order to enable machine-interpretation, discoverability and reuse, in support of scientific or journalistic studies into the analysis of societal debates on the Web."""@en ;
 	conference:hasSubEvent <#TODO>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
@@ -31,26 +31,58 @@
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Dietze> a conference:Person ;
+	conference:givenName "Stefan" ;
+	conference:familyName "Dietze" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#Heinrich> ;
+	.
+
+<#Fafalios> a conference:Person ;
+	conference:givenName "Pavlos" ;
+	conference:familyName "Fafalios" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#FORTH> ;
+	.
+
+<#Todorov> a conference:Person ;
+	conference:givenName "Konstantin" ;
+	conference:familyName "Todorov" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Montpellier> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#Heinrich> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <https://www.uni-duesseldorf.de/home/en/home.html> ;
+	.
+
+<#FORTH> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.ics.forth.gr/isl/about-isl> ;
+	.
+
+<#Montpellier> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://www.lirmm.fr/> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<https://www.uni-duesseldorf.de/home/en/home.html> a conference:Organisation ;
+	conference:name "Heinrich-Heine-University Düsseldorf & GESIS, Germany"@en ;
+	.
+
+<https://www.ics.forth.gr/isl/about-isl> a conference:Organisation ;
+	conference:name "Information Systems Laboratory and Centre for Cultural Informatics, ICS-FORTH, Greece"@en ;
+	.
+
+<http://www.lirmm.fr/> a conference:Organisation ;
+	conference:name "University of Montpellier / LIRMM / CNRS, France"@en ;
 	.
 
 # -------------------------------------

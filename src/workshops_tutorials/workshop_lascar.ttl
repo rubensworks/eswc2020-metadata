@@ -1,4 +1,4 @@
-@base <https://alammehwish.github.io/dl4kg-eswc/> .
+@base <http://lascar.sda.tech/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,8 +22,8 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
+	rdfs:label "Workshop on Large Scale RDF Analytics LASCAR II"@en ;
+	conference:description """The second workshop on Large Scale RDF Analytics (LASCAR) invites papers and posters related to the challenges and solutions to deal with the enormous growth of linked data. LASCAR targets the advancements in large scale and distributed processing for the semantic web technologies. We will particularly welcome research efforts exploring the use of generic big data frameworks like Apache Spark, Apache Flink, or specialized libraries like Giraph, Tinkerpop, SparkSQL etc. in Semantic Web technologies. The goal is to demonstrate the use of existing frameworks and libraries to exploit Knowledge Graph processing and to discuss the solutions to the challenges and issues arising therein. Moreover, we will organize a related talk by an expert speaker, and also arrange a panel discussion among experts and scientists working in the area of distributed semantic analytics. LASCAR targets a range of research topics covering large scale processing of Knowledge Graphs, like querying, inference, and analytics, therefore we expect a wider audience interested in attending the workshop."""@en ;
 	conference:hasSubEvent <#TODO>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
@@ -31,26 +31,72 @@
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Jabeen> a conference:Person ;
+	conference:givenName "Hajira" ;
+	conference:familyName "Jabeen" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#Bonn> ;
+	.
+
+<#Graux> a conference:Person ;
+	conference:givenName "Damien" ;
+	conference:familyName "Graux" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#ADAPT> ;
+	.
+
+<#Sejdiu> a conference:Person ;
+	conference:givenName "Gezim" ;
+	conference:familyName "Sejdiu" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Bonn> ;
+	.
+
+<#Papadakis> a conference:Person ;
+	conference:givenName "George" ;
+	conference:familyName "Papadakis" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Athens> ;
+	.
+
+<#Lehmann> a conference:Person ;
+	conference:givenName "Jens" ;
+	conference:familyName "Lehmann" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Bonn> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#Bonn> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <http://sda.cs.uni-bonn.de/> ;
+	.
+
+<#ADAPT> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.adaptcentre.ie/> ;
+	.
+
+<#Athens> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://en.uoa.gr/> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<http://sda.cs.uni-bonn.de/> a conference:Organisation ;
+	conference:name "University of Bonn"@en ;
+	.
+
+<https://www.adaptcentre.ie/> a conference:Organisation ;
+	conference:name "Trinity College Dublin"@en ;
+	.
+
+<https://en.uoa.gr/> a conference:Organisation ;
+	conference:name "University of Athens"@en ;
 	.
 
 # -------------------------------------

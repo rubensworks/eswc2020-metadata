@@ -1,4 +1,4 @@
-@base <https://alammehwish.github.io/dl4kg-eswc/> .
+@base <http://whise.cc/2020/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,8 +22,8 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
+	rdfs:label "Workshop on Humanities in the Semantic web (WHiSe III)"@en ;
+	conference:description """The WHiSe workshop series aims at strengthening communication between scholars in the Digital Humanities and Semantic Web communities. It debuted at ESWC 2016 and remained co-located with the largest international conferences in Semantic Web research, resulting in 23 published papers across two proceedings volumes. Many of these papers have presented mature technologies, adoption stories and contributions to a harmonic ecosystem for Semantic data-intensive technologies in the Humanities. WHiSe III continues the tradition and also explores the potential for novel SW questions emerging from the needs of humanists and a reflection on their processes."""@en ;
 	conference:hasSubEvent <#TODO>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
@@ -31,26 +31,58 @@
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Adamou> a conference:Person ;
+	conference:givenName "Alessandro" ;
+	conference:familyName "Adamou" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#DSI> ;
+	.
+
+<#Daga> a conference:Person ;
+	conference:givenName "Enrico" ;
+	conference:familyName "Daga" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#OU> ;
+	.
+
+<#Merono> a conference:Person ;
+	conference:givenName "Albert" ;
+	conference:familyName "Meroño-Peñuela" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#VU> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#DSI> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <https://datascienceinstitute.ie/> ;
+	.
+
+<#OU> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://www.open.ac.uk/> ;
+	.
+
+<#VU> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.vu.nl/en> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<https://datascienceinstitute.ie/> a conference:Organisation ;
+	conference:name "Data Science Institute, NUI Galway"@en ;
+	.
+
+<http://www.open.ac.uk/> a conference:Organisation ;
+	conference:name "The Open University"@en ;
+	.
+
+<https://www.vu.nl/en> a conference:Organisation ;
+	conference:name "Vrije Universiteit Amsterdam"@en ;
 	.
 
 # -------------------------------------

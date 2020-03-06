@@ -22,8 +22,10 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
+	rdfs:label "IoT infrastructures for safety in pervasive environments"@en ;
+	conference:description """Internet of Things (IoT) platforms have received a significant amount of attention due to the simplicity and efficiency they bring in creating business value, linking the IoT endpoints to applications and analytics. They are essentially the linchpin in a holistic IoT solution because they enable data generated at endpoints to be collected and analysed, spawning the growth of big data analytics and applications. The rapid increase in the number of network-enabled devices and sensors deployed in physical environments, enriched with information processing capabilities, has allowed the interconnection of people, processes, data and devices, offering enormous potential across many sectors. The large societal and personal impact of pervasive, mobile and interconnected entities in the web, is already apparent in health, smart factories and cities, security, environmental, agriculture and retail applications. For example, in smart cities, IoT technologies are used from collecting and interrogating city-centre parking metrics, to the use of so-called ‘smart’ street lighting to generate efficiencies. One of the most compelling, however, use case is the technology’s use in a safety context. In this context, the challenge is to use humans and devices interchangeably to achieve operational goals and respond to emergency situations, such as natural disasters, vandalisms or missing people in overcrowded places. At the same time, pervasive technologies and eHealth systems seem to offer a promising solution for accessible and affordable self-management of health problems, both in living and working environments. Wearable devices and ambient sensors can be transformed into meaningful lifestyle and work-style monitoring tools, extracting personalised partners and detecting problematic situations to foster a healthy and safe home and working environments.
+
+This workshop provides the opportunity to discuss specific research and technical topics in applying IoT technologies in pervasive environments, with a special emphasis on safety in high-risk environments, such as in the healthcare domain (home care and occupational health), public events, food supply chain, energy industries, intelligent transportation, and building & infrastructure management. The main objective is to stimulate and foster active exchange and interaction on formal ontologies for the semantic enrichment, representation and linking of sensor data, events and resources, context-aware and real-time discovery, reasoning, interpretation and composition of data sources for building high-level applications."""@en ;
 	conference:hasSubEvent <#TODO>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
@@ -31,26 +33,88 @@
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Chatzimichail> a conference:Person ;
+	conference:givenName "Angelos" ;
+	conference:familyName "Chatzimichail" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#CERTH> ;
+	.
+
+<#Feidakis> a conference:Person ;
+	conference:givenName "Michail" ;
+	conference:familyName "Feidakis" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#ATTICA> ;
+	.
+
+<#Soldatos> a conference:Person ;
+	conference:givenName "John" ;
+	conference:familyName "Soldatos" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Athens> ;
+	.
+
+<#Akhgar> a conference:Person ;
+	conference:givenName "Babak" ;
+	conference:familyName "Akhgar" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Sheffield> ;
+	.
+
+<#Meditskos> a conference:Person ;
+	conference:givenName "George" ;
+	conference:familyName "Meditskos" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#CERTH> ;
+	.
+
+<#Vrochidis> a conference:Person ;
+	conference:givenName "Stefanos" ;
+	conference:familyName "Vrochidis" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#CERTH> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#CERTH> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <https://www.certh.gr/root.en.aspx> ;
+	.
+
+<#ATTICA> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.uniwa.gr/en/> ;
+	.
+
+<#Athens> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.athtech.gr/en/> ;
+	.
+
+<#Sheffield> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.shu.ac.uk/> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<https://www.certh.gr/root.en.aspx> a conference:Organisation ;
+	conference:name "CERTH-ITI, GR"@en ;
+	.
+
+<https://www.uniwa.gr/en/> a conference:Organisation ;
+	conference:name "University of West ATTICA, GR"@en ;
+	.
+
+<https://www.athtech.gr/en/> a conference:Organisation ;
+	conference:name "Athens Institute of Technology, GR"@en ;
+	.
+
+<https://www.shu.ac.uk/> a conference:Organisation ;
+	conference:name "Sheffield Hallam University, UK"@en ;
 	.
 
 # -------------------------------------

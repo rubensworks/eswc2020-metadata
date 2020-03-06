@@ -1,4 +1,4 @@
-@base <https://alammehwish.github.io/dl4kg-eswc/> .
+@base <https://sedit.linkeddata.es> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,8 +22,12 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
+	rdfs:label "International Workshop on Semantic Digital Twins"@en ;
+	conference:description """The concept of digital twin, as a virtual replica of a physical entity, has gained traction recently in a range of domains such as industry, construction, energy, health or transport. Digital Twins can be used to view the status of the twinned physical object, without the need to interrogate the object itself. The digital twin can be queried by other software without the need to query the device itself thus relieving pressure on devices, which typically have very limited computational capabilities. Digital twins can also be used for monitoring and diagnostics to optimize device performance without impacting on the physical device.
+
+Digital twins require unambiguous descriptions of both the entity and its digital counterpart, as well as the ability to integrate data from heterogeneous sources of information (including real-time data) and to interact with the physical world. Given these requirements, semantic technologies will play a significant role in bringing digital twins to reality.
+
+The aims of the SeDIT workshop are twofold. Firstly, to initiate discussion about current trends and future challenges of semantic digital twins. Secondly, to support communication and collaboration with the goal of aligning the various efforts within the community and accelerating innovation in all the associated fields."""@en ;
 	conference:hasSubEvent <#TODO>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
@@ -31,26 +35,74 @@
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Castro> a conference:Person ;
+	conference:givenName "Raúl" ;
+	conference:familyName "García-Castro" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#UPM> ;
+	.
+
+<#Davies> a conference:Person ;
+	conference:givenName "John" ;
+	conference:familyName "Davies" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#BT> ;
+	.
+
+<#Antoniou> a conference:Person ;
+	conference:givenName "Grigoris" ;
+	conference:familyName "Antoniou" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Huddersfield> ;
+	.
+
+<#Fortuna> a conference:Person ;
+	conference:givenName "Carolina" ;
+	conference:familyName "Fortuna" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#JSI> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#UPM> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <http://www.upm.es/> ;
+	.
+
+<#BT> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.btplc.com/Innovation/> ;
+	.
+
+<#Huddersfield> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.hud.ac.uk/> ;
+	.
+
+<#JSI> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.jsi.com/> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<http://www.upm.es/> a conference:Organisation ;
+	conference:name "Universidad Politécnica de Madrid"@en ;
+	.
+
+<https://www.btplc.com/Innovation/> a conference:Organisation ;
+	conference:name "BT Research"@en ;
+	.
+
+<https://www.hud.ac.uk/> a conference:Organisation ;
+	conference:name "University of Huddersfield"@en ;
+	.
+
+<https://www.jsi.com/> a conference:Organisation ;
+	conference:name "JSI"@en ;
 	.
 
 # -------------------------------------

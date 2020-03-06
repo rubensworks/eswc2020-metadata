@@ -1,4 +1,4 @@
-@base <https://alammehwish.github.io/dl4kg-eswc/> .
+@base <http://cleopatra-workshop.l3s.uni-hannover.de/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,8 +22,12 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
+	rdfs:label "Workshop on Cross-lingual Event-centric Open Analytics (CLEOPATRA)"@en ;
+	conference:description """The modern society faces an unprecedented number of events that impact countries, communities and economies around the globe, across language, country and community borders. Recent examples include sudden or unexpected events such as terrorist attacks, political shake-ups such as Brexit as well as longer ongoing and evolving topics such as the migration crisis in Europe that regularly spawn events of global importance affecting local communities. These developments result in a vast amount of event-centric, multilingual information available from heterogeneously sources on the Web, in the Web of Data, within Knowledge Graphs, in social media, inside Web archives and in the news sources. Such event-centric information differs across sources, languages and communities, potentially reflecting community-specific aspects, opinions, sentiments and bias.
+
+The theme of the CLEOPATRA workshop – event-centric multilingual analytics – includes a variety of interdisciplinary challenges related to analysis, interaction with and interpretation of vast amounts of event-centric textual, semantic and visual information in multiple languages originating from different communities. The objective of the workshop is to bring together researchers and practitioners interested in the development of methods for analysing event-centric multilingual information.
+
+The CLEOPATRA workshop will be a highly interactive event, which will include keynotes by experts in the relevant fields, poster and demo session, research presentations and discussion."""@en ;
 	conference:hasSubEvent <#TODO>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
@@ -31,26 +35,74 @@
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Demidova> a conference:Person ;
+	conference:givenName "Elena" ;
+	conference:familyName "Demidova" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#Leibniz> ;
+	.
+
+<#Hakimov> a conference:Person ;
+	conference:givenName "Sherzod" ;
+	conference:familyName "Hakimov" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#TIB> ;
+	.
+
+<#Winters> a conference:Person ;
+	conference:givenName "Jane" ;
+	conference:familyName "Winters" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#UK> ;
+	.
+
+<#Tadic> a conference:Person ;
+	conference:givenName "Marko" ;
+	conference:familyName "Tadić" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Zagreb> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#Leibniz> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <https://www.l3s.de/en> ;
+	.
+
+<#TIB> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.tib.eu/en/> ;
+	.
+
+<#UK> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.sas.ac.uk/> ;
+	.
+
+<#Zagreb> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://www.unizg.hr/homepage/study-at-the-university-of-zagreb/degrees-studies-and-courses/studies-and-courses-in-croatian/humanities/> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<https://www.l3s.de/en> a conference:Organisation ;
+	conference:name "L3S Research Center, Leibniz Universität Hannover, Germany"@en ;
+	.
+
+<https://www.tib.eu/en/> a conference:Organisation ;
+	conference:name "TIB, Leibniz Information Centre for Science and Technology, Germany"@en ;
+	.
+
+<https://www.sas.ac.uk/> a conference:Organisation ;
+	conference:name "School of Advanced Study, University of London, UK"@en ;
+	.
+
+<http://www.unizg.hr/homepage/study-at-the-university-of-zagreb/degrees-studies-and-courses/studies-and-courses-in-croatian/humanities/> a conference:Organisation ;
+	conference:name "University of Zagreb, Faculty of Humanities and Social Sciences, Croatia"@en ;
 	.
 
 # -------------------------------------

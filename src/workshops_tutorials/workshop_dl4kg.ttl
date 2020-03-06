@@ -1,4 +1,4 @@
-@base <https://alammehwish.github.io/dl4kg-eswc/> .
+@base <https://alammehwish.github.io/dl4kg_eswc_2020/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,8 +22,10 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
+	rdfs:label "Deep Learning for Knowledge Graphs (DL4KG)"@en ;
+	conference:description """Over the past years there has been a rapid growth in the use and the importance of Knowledge Graphs (KGs) along with their application to many important tasks. KGs are large networks of real-world entities described in terms of their semantic types and their relationships to each other. On the other hand, Deep Learning methods have also become an important area of research, achieving some important breakthrough in various research fields, especially Natural Language Processing (NLP) and Image Recognition.
+
+In order to pursue more advanced methodologies, it has become critical that the communities related to Deep Learning, Knowledge Graphs, and NLP join their forces in order to develop more effective algorithms and applications. This workshop, in the wake of other similar efforts at previous Semantic Web conferences such as ESWC2018 as DL4KGs and ISWC2018, ESWC2019, aims to reinforce the relationships between these communities and foster inter-disciplinary research in the areas of KG, Deep Learning, and Natural Language Processing."""@en ;
 	conference:hasSubEvent <#TODO>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
@@ -31,26 +33,97 @@
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Alam> a conference:Person ;
+	conference:givenName "Mehwish" ;
+	conference:familyName "Alam" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#FIZ> ;
+	.
+
+<#Buscaldi> a conference:Person ;
+	conference:givenName "Davide" ;
+	conference:familyName "Buscaldi" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#LIPN> ;
+	.
+
+<#Cochez> a conference:Person ;
+	conference:givenName "Michael" ;
+	conference:familyName "Cochez" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#VU> ;
+	.
+
+<#Osborne> a conference:Person ;
+	conference:givenName "Francesco" ;
+	conference:familyName "Osborne" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#KMI> ;
+	.
+
+<#Recupero> a conference:Person ;
+	conference:givenName "Diego" ;
+	conference:familyName "Reforgiato Recupero" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#Cagliari> ;
+	.
+
+<#Sack> a conference:Person ;
+	conference:givenName "Harald" ;
+	conference:familyName "Sack" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#FIZ> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#FIZ> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <https://www.fiz-karlsruhe.de/en/ueber-uns/ueber-uns> ;
+	.
+
+<#LIPN> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://lipn.univ-paris13.fr/en/home/> ;
+	.
+
+<#VU> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.vu.nl/en> ;
+	.
+
+<#KMI> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <http://kmi.open.ac.uk/> ;
+	.
+
+<#Cagliari> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://www.unica.it/unica/en/homepage.page> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<https://www.fiz-karlsruhe.de/en/ueber-uns/ueber-uns> a conference:Organisation ;
+	conference:name "FIZ Karlsruhe - Leibniz Institute for Information Infrastructure, Germany"@en ;
+	.
+
+<https://lipn.univ-paris13.fr/en/home/> a conference:Organisation ;
+	conference:name "Labortoire d'Informatique Paris Nord (LIPN), Paris, France"@en ;
+	.
+
+<https://www.vu.nl/en> a conference:Organisation ;
+	conference:name "Vrije University of Amsterdam, the Netherlands"@en ;
+	.
+
+<http://kmi.open.ac.uk/> a conference:Organisation ;
+	conference:name "Knowledge Media Institute (KMi), The Open University, UK"@en ;
+	.
+
+<https://www.unica.it/unica/en/homepage.page> a conference:Organisation ;
+	conference:name "University of Cagliari, Cagliari, Italy"@en ;
 	.
 
 # -------------------------------------
