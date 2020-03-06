@@ -1,4 +1,4 @@
-@base <https://alammehwish.github.io/dl4kg-eswc/> .
+@base <https://comodide.com/tutorial.html> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,35 +22,57 @@
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
 	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
-	rdfs:label "TODO"@en ;
-	conference:description "TODO"@en ;
-	conference:hasSubEvent <#TODO>;
+	rdfs:label "Modular Ontology Engineering with CoModIDE"@en ;
+	conference:description """CoModIDE is a plugin for Protégé that enables graphical drag-and-drop editing of ontologies, with built in support for Ontology Design Patterns (ODPs). CoModIDE allows for simple construction and maintenance of modular ontologies; moreover, by taking an opinionated position on how to render OWL axioms on a graphical canvas, and which axioms to generate from constructs on said canvas, CoModIDE represents an attempt to develop the fine-grained method guidance we believe is missing from ODP usage methodologies.
+
+This tutorial aims to illustrate to participants how to use CoModIDE for both applied ontology engineering, and research on ontology engineering methodology. Specifically, our objectives are:
+
+    To teach the participants how to use the CoModIDE tool for the construction and maintenance of small- to medium-sized modular ontologies based on design patterns.
+    To illustrate the utility of modular ontology engineering to researchers, such that they can use and spread these methods and tools in projects with industry.
+"""@en ;
+	conference:hasSubEvent <#Ex1>, <#Ex2>;
 	eswc2020:day eswc2020:Day.Sunday ;
 	.
 
 # -------------------------------------
 # Persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:Person ;
-	conference:givenName "TODO" ;
-	conference:familyName "TODO" ;
+<#Hammar> a conference:Person ;
+	conference:givenName "Karl" ;
+	conference:familyName "Hammar" ;
 	conference:holdsRole <#Organizer> ;
-	conference:hasAffiliation <#TODO> ;
+	conference:hasAffiliation <#AI> ;
+	.
+
+<#Shimizu> a conference:Person ;
+	conference:givenName "Cogan" ;
+	conference:familyName "Shimizu" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#DataSemanticsLab> ;
 	.
 
 # -------------------------------------
 # Temporal-bound affiliations of persons associated with the Workshop
 # -------------------------------------
-<#TODO> a conference:AffiliationDuringEvent ;
+<#AI> a conference:AffiliationDuringEvent ;
 	conference:during <#Workshop> ;
-	conference:withOrganization <TODO> ;
+	conference:withOrganization <https://ju.se/en/research/research-groups/computer-science-and-informatics/jonkoping-ai-lab-jail.html> ;
+	.
+
+<#DataSemanticsLab> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <https://daselab.cs.ksu.edu/> ;
 	.
 
 # -------------------------------------
 # Organizations of affiliations
 # -------------------------------------
-<TODO> a conference:Organisation ;
-	conference:name "TODO"@en ;
+<https://ju.se/en/research/research-groups/computer-science-and-informatics/jonkoping-ai-lab-jail.html> a conference:Organisation ;
+	conference:name "Jönköping AI Lab (JAIL)"@en ;
+	.
+
+<https://daselab.cs.ksu.edu/> a conference:Organisation ;
+	conference:name "Data Semantics Lab"@en ;
 	.
 
 # -------------------------------------
@@ -64,21 +86,14 @@
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
+<#Ex1> a conference:Session ;
+	rdfs:label "Exercise 1 – Introduction to CoModIDE modelling – Instructions/Workflows domain"@en ;
 	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T10:30:00.000+02:00"^^xsd:dateTime ;
 	.
 
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
-	eswc2020:sessionContent (
-		[
-			a conference:Talk ;
-			rdfs:label "TODO"@en ;
-			eswc2020:paperAuthors "TODO" ;
-		]
-	) ;
+<#Ex2> a conference:Session ;
+	rdfs:label "Exercise 2 – Advanced modelling topics – Smart Buildings domain"@en ;
+	conference:startDate "2020-05-31T11:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-05-31T12:30:00.000+02:00"^^xsd:dateTime ;
 	.
