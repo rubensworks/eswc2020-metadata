@@ -1,0 +1,84 @@
+@base <https://alammehwish.github.io/dl4kg-eswc/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eswc2020: <https://metadata.2020.eswc-conferences.org/rdf/ontology/> .
+@prefix conference: <https://w3id.org/scholarlydata/ontology/conference-ontology.owl#> .
+@prefix role: <https://w3id.org/scholarlydata/role/> .
+@prefix hotel-knossos: <https://www.aldemarknossosroyal.gr/events/conferences/> .
+
+
+# -------------------------------------
+# Location (informative)
+# -------------------------------------
+<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+	conference:description "TODO conference room" ;
+	.
+
+# -------------------------------------
+# the Workshop itself
+# -------------------------------------
+<#Workshop> a conference:Workshop ;
+	conference:isSubEventOf eswc2020:Conference ;
+	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+	rdfs:label "TODO"@en ;
+	conference:description "TODO"@en ;
+	conference:hasSubEvent <#TODO>;
+	eswc2020:day eswc2020:Day.Sunday ;
+	.
+
+# -------------------------------------
+# Persons associated with the Workshop
+# -------------------------------------
+<#TODO> a conference:Person ;
+	conference:givenName "TODO" ;
+	conference:familyName "TODO" ;
+	conference:holdsRole <#Organizer> ;
+	conference:hasAffiliation <#TODO> ;
+	.
+
+# -------------------------------------
+# Temporal-bound affiliations of persons associated with the Workshop
+# -------------------------------------
+<#TODO> a conference:AffiliationDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withOrganization <TODO> ;
+	.
+
+# -------------------------------------
+# Organizations of affiliations
+# -------------------------------------
+<TODO> a conference:Organisation ;
+	conference:name "TODO"@en ;
+	.
+
+# -------------------------------------
+# Roles of persons associated with the Workshop
+# -------------------------------------
+<#Organizer> a conference:OrganisationalRoleDuringEvent ;
+	conference:during <#Workshop> ;
+	conference:withRole role:workshop-organiser ;
+	.
+
+# -------------------------------------
+# Workshop schedule
+# -------------------------------------
+<#TODO> a conference:Session ;
+	rdfs:label "TODO"@en ;
+	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#TODO> a conference:Session ;
+	rdfs:label "TODO"@en ;
+	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
+	eswc2020:sessionContent (
+		[
+			a conference:Talk ;
+			rdfs:label "TODO"@en ;
+			eswc2020:paperAuthors "TODO" ;
+		]
+	) ;
+	.
