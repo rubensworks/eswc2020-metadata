@@ -77,7 +77,7 @@ const trackLabels = {
 		let s_paper_id = submission['#'];
 		let sc1_paper = `eswc2020-submissions:Paper.${s_paper_id}`;
 
-		let a_author_items = submission.Authors.split(', ')
+		let a_author_items = submission.Authors.replace(' and', ',').split(', ')
 			.map((s_full_name, id) => {
 				let sc1_person = person_c1(s_full_name);
 				let sc1_author = `eswc2020-submissions:Author.${s_paper_id}.${id+1}`;
