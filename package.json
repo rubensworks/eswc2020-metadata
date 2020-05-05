@@ -22,8 +22,10 @@
   "dependencies": {
     "@graphy/content.ttl.read": "^3.2.2",
     "@graphy/content.ttl.write": "^3.2.2",
+    "arrayify-stream": "^1.0.0",
     "cheerio": "^1.0.0-rc.3",
     "content-type": "^1.0.4",
+    "csv-parser": "^2.3.2",
     "he": "^1.2.0",
     "latex-parser": "^0.6.2",
     "nth": "^1.0.0",

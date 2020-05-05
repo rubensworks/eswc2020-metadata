@@ -32,7 +32,7 @@ module.exports = {
 					'build/core/*',
 					'build/workshops_tutorials/*',
 					//'build/program/*', // TODO
-					//'build/papers/*', // TODO
+					'build/papers/*',
 				],
 				run: /* syntax: bash */ `
 					npx graphy content.ttl.read --pipe util.dataset.tree --union --pipe content.ttl.write > union.ttl --inputs build/*/*.ttl
@@ -71,26 +71,15 @@ module.exports = {
 			},
 
 			papers: { // TODO
-//				'proceedings.ttl': () => ({
-//					deps: [
-//						'proceedings.js',
-//						'proceedings-list.json',
-//					].map(s => path.join(PD_SRC_PAPERS, s)),
-//					run: /* syntax: bash */ `
-//						mkdir -p build/download/pdfs build/download/zips
-//						node $1 < $2 > $@
-//					`,
-//				}),
-//
-//				'reviews.ttl': () => ({
-//					deps: [
-//						'reviews.js',
-//						'submissions-tracks.json',
-//					].map(s => path.join(PD_SRC_PAPERS, s)),
-//					run: /* syntax: bash */ `
-//						node $1 < $2 > $@
-//					`,
-//				}),
+				'proceedings.ttl': () => ({
+					deps: [
+						'proceedings.js',
+						'submissions.csv',
+					].map(s => path.join(PD_SRC_PAPERS, s)),
+					run: /* syntax: bash */ `
+						node $1 < $2 > $@
+					`,
+				}),
 //
 //				'dois.ttl': () => ({
 //					deps: [

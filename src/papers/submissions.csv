@@ -1,0 +1,257 @@
+#;Authors;Title;paper;Supplementary_Material;Phdstage;Track;Time
+2;Dave Raggett;Tutorial on Cognitive AI, based upon advances in the cognitive sciences;✔;0;0;wsandtut;Nov 05, 12:01
+4;Matteo Lissandrini, Davide Mottin, Themis Palpanas and Yannis Velegrakis;Example-based Exploration: Exploring Knowledge through Examples;✔;0;0;wsandtut;Nov 11, 08:31
+5;Karl Hammar and Cogan Shimizu;Modular Ontology Engineering with CoModIDE;✔;0;0;wsandtut;Nov 15, 11:24
+6;Ljiljana Dolamic, Pratiksha Jain, Andreas Schade, Himanshu Jain, Vincent Lenders, Albert Blarer and Marc Liechti;Automatically identifying emerging technologies using open source data;✔;0;0;In-Use Track;Nov 15, 12:16
+7;Abderrahmane Khiat, Bastian Geneugelijk, Frank Nach and Steffen Lohmann;Triple Verification and Extraction through a Human-Centered Approach;✔;✔;0;Social and Human;Nov 18, 07:55
+8;Gong Cheng and Kalpa Gunaratna;[Tutorial] Entity Summarization in Knowledge Graphs: Algorithms, Evaluation, and Applications;✔;0;0;wsandtut;Nov 18, 12:41
+9;Angelos Chatzimichail, Michail Feidakis, John Soldatos, Babak Akhgar, George Meditskos and Stefanos Vrochidis;IoT infrastructures for safety in pervasive environments ;✔;0;0;wsandtut;Nov 19, 12:33
+10;Pasquale Lisena and Albert Meroño-Peñuela;SPARQL Endpoints and Web API;✔;0;0;wsandtut;Nov 19, 12:37
+11;Stefan Fenz;Supporting complex decision making by semantic technologies;✔;0;0;In-Use Track;Nov 19, 20:17
+12;Elena Demidova, Sherzod Hakimov, Jane Winters and Marko Tadić;The 1st International Workshop on  Cross-lingual Event-centric Open Analytics;✔;0;0;wsandtut;Nov 20, 10:42
+13;Konstantin Todorov, Stefan Dietze and Pavlos Fafalios;Beyond Facts - 1st International Workshop on Knowledge Graphs for Online Discourse (KnOD);✔;0;0;wsandtut;Nov 21, 09:15
+14;Nadine Steinmetz, Samaneh Nazari Dastjerdi and Kai-Uwe Sattler;Which SQA Benchmark should I use to get good Results?;✔;0;0;NLP and IR;Nov 21, 11:40
+15;Alessandro Adamou, Enrico Daga and Albert Meroño-Peñuela;3rd Workshop on Humanities in the Semantic web (WHiSe III);✔;0;0;wsandtut;Nov 21, 12:42
+16;Hajira Jabeen, Damien Graux, Gezim Sejdiu, Heba Mohamed and Jens Lehmann;SANSA’s Leap of Faith: Scalable RDF Analytics;✔;0;0;wsandtut;Nov 21, 13:12
+17;Hajira Jabeen, Damien Graux, Gezim Sejdiu, George Papadakis and Jens Lehmann;2nd Workshop on Large Scale RDF Analytics  LASCAR II;✔;0;0;wsandtut;Nov 21, 13:18
+18;Till Blume and Ansgar Scherp;Finding Data on the Web:  A Comparison of Schema-level Indices;✔;✔;0;SDM and DI;Nov 21, 15:04
+19;Martin G. Skjæveland, Daniel P. Lupp, Christian Mahesh Hansen and Johan W. Klüwer;Scalable construction of sustainable knowledge bases (OTTR);✔;0;0;wsandtut;Nov 21, 20:56
+21;Dennis Diefenbach, Andreas Both and Pierre Maret;Constructing Question Answering Systems over Knowledge Graphs;✔;0;0;wsandtut;Nov 22, 07:10
+22;Paul Warren and Paul Mulholland;A comparison of the cognitive difficulties posed by SPARQL query constructs;✔;0;0;Social and Human;Nov 22, 10:13
+23;Minh Triet Chau, Diego Esteves and Jens Lehmann;A Neural-based model to Predict the Future Natural Gas Market Price through Open-domain Event Extraction;✔;0;0;NLP and IR;Nov 23, 12:36
+24;Radu Ciucanu and Pascal Lafourcade;GOOSE: A Secure Framework for Graph Outsourcing and SPARQL Evaluation;✔;0;0;Security, Privacy, Licensing and Trust;Nov 24, 19:15
+25;Daniel Janke and Steffen Staab;Data Placement Strategies that Speed-Up Distributed Graph Query Processing;✔;0;0;SDM and DI;Nov 25, 08:29
+26;Sjoerd Rongen;Linked enterprise data for manufacturing product traceability;✔;0;0;Knowledge Graphs;Nov 26, 10:43
+27;Raúl García-Castro, John Davies, Grigoris Antoniou and Carolina Fortuna;1st International Workshop on Semantic Digital Twins;✔;0;0;wsandtut;Nov 28, 23:08
+28;Ewelina Dera, Flavius Frasincar, Kim Schouten and Lisa Zhuang;SASOBUS: Semi-automatic Sentiment Domain Ontology Building Using Synsets;✔;0;0;NLP and IR;Nov 29, 15:40
+30;Arthur Brack, Anett Hoppe, Pascal Buschermöhle and Ralph Ewerth;Cross-Domain Transfer Learning with Deep Neural Networks for Scientific Sentence Classification;✔;✔;0;Science of Science;Dec 01, 15:37
+31;André Langer, Dang Vu and Martin Gaedke;SolidRDP - Using SoLiD for Research Data Publishing;✔;0;0;SDM and DI;Dec 01, 15:56
+32;Ruben Verborgh and Ruben Taelman;LDflex: a Read/Write Linked Data Abstraction for Front-End Web Developers;✔;0;0;In-Use Track;Dec 01, 21:57
+33;Jana Ahmad, Bogdan Kostov, Andrej Lališ and Petr Křemen;Comparing the Application of Foundational Ontologies in the Safety Domain;✔;✔;0;Ontologies and Reasoning;Dec 02, 00:05
+34;Ilie Cristian Dorobat and Vlad Posea;eHeritage: A Practical Framework For Enriching The Digital Representation of The Cultural Heritage;✔;0;0;Resources Track;Dec 02, 02:09
+35;Xibo Zhou, Tianxin Liang and Bingqian Wang;Unified Target-based Sentiment Analysis by Dual-pointer Tagging Scheme;✔;0;0;NLP and IR;Dec 02, 02:58
+36;Xiong Ding;Analyzing Reputation and Stylometric Featuresto Identify Spear phishing Emails;✔;0;0;Security, Privacy, Licensing and Trust;Dec 02, 08:49
+37;Erik Bryhn Myklebust, Ernesto Jimenez-Ruiz, Chen Jiaoyan, Raoul Wolf and Knut Erik Tollefsen;TERA: the Toxicological Effect and Risk Assessment Knowledge Graph;✔;0;0;Resources Track;Dec 02, 08:54
+38;Malikeh Haj Khan Mirzaye Sarraf and Mahmood Neshati;Exploiting Query Attributes and Linked Entities For Entity Retrieval;✔;✔;0;NLP and IR;Dec 02, 08:55
+39;Nicolas Heist and Heiko Paulheim;Entity Extraction from Wikipedia List Pages;✔;0;0;Knowledge Graphs;Dec 02, 10:23
+40;Emil Riis Hansen, Matteo Lissandrini, Agneta Ghose, Søren Løkke, Christian Thomsen and Katja Hose;Transparent Sharing and Integration of Life Cycle Sustainability Data with Provenance;✔;0;0;In-Use Track;Dec 02, 11:46
+41;El Vaigh Cheikh Brahim, Francois Goasdoue, Guillaume Gravier and Pascale Sébillot;Measuring semantic relatedness from RDF property paths in collective entity linking;✔;0;0;NLP and IR;Dec 02, 14:01
+43;Victor Charpenay and Sebastian Käbisch;On Modeling The Physical World as a Collection of Things: the W3C Thing Description Ontology;✔;✔;0;In-Use Track;Dec 02, 14:29
+44;Jan Philipp Portisch, Mohamad Yaser Jaradeh, Omaima Falattah, Vincent Emonet and Axel Polleres;Towards Linking Organization(al Change)s in Open Data, Wikidata and DBpedia;✔;0;0;Knowledge Graphs;Dec 02, 16:40
+45;Jesper Kallehauge;Dynamic corporate thesaurus life cycle system with SKOS;✔;0;0;Ontologies and Reasoning;Dec 02, 17:43
+46;Ahmad Sakor, Kuldeep Singh, Anery Patel and Maria Esther Vidal;FALCON 2.0: An Entity and Relation Linking framework over Wikidata;✔;0;0;Resources Track;Dec 02, 17:43
+47;Anna Nguyen, Tobias Weller and York Sure-Vetter;Making Neural Networks FAIR;✔;0;0;Resources Track;Dec 02, 20:01
+48;Basel Shbita, Craig Knoblock, Yao-Yi Chiang, Weiwei Duan, Johannes Uhl and Stefan Leyk;Building Linked Spatio-Temporal Data from Vectorized Historical Maps;✔;0;0;Knowledge Graphs;Dec 03, 00:15
+52;Prodromos Kolyvakis, Alexandros Kalousis and Dimitris Kiritsis;Hyperbolic Knowledge Graph Embeddings for Knowledge Base Completion;✔;✔;0;Machine Learning;Dec 03, 09:07
+53;Ilaria Tiddi, Daniel Balliet and Annette Ten Teije;Fostering Scientific Meta-Analyses with Knowledge Graphs : a Case-Study;✔;0;0;Science of Science;Dec 03, 09:46
+55;Maoyuan Zhang, Yang Wen and Liquan Zhou;DSRL:Knowledge Representation Learning with Structural and Descriptive Modeling;✔;0;0;Knowledge Graphs;Dec 03, 11:10
+56;Nikita Debelov, Petr Mukhachev and Anton Ivanov;Approach for developing engineering tools based on  Knowledge Graphs to find new ways to speedup top level engineering processes;✔;0;0;Knowledge Graphs;Dec 03, 11:42
+58;Kumar Vidhani, Gurpriya Bhatia, Mangesh Gharote and Sachin Lodha;A Framework of Threshold Value Discovery for Ontology Matching Algorithm;✔;✔;0;Ontologies and Reasoning;Dec 03, 12:25
+60;Fabian Kirstein, Kyriakos Stefanidis, Benjamin Dittwald, Simon Dutkowski, Sebastian Urbanek and Manfred Hauswirth;Piveau: A Large-scale Open Data Management Platform based on Semantic Web Technologies;✔;✔;0;In-Use Track;Dec 03, 12:32
+62;Sven Hertling and Heiko Paulheim;The Knowledge Graph Track at OAEI - Gold Standards, Baselines, and the Golden Hammer Bias;✔;0;0;Knowledge Graphs;Dec 03, 12:38
+66;Qingxia Liu, Yue Chen, Gong Cheng, Evgeny Kharlamov, Junyou Li and Yuzhong Qu;Entity Summarization with User Feedback;✔;0;0;Knowledge Graphs;Dec 03, 13:15
+67;Meenakshi Maindola and Raghava Mutharaju;PGBench: A Property Graph Benchmark for Knowledge Graphs;✔;0;0;Resources Track;Dec 03, 13:27
+68;Kris McGlinn, Sander Stolk, Christophe Debruyne, Eamonn Clinton and Declan O'Sullivan;Converting Geospatial Building Data into ifcOWL;✔;0;0;Integration, Services and APIs;Dec 03, 13:37
+69;Endri Kacupaj, Hamid Zafar, Jens Lehmann and Maria Maleshkova;VQuAnDa: Verbalization QUestion ANswering DAtaset;✔;0;0;Resources Track;Dec 03, 13:51
+70;Nuno Freire and Diogo Proença;RDF reasoning on large ontologies for cultural heritage: a study on Wikidata;✔;0;0;Ontologies and Reasoning;Dec 03, 13:54
+72;Qingxia Liu, Gong Cheng, Kalpa Gunaratna and Yuzhong Qu;ESBM: An Entity Summarization BenchMark;✔;0;0;Resources Track;Dec 03, 14:01
+73;Tarcísio Souza Costa, Simon Gottschalk and Elena Demidova;Event-QA: A Dataset for Event-Centric Question Answering over Knowledge Graphs;✔;0;0;Resources Track;Dec 03, 14:10
+74;Shimaa Ibrahim, Said Fathalla, Jens Lehmann and Hajira Jabeen;MULON: A Software Framework for Multilingual Ontology Merging;✔;0;0;Resources Track;Dec 03, 14:52
+75;Angelo Neves Júnior, Luiz André P. Paes Leme, Yenier Torres, Grettel Monteagudo Garcia, Marco Antonio Casanova and Elisa Menendez;Computing Benchmarks for RDF Keyword Search;✔;0;0;Resources Track;Dec 03, 14:59
+76;Riccardo Tommasini, Mohamed Ragab, Sherif Sakr and Emanuele Della Valle;Streaming Linked Data: A Cookbook;✔;0;0;Resources Track;Dec 03, 15:16
+77;Xiaofei Cao, Juan Yang and Xiangbin Meng;Partial Domain Adaptation for Relation Extraction Based on Adversarial Learning;✔;✔;0;NLP and IR;Dec 03, 15:24
+78;Mengya Liu, Luis Ibanez-Gonzalez, Adriane Chapman and Elena Simperl;Best Bang for the Buck: Purchase Allocation Under Access Dependent Pricing Functions;✔;0;0;SDM and DI;Dec 03, 15:48
+79;Lucas Ramos, Victor Hochgreb and Julio Cesar Dos Reis;Generating knowledge graphs from unstructured texts: Experiences in the eCommerce field;✔;0;0;In-Use Track;Dec 03, 16:04
+80;Anna Primpeli, Christian Bizer and Margret Keuper;Unsupervised Bootstrapping of Active Learning for Entity Resolution;✔;0;0;Machine Learning;Dec 03, 16:07
+81;Túlio Brandão Soares Martins and Julio Cesar Dos Reis;Handling Multi-chapter Inconsistencies in DBpedia Evolution;✔;0;0;Knowledge Graphs;Dec 03, 16:09
+82;André Regino and Julio Cesar Dos Reis;Discovering Semantically Broken Links in LOD Datasets;✔;0;0;Knowledge Graphs;Dec 03, 16:11
+83;Jan Portisch, Michael Hladik and Heiko Paulheim;Background Knowledge in Schema Matching: Strategy vs. Data;✔;0;0;Integration, Services and APIs;Dec 03, 16:39
+84;Christian Aebeloe, Ilkcan Keles, Gabriela Montoya and Katja Hose;Star Pattern Fragments: Accessing Knowledge Graphs through Star Patterns;✔;0;0;Distribution and Decentralization;Dec 03, 16:44
+85;Federica Rollo, Laura Po and Gianluca Ferrari;Crime event localization and deduplication;✔;0;0;NLP and IR;Dec 03, 17:15
+87;Aleksandra Edwards, David Rogers, Jose Camacho-Collados, Hélène de Ribaupierre and Alun Preece;Automated Thematic Analysis on a Corpus of Safeguarding Reports;✔;0;0;Machine Learning;Dec 03, 19:27
+88;Ernesto Jimenez-Ruiz, Oktie Hassanzadeh, Vasilis Efthymiou, Jiaoyan Chen and Kavitha Srinivas;SemTab 2019: Resources to Benchmark Tabular Data to Knowledge Graph Matching Systems;✔;0;0;Resources Track;Dec 03, 20:55
+89;Mojtaba Nayyeri, Sahar Vahdati, Xiaotian Zhou, Hamed Shariat Yazdi and Jens Lehmann;Embedding-based Recommendations on Scholarly Knowledge Graphs;✔;0;0;Science of Science;Dec 03, 21:25
+91;Maria Malapetsa;Application of ontologies and semantic web technologies in construction industry;✔;0;0;In-Use Track;Dec 03, 21:56
+92;Robin Keskisärkkä, Eva Blomqvist, Leili Lind and Olaf Hartig;Uncertainty-Based RDF Stream Processing;✔;0;0;SDM and DI;Dec 03, 22:30
+93;Dario Malchiodi, Célia Da Costa Pereira and Andrea Tettamanzi;Classifying Candidate Axioms via Dimensionality Reduction Techniques;✔;0;0;Machine Learning;Dec 03, 22:31
+94;Xu Wang, Frank Van Harmelen and Zhisheng Huang;Ontology-based methods for classifying scientific datasets into research domains;✔;0;0;Science of Science;Dec 03, 23:31
+96;Yang Zhou, Kui Xiao and Junxing Ma;Mining Prerequisite Relationships Among Concepts in Wikipedia;✔;0;0;Knowledge Graphs;Dec 04, 01:08
+97;Philipp Cimiano, Basil Ell, Frank Grimm, Olivia Sanchez Graillet and Christian Witte;Knowledge Synthesis with Hierarchical Argumentation Frameworks: the case of synthesizing the evidence from published clinical trials;✔;0;0;Science of Science;Dec 04, 02:49
+98;Zhao Yawei, Wang Pu, Luo Gang and Wang Yutao;A micro-dissemination analytical framework of complex networks based on quantifiable information of nodes and relations;✔;0;0;Knowledge Graphs;Dec 04, 04:59
+101;Qi Liu, Jianmin Han, Xin Yao and Juan Yu;Staircase Mechanism based Differentially Private Spatial Decomposition ;✔;0;0;Security, Privacy, Licensing and Trust;Dec 04, 08:17
+102;Henrik Dibowski and Francesco Massa Gray;Applying Knowledge Graphs as Integrated Semantic Information Model for the Computerized Engineering of Building Automation Systems;✔;0;0;In-Use Track;Dec 04, 08:26
+106;Julien Romero, Nicoleta Preda and Fabian M. Suchanek;Equivalent Rewritings on Path Views with Binding Patterns;✔;0;0;Integration, Services and APIs;Dec 04, 09:52
+107;Giorgos Stoilos, Damir Juric, Szymon Wartak, Claudia Schulz and Mohammad Khodadadi;Hybrid Reasoning Over Large Knowledge Bases Using On-The-Fly Knowledge Extraction;✔;0;0;Ontologies and Reasoning;Dec 04, 10:02
+109;Laura Hollink, Aysenur Bilgin and Jacco van Ossenbruggen;Is it a Fruit, an Apple or a Granny Smith? Predicting the Basic Level in a Concept Hierarchy;✔;0;0;Social and Human;Dec 04, 10:19
+110;Thomas Pellissier Tanon, Gerhard Weikum and Fabian M. Suchanek;YAGO 4: A Reason-able Knowledge Base;✔;0;0;Resources Track;Dec 04, 10:21
+111;Karl Hammar, Cogan Shimizu and Pascal Hitzler;Modular Graphical Ontology Engineering Evaluated;✔;0;0;Ontologies and Reasoning;Dec 04, 10:25
+112;Phyo;Knowledge extraction and annotation of research documents based on WordNet and Wikipedia;✔;0;0;Knowledge Graphs;Dec 04, 10:35
+113;Samira Babalou and Birgitta König-Ries;Holistic Knowledge Integration with CoMerger: A divide-and-conquer approach;✔;0;0;Ontologies and Reasoning;Dec 04, 10:42
+114;Wei Li, Jian Xu, Hao Yuan, Rujia Shen and Ming Xu;Social Graph-based Representation Learning for Group Recommendation;✔;0;0;Machine Learning;Dec 04, 10:44
+115;Hamada Zahera, Mohamed Sherif and Axel Ngonga;Semantics-based End-to-End Learning for Typhoon Intensity Prediction;✔;0;0;Machine Learning;Dec 04, 10:48
+116;David Schindler, Benjamin Zapilko and Frank Krüger;Investigating Software Usage in the Social Sciences: A Knowledge Graph Approach;✔;0;0;Science of Science;Dec 04, 10:50
+117;Samira Babalou, Elena Grygorova and Birgitta König-Ries;How good is this merged ontology? Towards a customizable quality evaluation;✔;0;0;Ontologies and Reasoning;Dec 04, 10:56
+118;Ensar Hadziselimovic, David Filip and Dave Lewis;Hybrid Approach to Data Compliance with BPMN and Semantic Web Technologies;✔;✔;0;SDM and DI;Dec 04, 11:13
+120;Jonathan Lajus, Luis Galárraga and Fabian M. Suchanek;Fast and Exact Rule Mining with AMIE 3;✔;0;0;Ontologies and Reasoning;Dec 04, 11:27
+121;Giuseppe Capobianco, Danilo Cavaliere and Sabrina Senatore;Semantic drift measures to monitoring the ontology evolution process;✔;0;0;Ontologies and Reasoning;Dec 04, 11:27
+123;Selene Baez Santamaria, Manolis Manousogiannis, Guusje Boomgaard, Linh P. Tran, Zoltan Szlavik and Robert-Jan Sips;Access to care: Geographical analysis of medical facilities;✔;0;0;In-Use Track;Dec 04, 11:35
+124;Beyza Yaman, Kevin Thompson and Rob Brennan;Quality Metrics for Measuring Standards Conformance of GeoSpatial Linked Datasets;✔;0;0;In-Use Track;Dec 04, 11:40
+126;Jaydeep Sen, Sumit Bhatia and Karthik Sankaranarayanan;Using Ontology Reasoning for Interpreting Natural Language Queries in Enterprise Settings;✔;✔;0;NLP and IR;Dec 04, 12:09
+127;Heba Mohamed, Said Fathalla, Jens Lehmann and Hajira Jabeen;DistOWL Parser: A Distributed Parsing Framework for OWL Datasets;✔;0;0;Resources Track;Dec 04, 12:11
+128;Pierre-Henri Paris, Fayçal Hamdi and Samira Si-Said Cherfi;Contextual Propagation of Properties for Knowledge Graphs: A Sentence Embedding Based Approach;✔;✔;0;Knowledge Graphs;Dec 04, 12:20
+129;Alexandros Vassiliades, Nick Bassiliades, Filippos Gouidis and Theodore Patkos;A Semantic Question Answering Framework about Household Objects and Actions;✔;0;0;Resources Track;Dec 04, 12:37
+131;Jacques Chabin, Cédric Eichler, Mirian Halfeld-Ferrari and Nicolas Hiot;Graph Rewriting Rules for Consistent Evolution of RDF Knowledge Graphs;✔;0;0;Knowledge Graphs;Dec 04, 13:06
+132;Roger Ferrod, Luigi Di Caro and Claudio Schifanella;CiTelling: Structured Semantic Modeling of Citation Intents;✔;✔;0;Resources Track;Dec 04, 13:34
+133;Julián Schneider, Peter Bourgonje, Karolina Zaczynska, Maria Berger and Georg Rehm;Towards an Ontology for the Development of Adaptive (Q)Curation Technologies: Qontology;✔;0;0;Ontologies and Reasoning;Dec 04, 13:35
+135;Molka Tounsi Dhouib, Catherine Faron Zucker and Andrea Tettamanzi;Measuring Clusters of Labels in an Embedding Space to Refine Relations in Ontology Alignmen;✔;0;0;Ontologies and Reasoning;Dec 04, 13:40
+136;Philipp Zehnder, Patrick Wiener, Tim Straub and Dominik Riemer;StreamPipes Connect: Semantics-Based Edge Adapters for the Industrial IoT;✔;0;0;In-Use Track;Dec 04, 13:45
+138;Jan-Christoph Kalo, Stephan Mennicke, Philipp Ehler and Wolf-Tilo Balke;Detecting Synonymous Properties by Shared Data-driven Definitions;✔;0;0;Knowledge Graphs;Dec 04, 13:58
+142;Karolina Bataityte, Vassil Vassilev and Olivia Gill;Ontological Foundations for Vulnerability Analysis of Security Policies;✔;0;0;Ontologies and Reasoning;Dec 04, 14:27
+144;Jie Xie, Cong Cao, Zhenzhen Li, Yangyang Guan, Yanbing Liu and Jianlong Tan;Joint Entity Linking for Web Tables with Hybrid Semantic Matching;✔;0;0;NLP and IR;Dec 04, 14:46
+146;Bhupesh Mishra, Dhavalkumar Thakker, Noe Giraud, Thomas Vickers and Sydney Simpson;Combining Deep Learning based Multi-Object Detection Models With Semantic Rule Base for a Flood Monitoring Use Case;✔;0;0;In-Use Track;Dec 04, 14:47
+149;Hemanth Kumar Reddy Mayaluru, Mohnish Dubey, Andreas Hamm and Jens Lehmann;One Class Text Classification using an Ensemble of Classifiers;✔;0;0;Machine Learning;Dec 04, 14:58
+150;Lars C. Gleim, Rafael Schimassek, Dominik Hüser, Maximilian Peters, Christoph Krämer, Michael Cochez and Stefan Decker;SchemaTree: Maximum-likelihood Property Recommendation for Wikidata;✔;✔;0;Social and Human;Dec 04, 15:18
+153;Michael Röder, Geraldo Souza, Denis Kuchelev, Abdelmoneim Amer Desouki and Axel-Cyrille Ngonga Ngomo;ORCA: a Benchmark for Data Web Crawlers;✔;0;0;Resources Track;Dec 04, 15:46
+154;Piero A. Bonatti, Luca Ioffredo, Iliana M. Petrova and Luigi Sauro;Fast compliance checking with general vocabularies;✔;0;0;Ontologies and Reasoning;Dec 04, 15:50
+155;Arnaud Grall, Thomas Minier, Hala Skaf-Molli and Pascal Molli;Processing SPARQL Aggregates Queries with Web Preemption;✔;0;0;Distribution and Decentralization;Dec 04, 15:57
+156;Pramit Bhattacharyya and Raghava Mutharaju;OntoSeer - A Tool to Improve the Quality of Ontologies;✔;0;0;Resources Track;Dec 04, 15:59
+158;Sven Lieber, Ben De Meester, Ruben Verborgh and Anastasia Dimou;EcoDaLo: Federating advertisement targeting with Linked Data;✔;0;0;In-Use Track;Dec 04, 16:08
+159;Alieh Saeedi, Eric Peukert and Erhard Rahm;Incremental Multi-source Entity Resolution for Knowledge Graph Completion;✔;0;0;Knowledge Graphs;Dec 04, 16:20
+161;Anita Khadka, Iván Cantador and Miriam Fernandez;Capturing and Exploiting Citation Knowledge for Recommending Recently Published Papers;✔;0;0;Science of Science;Dec 04, 16:31
+162;Maria Angela Pellegrino, Renato De Donato, Martina Garofalo, Delfina Malandrino, Andrea Petta and Vittorio Scarano;QueDI: from Knowledge Graph Querying to Data Visualization;✔;0;0;NLP and IR;Dec 04, 16:37
+163;Felix Bensmann, Andrea Papenmeier, Dagmar Kern, Benjamin Zapilko and Stefan Dietze;Semantic Annotation, Representation and Linking of Survey Data;✔;0;0;Science of Science;Dec 04, 16:41
+165;Russa Biswas, Mehwish Alam and Harald Sack;Is Aligning Embedding Spaces a Challenging Task? An Analysis of the Existing Methods;✔;0;0;In-Use Track;Dec 04, 16:56
+166;Erisa Terolli, Patrick Ernst and Gerhard Weikum;Entity Cores for Personalized Health Search;✔;0;0;NLP and IR;Dec 04, 17:02
+167;Erhard Eibl, Oya Beyan, Stefan Decker, Jan Winkelmann and Heiner Oberkampf;Towards automated Graph Data Cleansing using Shapes;✔;✔;0;eswc2020;Dec 04, 17:07
+168;Sebastian Bader, Jaroslav Pullmann, Christian Mader, Sebastian Tramp, Christoph Quix, Andreas Müller, Haydar Akyuerek, Matthias Böckmann, Benedikt Imbusch, Sandra Geisler and Christoph Lange;The International Data Spaces Information Model – an Ontology for Sovereign Exchange of Digital Content;✔;0;0;Resources Track;Dec 04, 17:17
+169;Sebastian Bader, Irlan Grangel-González, Priyanka Nanjappa, Maria-Esther Vidal and Maria Maleshkova;A Knowledge Graph for Industry 4.0;✔;0;0;Resources Track;Dec 04, 17:24
+170;Ralph Peeters, Anna Primpeli, Benedikt Wichtlhuber and Christian Bizer;Using schema.org Annotations for Training and Maintaining Product Matchers;✔;0;0;In-Use Track;Dec 04, 17:28
+171;David Chaves-Fraga, Edna Ruckhaus, Freddy Priyatna, Maria-Esther Vidal and Oscar Corcho;Enhancing OBDA Query Translation over Tabular Data with Morph-CSV;✔;0;0;eswc2020;Dec 04, 17:33
+174;Carlota Cardoso, Rita Sousa, Sebastian Kholer and Catia Pesquita;A Collection of Benchmark Datasets for Knowledge Graph Similarity in the Biomedical Domain;✔;0;0;Resources Track;Dec 04, 17:35
+175;Meriem Beloucif, Varvara Logacheva, Alexander Panchenko and Chris Biemann;Comparing text-based and knowledge-based information sources for Comparative Question Answering;✔;0;0;NLP and IR;Dec 04, 17:40
+176;Gunjan Singh, Sumit Bhatia and Raghava Mutharaju;OWL2Bench: A Benchmark for OWL 2 Ontologies;✔;0;0;Resources Track;Dec 04, 17:48
+177;Rita Sousa, Sara Silva and Catia Pesquita;evoKGsim: Evolving semantic representations for Knowledge Graph based supervised learning;✔;0;0;Machine Learning;Dec 04, 18:03
+178;Sumit Neelam, Udit Sharma, Sumit Bhatia, Hima Prasad K and L. Venkata Subramaniam;Storing and Querying RDF Datasets on Property Graph Databases;✔;0;0;SDM and DI;Dec 04, 18:05
+179;Lama Saeeda, Michal Med, Martin Ledvinka, Miroslav Blaško and Petr Kremen;Entity Linking and Lexico-Semantic Patterns for Ontology Learning;✔;0;0;NLP and IR;Dec 04, 18:25
+180;Andrea Cimmino Arriaga, Alba Fernández Izquierdo and Raúl García-Castro;Astrea: automatic generation of SHACL shapes from ontologies;✔;✔;0;Resources Track;Dec 04, 18:34
+181;Yalemisew Abgaz, Junli Liang, Natalia Duda, Nick McDonald and Rob Brennan;Semantic Cube: A Framework for Managing Organisational Changes and Risks Using Ontologies;✔;0;0;Social and Human;Dec 04, 18:49
+182;Sunday Ngwobia, Saeedeh Shekarpour and Faisal Alshargi;Capturing Knowledge of Emerging Entities from Extended Search Snippets;✔;0;0;NLP and IR;Dec 04, 18:54
+183;Wojciech Waloszek and Aleksander Waloszek;Improving the Performance of Ontological Querying by using a Contextual Approach;✔;✔;0;Ontologies and Reasoning;Dec 04, 19:04
+185;Maxime Buron, Francois Goasdoue, Ioana Manolescu, Tayeb Merabti and Marie-Laure Mugnier;Revisiting RDF storage layouts for efficient query answering;✔;✔;0;SDM and DI;Dec 04, 19:12
+186;Giorgos Kadilierakis, Pavlos Fafalios, Panagiotis Papadakos and Yannis Tzitzikas;Keyword Search over RDF using Document-centric Information Retrieval Systems;✔;0;0;NLP and IR;Dec 04, 19:22
+188;Ammar Ammar, Remzi Celebi and Michel Dumontier;FaVLib: A Fact Validation Library based on Knowledge Graph Embeddings;✔;✔;0;Resources Track;Dec 04, 19:38
+189;Manuel Fiorelli, Armando Stellato, Tiziano Lorenzetti, Andrea Turbati, Peter Schmitz, Willem van Gemert, Denis Dechandon, Enrico Francesconi and Aniko Gerencser;A Use Case-Driven Metadata Model and Repository;✔;0;0;Resources Track;Dec 04, 19:44
+191;Maria Angela Pellegrino, Abdulrahman Altabba, Martina Garofalo, Petar Ristoski and Michael Cochez;A Modular and Extensible Evaluation Framework for Graph Embedding Techniques;✔;0;0;Resources Track;Dec 04, 19:51
+193;Marcin Pietrasik and Marek Reformat;A Simple Method for Inducing Class Taxonomies in Knowledge Graphs;✔;0;0;Ontologies and Reasoning;Dec 04, 19:56
+194;Valentina Beretta, Andon Tchechmedjiev, Sébastien Harispe and Konstantin Todorov;Claim Embeddings: an Empirical Study;✔;0;0;Knowledge Graphs;Dec 04, 19:57
+195;Tobias Käfer;BrickBench - A Read-Write Linked Data Benchmarking Environment for User Agents;✔;0;0;Resources Track;Dec 04, 20:10
+196;Lars Heling and Maribel Acosta;Estimating Characteristic Sets for RDF Dataset Profiles based on Sampling;✔;0;0;SDM and DI;Dec 04, 20:32
+197;Said Fathalla, Sören Auer and Christoph Lange;ModSci: The Modern Science Ontology;✔;0;0;Resources Track;Dec 04, 20:35
+200;Arjun Roy, Asif Ekbal, Stefan Dietze and Pavlos Fafalios;Exploiting stance hierarchies for cost-sensitive stance detection of Web documents;✔;0;0;eswc2020;Dec 04, 21:42
+202;Dhruv Gupta and Klaus Berberich;Optimizing Hyper-Phrase Queries;✔;0;0;NLP and IR;Dec 04, 21:51
+203;Dennis Diefenbach, Jose M. Gimenez-Garcia, Wouter Beek and Dimitris Nikolopoulos;HDTcat: Scalable compression of RDF in HDT;✔;0;0;Resources Track;Dec 04, 22:02
+207;Hubert Naacke and Olivier Curé;Triaf, a Framework Based on Triangles of Triples for Knowledge Graph Management;✔;0;0;SDM and DI;Dec 04, 22:59
+215;Petar Ristoski, Dmitry Zubarev, Anna Lisa Gentile, Nathaniel Park, Daniel Sanders, Daniel Gruhl, Steve Welch and Linda Kato;Expert-in-the-loop AI for Polymer Discovery;✔;0;0;Social and Human;Dec 05, 01:25
+216;Umutcan Şimşek, Kevin Angele, Elias Kärle, Oleksandra Panasiuk and Dieter Fensel;Domain-specific Customization of schema.org based on SHACL;✔;0;0;In-Use Track;Dec 05, 01:34
+217;Caio Viktor Avila, Jose Wellington Franco, José Gilvan Rodrigues Maia and Vânia Vidal;CONQUEST: A Framework for Building Template-Based IQA Chatbots in Knowledge Graphs;✔;0;0;NLP and IR;Dec 05, 02:03
+218;Monireh Ebrahimi, Md Kamruzzaman Sarker, Federico Bianchi, Ning Xie, Aaron Eberhart, Derek Doran and Pascal Hitzler;Neuro-Symbolic Deductive Reasoning for Cross-Knowledge Graph Entailment;✔;0;0;Ontologies and Reasoning;Dec 05, 03:11
+220;Vitor Almeida, Sukanya Bhowmik, Markus Endler and Kurt Rothermel;DSCEP: An Infrastructure for Distributed Semantic Complex Event Processing;✔;0;0;SDM and DI;Dec 05, 04:21
+221;Liu Yang, Yiqing Feng, Zhou Chen, Xinyu Zhang, Zhifang Liao and Jun Long;StarSM:Fast SPARQL Query Processing Based on Star-SubGraph Matching;✔;0;0;SDM and DI;Dec 05, 05:28
+223;Rumana Ferdous Munne and Ryutaro Ichise;Joint Entity Summary and Attribute Embeddings for Entity Alignment between Knowledge Graphs;✔;0;0;Knowledge Graphs;Dec 05, 06:09
+224;Masoud Salehpour and Joseph G. Davis;A Comparative Analysis of Knowledge Graph Query Performance;✔;0;0;Knowledge Graphs;Dec 05, 06:27
+225;Michiaki Tatsubori, Asim Munawar and Takao Moriyama;Design and Implementation of Linked Planning Domain Definition Language;✔;0;0;Ontologies and Reasoning;Dec 05, 06:31
+227;Qilin Sun and Weizhuo Li;RuKBC-QA: A Framework for Question Answering over Incomplete KBs Enhanced with Rules Injection;✔;0;0;NLP and IR;Dec 05, 06:55
+228;Toky Hajatiana Raboanary, Steve Wang and C. Maria Keet;Generating Answerable Questions from Ontologies for Educational Exercises;✔;✔;0;Knowledge Graphs;Dec 05, 07:03
+230;Wouter Beek, Joe Raad, Erman Acar and Frank Van Harmelen;MetaLink: A Travel Guide to the LOD Cloud;✔;0;0;Resources Track;Dec 05, 08:37
+231;Isaiah Onando Mulang, Kuldeep Singh, Akhilesh Vyas, Saeedeh Shekarpour, Ahmad Sakor, Maria Esther Vidal, Soren Auer and Jens Lehmann;Context-aware Entity Linking with Attentive Neural Networks on Wikidata Knowledge Graph;✔;0;0;NLP and IR;Dec 05, 08:41
+232;Elias Kärle, Umutcan Şimşek and Dieter Fensel;Heuristics for meaningful materialization of structured data on the web;✔;0;0;SDM and DI;Dec 05, 08:47
+233;Ba-Huy Tran, Nathalie Aussenac-Gilles, Catherine Comparot and Cassia Trojahn;Integrated Spatio-temporal Data for Earth Observation;✔;0;0;In-Use Track;Dec 05, 08:53
+234;Thomas de Groot, Joe Raad and Stefan Schlobach;Analysing Large Inconsistent Knowledge Graphs;✔;0;0;eswc2020;Dec 05, 08:53
+237;Dennis Diefenbach, José Giménez-García, Andreas Both, Kamal Singh and Pierre Maret;QAnswer KG: Creating On-Demand Question Answering Systems on Top of RDF Data;✔;0;0;Integration, Services and APIs;Dec 05, 08:59
+238;Kevin Angele, Jürgen Angele and Dieter Fensel;A proposal of a bottom up enhancement of JSON towards a simple ontology language;✔;0;0;Ontologies and Reasoning;Dec 05, 09:20
+239;Oleksandra Panasiuk, Omar Holzknecht, Umutcan Şimşek, Kevin Angele, Elwin Huaman and Dieter Fensel;A verification framework for Knowledge Graphs;✔;0;0;Knowledge Graphs;Dec 05, 09:23
+240;Kris McGlinn, Declan O'Sullivan, Eamonn Clinton and Rob Brennan;Geoff: A Linked Data Vocabulary for Describing the Form and Function of Spatial Objects;✔;0;0;Resources Track;Dec 05, 09:30
+241;Sébastien Ferré;A Query Builder Approach to the Data Analytics of Vanilla RDF Graphs;✔;0;0;Science of Science;Dec 05, 09:46
+243;Afshin Sadeghi, Mojtaba Nayyeri, Hamed Shariat Yazdi and Jens Lehmann;A Knowledge Graph Based Learning Method for Word Similarity;✔;0;0;NLP and IR;Dec 05, 10:25
+244;Miroslav Blaško, Bogdan Kostov, Martin Ledvinka and Petr Kremen;Collecting meaningful data: an iterative approach;✔;0;0;Ontologies and Reasoning;Dec 05, 10:28
+247;Hamid Bazoobandi, Henri Bal, Frank Van Harmelen and Jacopo Urbani;Handling Impossible Derivations during Stream Reasoning;✔;0;0;Ontologies and Reasoning;Dec 05, 10:55
+248;Damien Graux and Sina Mahmoodi;A fully decentralized triplestore managed via the Ethereum blockchain;✔;✔;0;Distribution and Decentralization;Dec 05, 10:56
+251;Vito Walter Anelli, Yashar Deldjoo, Tommaso Di Noia, Eugenio Di Sciascio and Felice Antonio Merra;SAShA: Semantic-Aware Shilling Attacks on Recommender Systems exploiting Knowledge Graphs;✔;0;0;Security, Privacy, Licensing and Trust;Dec 05, 11:31
+254;Mahdi Bohlouli, Jonathan Hermann and Fabian Sunnus;CompeTics: Visualization and Analysis of Scientific Competences from Big Bibliographic Data with NoSQL;✔;0;0;Science of Science;Dec 05, 12:19
+261;Xinagng Wang, Tongyu Zhao and Dong Wang;Reinforcement Learning-based Noisy Reduction for Distant Supervised Biomedical Relation Extraction;✔;0;early;phdsym;Dec 12, 03:33
+262;Wafaa Mebrek and Amel Bouzeghoub;Agents-based Distributed Stream Reasoning for Online Detection of Daily Living Activities;✔;0;late;Distribution and Decentralization;Dec 12, 11:04
+263;Julian Lindner and Harald Steinmüller;Semantic Enrichment of Internet of Things Data;✔;✔;0;postersdemos;Jan 22, 14:17
+264;Nitisha Jain;Domain-Specific Knowledge Graph Construction for Semantic Analysis;✔;0;early;phdsym;Feb 08, 19:43
+265;Jan Philipp Portisch;Towards Automatic Matching of Domain-Specific Schemas Utilizing General Purpose External Background Knowledge;✔;0;early;phdsym;Feb 09, 11:53
+266;Endri Kacupaj;Explicable Question Answering;✔;0;early;phdsym;Feb 12, 12:42
+267;Mostafa Mirzaie;Contextualizing the quality assessment of data streams;✔;0;early;phdsym;Feb 12, 12:49
+268;Nora Abdelmageed;Towards Transforming Tabular Datasets into Knowledge Graphs;✔;0;early;phdsym;Feb 12, 15:18
+269;Amr Azzam;Enabling Web-scale Knowledge Graphs Querying;✔;0;late;phdsym;Feb 12, 17:30
+270;Peb Ruswono Aryan;Semantic Explainability for Cyber Physical Systems;✔;0;early;phdsym;Feb 12, 23:36
+271;Ole Magnus Holter;Semantic Parsing of Textual Requirements;✔;0;early;phdsym;Feb 12, 23:49
+272;Rita Sousa;Evolving meaning for supervised learning in complex biomedical domains using knowledge graphs;✔;0;early;phdsym;Feb 13, 00:12
+273;Jason Armitage;Compositional Systems for Fact Validation on Multiple Modalities;✔;0;early;phdsym;Feb 13, 10:47
+274;Shrestha Ghosh, Simon Razniewski and Gerhard Weikum;CounQER: A System for Discovering and Linking Count Information in Knowledge Bases;✔;0;0;postersdemos;Feb 18, 13:23
+275;Ademar Crotti Junior, Fabrizio Orlandi, Damien Graux, Murhaf Hossari, Declan O'Sullivan, Christian Hartz and Christian Dirschl;Knowledge Graph-based Legal Search over German Court Cases;✔;0;0;industry;Feb 21, 16:03
+276;Mohamed Nadjib Mami, Irlán Grangel-González, Damien Graux, Enkeleda Elezi and Felix Loesch;Semantic Data Integration for the SMT Manufacturing Process using SANSA Stack;✔;0;0;industry;Mar 02, 14:54
+277;Christian Dirschl, Jessica Kent, Jamie Schram and Quentin Reul;Enabling Digital Business Transformation through an enterprise Knowledge Graph;✔;0;0;industry;Mar 04, 08:04
+278;Karl Hammar;Simple Linked Data Creation with ExcelRDF;✔;✔;0;postersdemos;Mar 06, 08:30
+279;Alsayed Algergawy, Ria Stangneth, Tina Heger, Jonathan Jeschke and Birgitta König-Ries;Towards a Core Ontology for Hierarchies of Hypotheses in Invasion Biology;✔;0;0;postersdemos;Mar 06, 09:32
+280;Barry Norton and Mathias Normann;Semantic Data Fusion for Security in a Healthcare Environment;✔;0;0;postersdemos;Mar 06, 17:02
+281;Guntis Barzdins, Didzis Gosko, Kārlis Čerāns, Oskars Barzdins, Arturs Znotins, Paulis Barzdins, Normunds Grūzītis, Mikus Grasmanis and Janis Barzdins;Pini Language and PiniTree Ontology Editor:  Annotation and Verbalisation for Atomised Journalism;✔;✔;0;postersdemos;Mar 08, 16:45
+282;Giorgos Kadilierakis, Christos Nikas, Pavlos Fafalios, Panagiotis Papadakos and Yannis Tzitzikas;Elas4RDF: Multi-perspective Triple-centered Keyword Search over RDF using Elasticsearch;✔;0;0;postersdemos;Mar 09, 14:30
+283;Carlota Cardoso, Rita Sousa, Sebastian Köhler and Catia Pesquita;A Collection of Benchmark data sets for Knowledge Graph-based Similarity in the Biomedical Domain;✔;0;0;postersdemos;Mar 09, 15:35
+284;Jan Portisch, Sven Hertling and Heiko Paulheim;Visual Analysis of Ontology Matching Results with the MELT Dashboard;✔;0;0;postersdemos;Mar 10, 09:19
+285;Sergey Gorshkov, Alena Begler, Alexander Grebeshkov and Roman Shebalov;Ontology-based industrial data management platform;✔;✔;0;postersdemos;Mar 10, 11:04
+286;Jakub Klímek, Altynbek Orumbayev, Marzia Cutjar, Esteban Jenkins, Ivan Latták, Alexandr Mansurov and Jiří Helmich;LinkedPipes Applications - Automated Discovery of Configurable Linked Data Applications;✔;0;0;postersdemos;Mar 10, 13:08
+287;Samira Babalou and Birgitta König-Ries;Towards Multiple Ontology Merging with CoMerger;✔;0;0;postersdemos;Mar 10, 18:03
+288;Samira Babalou, Elena Grygorova and Birgitta König-Ries;How good is this merged ontology?;✔;0;0;postersdemos;Mar 10, 18:08
+289;Samira Babalou, Elena Grygorova and Birgitta König-Ries;CoMerger: A Customizable Online Tool for Building a Consistent Quality-Assured Merged Ontology;✔;✔;0;postersdemos;Mar 10, 18:13
+290;Benjamin Moreau and Patricia Serrano Alvarado;Assessing the Quality of RDF Mappings with EvaMap;✔;0;0;postersdemos;Mar 11, 09:03
+291;Sotiris Batsakis, Ilias Tachmazidis, George Baryannis and Grigoris Antoniou;Semantic Neural Networks;✔;0;0;postersdemos;Mar 11, 09:21
+292;Addi Ait-Mlouk and Lili Jiang;KBot: A Knowledge Bot for Natural Language Question over Linked Data;✔;0;0;postersdemos;Mar 11, 09:29
+293;Marco Cremaschi, Alessandra Siano, Roberto Avogadro, Ernesto Jimenez-Ruiz and Andrea Maurino;STILTool: a Semantic Table Interpretation evaLuation Tool;✔;0;0;postersdemos;Mar 11, 12:26
+294;Matthias Farnbauer-Schmidt, Victor Charpenay and Andreas Harth;N3X: Notation3 with SPARQL Expressions;✔;0;0;postersdemos;Mar 11, 12:52
+295;Uldis Bojars, Anita Goldberga, Anita Rašmane, Jogita Sauka, Maira Kreislere and Mārīte Apenīte;Towards semantic integration of Latvia's cultural heritage information;✔;0;0;postersdemos;Mar 11, 13:24
+296;Benjamin Moreau, Bastian Confais, Patricia Serrano Alvarado and Damien Vintache;A Tool to Define the Compatibility of Licenses as Partial Orders with CaLi;✔;0;0;postersdemos;Mar 11, 13:55
+297;Jordane Dorne, Nathalie Aussenac-Gilles, Catherine Comparot, Romain Hugues and Cassia Trojahn;LandCover2RDF: an API for computing the land cover of a geographical area and generating the RDF graph;✔;0;0;postersdemos;Mar 12, 10:24
+298;Jan Martin Keil;ABECTO: An ABox Evaluation and Comparison Tool for Ontologies;✔;0;0;postersdemos;Mar 12, 13:33
+299;Mengyu Zhang, Weiwei Sun and Xiaojun Wan;Active Learning for Negation Scope Resolution;✔;✔;0;postersdemos;Mar 12, 15:58
+300;Naouel Karam, Olga Streibel, Aray Karjauv, Goekhan Coskun and Adrian Paschke;Answering Controlled Natural Language Questions overRDF Clinical Data;✔;0;0;postersdemos;Mar 12, 16:20
+301;Eero Hyvönen;Semantic ''Sampo'' Portals for Digital Humanities Based on a National Linked Open Data Infrastructure;✔;0;0;postersdemos;Mar 12, 18:51
+302;Heikki Rantala, Esko Ikkala, Ilkka Jokipii, Mikko Koho, Jouni Tuominen and Eero Hyvönen;WarVictimSampo 1914--1922: A Semantic Portal and Linked Data Service for Digital Humanities Research on War History;✔;0;0;postersdemos;Mar 12, 19:24
+303;Andreas Belger, Renato Budinich, Ralph Blum, Martin Zablocki and Roland Zimmermann;Market and Technology Monitoring driven by Knowledge Graphs;✔;0;0;postersdemos;Mar 12, 20:14
+304;Julien Romero, Nicoleta Preda, Antoine Amarilli and Fabian M. Suchanek;Computing and Illustrating Query Rewritings on Path Views with Binding Patterns;✔;✔;0;postersdemos;Mar 12, 22:56
+305;Fatima Danash, Danielle Ziebelin and Emilie Chalmin-Aljanabi;A Parthood Approach for the conceptual modelling of Tangible Objects Composition (TOC) - an application on Cultural Heritage (CH) ;✔;0;0;postersdemos;Mar 12, 23:05
+306;Johannes Heinecke and Frédéric Herlédan;FRIES: User-Friendly Semantic Information Extraction from Unstructured Text;✔;0;0;postersdemos;Mar 16, 13:41
+307;Amr Azzam, Ruben Taelman and Axel Polleres;Towards Cost-model-based Query Execution over Hybrid Linked Data Fragments Interfaces;✔;0;0;postersdemos;Mar 16, 19:53
+308;Eero Hyvönen, Minna Tamper, Esko Ikkala, Sami Sarsa, Arttu Oksanen, Jouni Tuominen and Aki Hietanen;Publishing and Using Legislation and Case Law as Linked Open Data on the Semantic Web;✔;0;0;postersdemos;Mar 17, 11:35
+309;Anuj Singh, Paraskevi Zerva and Nikhil Mudhalwadkar;F-CAT: an ontology to manage features of ML models applied in real estate domain;✔;0;0;industry;Mar 18, 15:46
+310;Maria Koutraki and Besnik Fetahu;MedTable: Extracting Disease Types from Web Tables;✔;0;0;postersdemos;Mar 18, 16:32
+311;Minna Tamper, Arttu Oksanen, Jouni Tuominen, Aki Hietanen and Eero Hyvönen;Automatic Annotation Service APPI: Named Entity Linking in Legal Domain;✔;0;0;postersdemos;Mar 18, 18:16
+312;Michalis Mountantonakis and Yannis Tzitzikas;LODsyndesisIE: Entity Extraction from Text and Enrichment using Hundreds of Linked Datasets;✔;0;0;postersdemos;Mar 19, 01:18
+313;Orçun Oruç and Uwe Aßmann;A Semantic Question Answering in the Domain of Smart Factories (Extended Abstract);✔;✔;0;industry;Mar 19, 08:54
+314;Pierre-Henri Paris, Fayçal Hamdi and Samira Si-Said Cherfi;A study about the use of OWL 2 semantics in RDF-based knowledge graphs;✔;0;0;postersdemos;Mar 19, 09:06
+315;Andrea Cimmino Arriaga, Alba Fernández Izquierdo and Raúl García-Castro;Generating SHACL Shapes with Astrea;✔;✔;0;postersdemos;Mar 19, 09:35
+316;Mohammad Noorani Bakerally, Cyrille Bareau, Fabrice Blache, Sebastien Bolle, Christelle Ecrepont, Pauline Folz, Nathalie Hernandez, Thierry Monteil, Gilles Privat and Fano Ramparany;Semi-automatic RDFization using automatically generated mappings;✔;0;0;postersdemos;Mar 19, 09:55
+317;Ioannis Chrysakis, Giorgos Flouris, Theodore Patkos, Anastasia Dimou and Ruben Verborgh;REWARD: Ontology for reward schemes;✔;0;0;postersdemos;Mar 19, 12:01
+318;Prajna Upadhyay and Maya Ramanath;Determining Faceted Pre-requisites using domain-specific Knowledge Bases;✔;0;0;postersdemos;Mar 19, 14:39
+319;Heikki Rantala, Eero Hyvönen and Esko Ikkala;Historical Events of Finland as Linked Data: HISTO Ontology and HistorySampo;✔;0;0;postersdemos;Mar 19, 14:44
+320;Elena Grygorova, Samira Babalou and Birgitta König-Ries;Toward OWL Restriction Reconciliation in Merging Knowledge;✔;0;0;postersdemos;Mar 19, 15:50
+321;Konstantinos Alexis, Vassilis Kaffes and Giorgos Giannopoulos;Boosting toponym interlinking by combining Machine Learning and Deep Learning methods;✔;0;0;postersdemos;Mar 19, 18:40
+322;Sascha Meckler and Victor Charpenay;A Semantic Personal Video Manager;✔;✔;0;postersdemos;Mar 19, 20:39
+323;Qingyuan Bie, Rima Türker, Mehwish Alam, Lei Zhang and Harald Sack;Short Text Classification using Words and Entities;✔;0;0;postersdemos;Mar 19, 20:53
+324;Radina Sofronova, Russa Biswas, Mehwish Alam and Harald Sack;Entity Typing based on RDF2Vec using Supervised and Unsupervised Methods ;✔;0;0;postersdemos;Mar 19, 21:03
+325;Ioannis Kefaloukos, Despoina Arvaniti, Dimitris Antonogiorgakis, Asimina Basdani, Panos Chatziadam, Manos Fragkopoulos, Fanouris Kapetanakis, Manolis Mihalodimitrakis, Nikos Ntantinakis, Georgia Papadakaki, Nikolaos Papatheodorou, Konstantina Pityanou, Charilaos Savva, Petros Selekos, Georgia Skoulataki, Aristea Terezaki, Styliani Tsixlaki, Nikolaos Papadakis and Haridimos Kondylakis;Ontology Analyzer: An Online Tool for Analyzing and Evaluating Ontologies;✔;0;0;postersdemos;Mar 19, 22:18
+326;Haridimos Kondylakis, Efthymios Alekos, Nikolaos Papadakis and Kostas Marias;The BOUNCE Psychological Ontology;✔;0;0;postersdemos;Mar 19, 22:30
+327;Alexandros Damianakis, Nikolaos Papadakis and Haridimos Kondylakis;Ontology Explorer:  Ontology Exploration Right at your Palm;✔;0;0;postersdemos;Mar 19, 22:39
+328;Tabea Tietz, Danilo Dessi, Mehwish Alam and Harald Sack;An Evaluation of Pre-trained Image Recognition Models to Enrich Linked Stage Graph;✔;0;0;postersdemos;Mar 19, 23:01
+329;Maxim Ionov, Florian Stein, Sagar Sehgal and Christian Chiarcos;cqp4rdf: Towards a Suite for RDF-based Corpus Linguistics;✔;0;0;postersdemos;Mar 19, 23:40
+330;Simon Gottschalk and Elena Demidova;EventKG+BT: Generation of Interactive Biography Timelines from a Knowledge Graph;✔;0;0;postersdemos;Mar 20, 08:33
+331;Fabian Hoppe, Danilo Dessì, Mehwish Alam and Harald Sack;Towards an Ontology-based Recommender for Trip Planning;✔;0;0;postersdemos;Mar 20, 08:37
+332;Daniel Schraudner and Victor Charpenay;A HTTP/RDF-based Communication Infrastructure for a Shop Floor operated by Simple-reflex Agents;✔;0;0;postersdemos;Mar 20, 08:55
+333;Albert Meroño-Peñuela, Dayana Spagnuelo and Gpt Two;Is a Transformer Your Next Semantic Co-Author? Generating Semantic Web Paper Snippets with GPT-2;✔;0;0;postersdemos;Mar 20, 08:57
+334;Sotirios Karampatakis, Alexis Dimitriadis and Artem Revenko;Training NER Models: Knowledge Graphs in the Loop;✔;0;0;postersdemos;Mar 20, 08:59
+335;Fabrizio Orlandi, Damien Graux and Declan O'Sullivan;How many stars do you see in this constellation?;✔;0;0;postersdemos;Mar 20, 10:44
+336;Kristian Noullet and Michael Färber;Agnos: Linking Texts to Any Knowledge Graph;✔;0;0;postersdemos;Mar 20, 11:50
+337;Javier D. Fernández, Nelia Lasierra, Didier Clement, Huw Mason and Ivan Robinson;Enabling FAIR Clinical Data Standards with Linked Data;✔;0;0;industry;Mar 31, 06:55
