@@ -1,0 +1,40 @@
+Paper,Authors,Title,Track,Decision,Metadatata
+11,Stefan Fenz,Supporting complex decision making by semantic technologies,In-Use Track,ACCEPT,public
+28,"Ewelina Dera, Flavius Frasincar, Kim Schouten and Lisa Zhuang",SASOBUS: Semi-automatic Sentiment Domain Ontology Building Using Synsets,NLP and IR,ACCEPT,public
+39,Nicolas Heist and Heiko Paulheim,Entity Extraction from Wikipedia List Pages,Knowledge Graphs,ACCEPT,public
+43,Victor Charpenay and Sebastian Käbisch,On Modeling The Physical World as a Collection of Things: the W3C Thing Description Ontology,In-Use Track,ACCEPT,public
+48,"Basel Shbita, Craig Knoblock, Yao-Yi Chiang, Weiwei Duan, Johannes Uhl and Stefan Leyk",Building Linked Spatio-Temporal Data from Vectorized Historical Maps,Knowledge Graphs,ACCEPT,public
+52,"Prodromos Kolyvakis, Alexandros Kalousis and Dimitris Kiritsis",Hyperbolic Knowledge Graph Embeddings for Knowledge Base Completion,Machine Learning,ACCEPT,public
+53,"Ilaria Tiddi, Daniel Balliet and Annette Ten Teije",Fostering Scientific Meta-Analyses with Knowledge Graphs : a Case-Study,Science of Science,ACCEPT,public
+60,"Fabian Kirstein, Kyriakos Stefanidis, Benjamin Dittwald, Simon Dutkowski, Sebastian Urbanek and Manfred Hauswirth",Piveau: A Large-scale Open Data Management Platform based on Semantic Web Technologies,In-Use Track,ACCEPT,public
+62,Sven Hertling and Heiko Paulheim,"The Knowledge Graph Track at OAEI - Gold Standards, Baselines, and the Golden Hammer Bias",Knowledge Graphs,ACCEPT,public
+66,"Qingxia Liu, Yue Chen, Gong Cheng, Evgeny Kharlamov, Junyou Li and Yuzhong Qu",Entity Summarization with User Feedback,Knowledge Graphs,ACCEPT,public
+69,"Endri Kacupaj, Hamid Zafar, Jens Lehmann and Maria Maleshkova",VQuAnDa: Verbalization QUestion ANswering DAtaset,Resources Track,ACCEPT,public
+72,"Qingxia Liu, Gong Cheng, Kalpa Gunaratna and Yuzhong Qu",ESBM: An Entity Summarization BenchMark,Resources Track,ACCEPT,public
+77,"Xiaofei Cao, Juan Yang and Xiangbin Meng",Partial Domain Adaptation for Relation Extraction Based on Adversarial Learning,NLP and IR,ACCEPT,public
+80,"Anna Primpeli, Christian Bizer and Margret Keuper",Unsupervised Bootstrapping of Active Learning for Entity Resolution,Machine Learning,ACCEPT,public
+88,"Ernesto Jimenez-Ruiz, Oktie Hassanzadeh, Vasilis Efthymiou, Jiaoyan Chen and Kavitha Srinivas",SemTab 2019: Resources to Benchmark Tabular Data to Knowledge Graph Matching Systems,Resources Track,ACCEPT,public
+89,"Mojtaba Nayyeri, Sahar Vahdati, Xiaotian Zhou, Hamed Shariat Yazdi and Jens Lehmann",Embedding-based Recommendations on Scholarly Knowledge Graphs,Science of Science,ACCEPT,public
+102,Henrik Dibowski and Francesco Massa Gray,Applying Knowledge Graphs as Integrated Semantic Information Model for the Computerized Engineering of Building Automation Systems,In-Use Track,ACCEPT,public
+106,"Julien Romero, Nicoleta Preda and Fabian M. Suchanek",Equivalent Rewritings on Path Views with Binding Patterns,"Integration, Services and APIs",ACCEPT,public
+107,"Giorgos Stoilos, Damir Juric, Szymon Wartak, Claudia Schulz and Mohammad Khodadadi",Hybrid Reasoning Over Large Knowledge Bases Using On-The-Fly Knowledge Extraction,Ontologies and Reasoning,ACCEPT,public
+110,"Thomas Pellissier Tanon, Gerhard Weikum and Fabian M. Suchanek",YAGO 4: A Reason-able Knowledge Base,Resources Track,ACCEPT,public
+111,"Karl Hammar, Cogan Shimizu and Pascal Hitzler",Modular Graphical Ontology Engineering Evaluated,Ontologies and Reasoning,ACCEPT,public
+116,"David Schindler, Benjamin Zapilko and Frank Krüger",Investigating Software Usage in the Social Sciences: A Knowledge Graph Approach,Science of Science,ACCEPT,public
+120,"Jonathan Lajus, Luis Galárraga and Fabian M. Suchanek",Fast and Exact Rule Mining with AMIE 3,Ontologies and Reasoning,ACCEPT,public
+136,"Philipp Zehnder, Patrick Wiener, Tim Straub and Dominik Riemer",StreamPipes Connect: Semantics-Based Edge Adapters for the Industrial IoT,In-Use Track,ACCEPT,public
+138,"Jan-Christoph Kalo, Stephan Mennicke, Philipp Ehler and Wolf-Tilo Balke",Detecting Synonymous Properties by Shared Data-driven Definitions,Knowledge Graphs,ACCEPT,public
+150,"Lars C. Gleim, Rafael Schimassek, Dominik Hüser, Maximilian Peters, Christoph Krämer, Michael Cochez and Stefan Decker",SchemaTree: Maximum-likelihood Property Recommendation for Wikidata,Social and Human,ACCEPT,public
+155,"Arnaud Grall, Thomas Minier, Hala Skaf-Molli and Pascal Molli",Processing SPARQL Aggregates Queries with Web Preemption,Distribution and Decentralization,ACCEPT,public
+159,"Alieh Saeedi, Eric Peukert and Erhard Rahm",Incremental Multi-source Entity Resolution for Knowledge Graph Completion,Knowledge Graphs,ACCEPT,public
+169,"Sebastian Bader, Irlan Grangel-González, Priyanka Nanjappa, Maria-Esther Vidal and Maria Maleshkova",A Knowledge Graph for Industry 4.0,Resources Track,ACCEPT,public
+179,"Lama Saeeda, Michal Med, Martin Ledvinka, Miroslav Blaško and Petr Kremen",Entity Linking and Lexico-Semantic Patterns for Ontology Learning,NLP and IR,ACCEPT,public
+180,"Andrea Cimmino Arriaga, Alba Fernández Izquierdo and Raúl García-Castro",Astrea: automatic generation of SHACL shapes from ontologies,Resources Track,ACCEPT,public
+186,"Giorgos Kadilierakis, Pavlos Fafalios, Panagiotis Papadakos and Yannis Tzitzikas",Keyword Search over RDF using Document-centric Information Retrieval Systems,NLP and IR,ACCEPT,public
+191,"Maria Angela Pellegrino, Abdulrahman Altabba, Martina Garofalo, Petar Ristoski and Michael Cochez",A Modular and Extensible Evaluation Framework for Graph Embedding Techniques,Resources Track,ACCEPT,public
+193,Marcin Pietrasik and Marek Reformat,A Simple Method for Inducing Class Taxonomies in Knowledge Graphs,Ontologies and Reasoning,ACCEPT,public
+196,Lars Heling and Maribel Acosta,Estimating Characteristic Sets for RDF Dataset Profiles based on Sampling,SDM and DI,ACCEPT,public
+230,"Wouter Beek, Joe Raad, Erman Acar and Frank Van Harmelen",MetaLink: A Travel Guide to the LOD Cloud,Resources Track,ACCEPT,public
+237,"Dennis Diefenbach, José Giménez-García, Andreas Both, Kamal Singh and Pierre Maret",QAnswer KG: Creating On-Demand Question Answering Systems on Top of RDF Data,"Integration, Services and APIs",ACCEPT,public
+247,"Hamid Bazoobandi, Henri Bal, Frank Van Harmelen and Jacopo Urbani",Handling Impossible Derivations during Stream Reasoning,Ontologies and Reasoning,ACCEPT,public
+251,"Vito Walter Anelli, Yashar Deldjoo, Tommaso Di Noia, Eugenio Di Sciascio and Felice Antonio Merra",SAShA: Semantic-Aware Shilling Attacks on Recommender Systems exploiting Knowledge Graphs,"Security, Privacy, Licensing and Trust",ACCEPT,public
