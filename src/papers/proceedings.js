@@ -3,6 +3,7 @@ const progress = require('progress');
 const csv = require('csv-parser');
 const nth = require('nth');
 const arrayifyStream = require('arrayify-stream');
+const fs = require('fs');
 
 const {
 	prefixes: H_PREFIXES,
@@ -32,6 +33,10 @@ const trackLabels = {
 	'industry': 'Industry',
 };
 
+const acceptedPapers = fs.readFileSync(process.argv[2], { encoding: 'utf8' })
+	.split('\n')
+	.map(line => line.substr(0, line.indexOf(',')));
+
 (async() => {
 	const tracks = {};
 	let submissions = await arrayifyStream(process.stdin.pipe(csv({ separator: ';' })));
@@ -44,6 +49,7 @@ const trackLabels = {
 		total: submissions.length,
 	});
 
+	let a_submissions = [];
 	let a_proceedings = [];
 
 	let ds_out = ttl_write({
@@ -93,7 +99,7 @@ const trackLabels = {
 						},
 						[sc1_author]: {
 							a: 'conference:RoleDuringEvent',
-							'rdfs:label': `@en"${s_full_name}, ${nth.appendSuffix(id+1)} Author for Proceedings Paper ${s_paper_id}`,
+							'rdfs:label': `@en"${s_full_name}, ${nth.appendSuffix(id+1)} Author for Paper ${s_paper_id}`,
 							'conference:isHeldBy': sc1_person,
 							'conference:withRole': 'conference:PublishingRole',
 						},
@@ -101,15 +107,19 @@ const trackLabels = {
 				};
 			});
 
-		a_proceedings.push(sc1_paper);
+		const accepted = acceptedPapers.indexOf(s_paper_id) >= 0;
+		a_submissions.push(sc1_paper);
+		if (accepted) {
+			a_proceedings.push(sc1_paper);
+		}
 		ds_out.write({
 			type: 'c3',
 			value: {
 				[sc1_paper]: {
-					a: ['eswc2020:SubmissionsPaper', 'conference:InProceedings'], //['eswc2020:ProceedingsPaper', 'conference:InProceedings'],
+					a: accepted ? ['eswc2020:SubmissionsPaper', 'conference:InProceedings'] : ['eswc2020:SubmissionsPaper'],
 					'rdfs:label': '@en"'+submission.Title,
 					'conference:title': '@en"'+submission.Title,
-					'conference:isPartOf': 'eswc2020:Proceedings',
+					...accepted ? { 'conference:isPartOf': 'eswc2020:Proceedings' } : {},
 					//'eswc2020:pdf': `^xsd:anyUri"${H_PREFIXES['eswc2020-object']}${si_paper}.pdf`,
 					'dct:issued': new Date(submission.Time),
 					'eswc2020:authorList': [a_author_items.map(g => g.c1)],
@@ -129,7 +139,8 @@ const trackLabels = {
 		type: 'c3',
 		value: {
 			'eswc2020:Conference': {
-				'eswc2020:submissions': [a_proceedings.sort(F_SORT_PAPER_INDEX)],
+				'eswc2020:submissions': [a_submissions.sort(F_SORT_PAPER_INDEX)],
+				'eswc2020:proceedings': [a_proceedings.sort(F_SORT_PAPER_INDEX)],
 			},
 		},
 	});
@@ -152,6 +163,14 @@ const trackLabels = {
 					[trackId]: {
 						a: ['eswc2020:Track'],
 						'rdfs:label': '@en"'+trackLabels[trackName]
+					},
+				},
+			});
+			ds_out.write({
+				type: 'c3',
+				value: {
+					'eswc2020:Conference': {
+						'eswc2020:tracksInclude': trackId,
 					},
 				},
 			});

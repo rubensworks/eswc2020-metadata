@@ -75,9 +75,10 @@ module.exports = {
 					deps: [
 						'proceedings.js',
 						'submissions.csv',
+						'papers.csv',
 					].map(s => path.join(PD_SRC_PAPERS, s)),
 					run: /* syntax: bash */ `
-						node $1 < $2 > $@
+						node $1 $3 < $2 > $@
 					`,
 				}),
 //

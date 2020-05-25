@@ -260,13 +260,13 @@ eswc2020:correspondingAuthor a owl:DatatypeProperty ;
 	rdfs:range xsd:boolean ;
 	.
 
-eswc2020:submissionsList a owl:ObjectProperty ;
+eswc2020:submissions a owl:ObjectProperty ;
 	rdfs:label "List of Submissions"@en ;
 	rdfs:domain eswc2020:Conference ;
 	rdfs:range rdfs:List ;
 	.
 
-eswc2020:proceedingsList a owl:ObjectProperty ;
+eswc2020:proceedings a owl:ObjectProperty ;
 	rdfs:label "List of Proceedings"@en ;
 	rdfs:domain eswc2020:Conference ;
 	rdfs:range rdfs:List ;
