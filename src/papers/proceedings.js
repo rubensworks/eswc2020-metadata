@@ -33,9 +33,13 @@ const trackLabels = {
 	'industry': 'Industry',
 };
 
+// Keep an index of all accepted papers
 const acceptedPapers = fs.readFileSync(process.argv[2], { encoding: 'utf8' })
 	.split('\n')
 	.map(line => line.substr(0, line.indexOf(',')));
+
+// Load the reviews
+const reviews = indexReviews(fs.readFileSync(process.argv[4], { encoding: 'utf8' }), fs.readFileSync(process.argv[3], { encoding: 'utf8' }));
 
 (async() => {
 	const tracks = {};
@@ -133,6 +137,69 @@ const acceptedPapers = fs.readFileSync(process.argv[2], { encoding: 'utf8' })
 				}), {}),
 			},
 		});
+
+		let reviewId = 0;
+		for (const review of reviews[s_paper_id] || []) {
+			const reviewIri = sc1_paper + '_Review.' + reviewId++;
+			const reviewAuthorIri = reviewIri + '_Reviewer';
+			if (review.reviewer === 'Anonymous') {
+				ds_out.write({
+					type: 'c3',
+					value: {
+						[reviewAuthorIri]: {
+							a: 'conference:RoleDuringEvent',
+							'rdfs:label': `@en"Anonymous Reviewer for Paper ${s_paper_id}`,
+							'conference:withRole': ['conference:ReviewerRole', 'eswc2020:AnonymousReviewerRole'],
+						},
+					},
+				});
+			} else {
+				const reviewAuthorPersonIri = person_c1(review.reviewer);
+				ds_out.write({
+					type: 'c3',
+					value: {
+						[reviewAuthorPersonIri]: {
+							a: 'conference:Person',
+							'rdfs:label': '"'+review.reviewer,
+							'foaf:mbox': '>mailto:' + review.email,
+							'conference:name': '"'+review.reviewer,
+							'conference:holdsRole': reviewAuthorIri,
+						},
+						[reviewAuthorIri]: {
+							a: 'conference:RoleDuringEvent',
+							'rdfs:label': `@en"${review.reviewer}, Reviewer for Paper ${s_paper_id}`,
+							'conference:isHeldBy': '>' + reviewAuthorPersonIri,
+							'conference:withRole': ['conference:ReviewerRole', 'eswc2020:NonAnonymousReviewerRole'],
+						},
+					},
+				});
+			}
+			ds_out.write({
+				type: 'c3',
+				value: {
+					[reviewIri]: {
+						a: 'fr:ReviewVersion',
+						'frbr:creator': reviewAuthorIri,
+						'fr:hasRating': 'eswc2020:ReviewRating.' + review.score,
+						'fr:hasReviewerConfidence': 'eswc2020:ReviewerConfidence.' + review.confidence,
+						'cito:reviews': sc1_paper,
+						'fr:issuedAt': '>https://easychair.org',
+						'fr:issuedFor': 'eswc2020:Conference',
+						'fr:releasedBy': 'eswc2020:Conference',
+						'dct:issued': new Date(review.date),
+						'c4o:hasContent': '"' + review.content + '"',
+					},
+				},
+			});
+			ds_out.write({
+				type: 'c3',
+				value: {
+					[sc1_paper]: {
+						'eswc2020:review': '>' + reviewIri,
+					},
+				},
+			});
+		}
 	}
 
 	ds_out.write({
@@ -178,3 +245,43 @@ const acceptedPapers = fs.readFileSync(process.argv[2], { encoding: 'utf8' })
 		return trackId;
 	}
 })();
+
+function indexReviews(reviewsRaw, reviewersRaw) {
+	const index = {};
+
+	for (const reviewsPaper of reviewsRaw.split('________________')) {
+		let reviews = reviewsPaper.split(/------------------------------------------------------- Review [0-9]* -------------------------------------------------------/);
+		const paperId = reviews[0].match(/\[([0-9]*)\]/)[1];
+		reviews.splice(0, 1);
+
+		index[paperId] = [];
+		for (const review of reviews) {
+			const reviewer = review.match(/PC member: *([^\n\r]*)/)[1].trim();
+			const date = review.match(/Time: *([^\n\r]*)/)[1];
+			const score = review.match(/Overall evaluation: *([0-9]*)/)[1];
+			const confidence = review.match(/Reviewer's confidence: *([0-9]*)/)[1];
+			const content = review.trimLeft().split('\n')[3].trimRight();
+			let email;
+
+			if (reviewer !== 'Anonymous') {
+				const reviewerIndex = reviewersRaw.indexOf(reviewer);
+				if (reviewerIndex < 0) {
+					throw new Error('Could not find the email of a reviewer in reviewers.csv: ' + reviewer);
+				}
+				const reviewerPos = reviewerIndex + reviewer.length + 1;
+				email = reviewersRaw.substr(reviewerPos, reviewersRaw.indexOf(',', reviewerPos + 1) - reviewerPos);
+			}
+
+			index[paperId].push({
+				reviewer,
+				email,
+				date,
+				score,
+				confidence,
+				content,
+			});
+		}
+	}
+
+	return index;
+}
