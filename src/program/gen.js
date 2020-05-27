@@ -14,23 +14,59 @@ let ds_out = ttl_write({
 let s_day = process.argv[2];
 
 ds_out.pipe(process.stdout);
-// TODO: update all below once program has been defined.
-const SC1_EMERALD_1 = 'hotel-knossos:emerald-ballroom#section-1';
-const SC1_EMERALD_2 = 'hotel-knossos:emerald-ballroom#section-2';
-const SC1_ADRIA = 'hotel-knossos:adria';
 
 let h_dates = {
 	tuesday: 2,
 	wednesday: 3,
 	thursday: 4,
+	friday: 5,
 };
 
 let h_papers = {
 	...Object.entries({
-		aligning_metadata_with_ontology_terms_using_clustering_and_embeddings: 'Paper.161',
-		shacl_constraint_validation_over_ontology_enhanced_kgs_via_rewriting: 'Paper.119',
-		mini_me_swift_the_first_owl_reasoner_for_ios: 'Paper.124',
-		// using_knowledge_graphs_to_search_an_enterprise_data_lake: '',
+		'Processing SPARQL Aggregates Queries with Web Preemption': 'Paper.155',
+		'Equivalent Rewritings on Path Views with Binding Patterns': 'Paper.106',
+		'StreamPipes Connect: Semantics-Based Edge Adapters for the Industrial IoT': 'Paper.136',
+		'Entity Extraction from Wikipedia List Pages': 'Paper.39',
+		'Building Linked Spatio-Temporal Data from Vectorized Historical Maps': 'Paper.48',
+		'SchemaTree: Maximum-likelihood Property Recommendation for Wikidata': 'Paper.150',
+		'Entity Summarization with User Feedback': 'Paper.66',
+		'Detecting Synonymous Properties by Shared Data-driven Definitions': 'Paper.138',
+		'Incremental Multi-source Entity Resolution for Knowledge Graph Completion': 'Paper.159',
+		'Hyperbolic Knowledge Graph Embeddings for Knowledge Base Completion': 'Paper.52',
+		'Unsupervised Bootstrapping of Active Learning for Entity Resolution': 'Paper.80',
+		'Embedding-based Recommendations on Scholarly Knowledge Graphs': 'Paper.89',
+		'SASOBUS: Semi-automatic Sentiment Domain Ontology Building Using Synsets': 'Paper.28',
+		'Partial Domain Adaptation for Relation Extraction Based on Adversarial Learning': 'Paper.77',
+		'Entity Linking and Lexico-Semantic Patterns for Ontology Learning': 'Paper.179',
+		'Hybrid Reasoning Over Large Knowledge Bases Using On-The-Fly Knowledge Extraction': 'Paper.107',
+		'A Simple Method for Inducing Class Taxonomies in Knowledge Graphs': 'Paper.193',
+		'Handling Impossible Derivations during Stream Reasoning': 'Paper.247',
+		'Semantic Data Integration for the SMT Manufacturing Process using SANSA Stack': 'Paper.276',
+		'Enabling Digital Business Transformation through an enterprise Knowledge Graph': 'Paper.277',
+		'Knowledge Graph-based Legal Search over German Court Cases': 'Paper.275',
+		'Enabling FAIR Clinical Data Standards with Linked Data': 'Paper.337',
+		'The Knowledge Graph Track at OAEI – Gold Standards, Baselines, and the Golden Hammer Bias': 'Paper.62',
+		'Modular Graphical Ontology Engineering Evaluated': 'Paper.111',
+		'Investigating Software Usage in the Social Sciences: A Knowledge Graph Approach': 'Paper.116',
+		'QAnswer KG: Creating On-Demand Question Answering Systems on Top of RDF Data': 'Paper.237',
+		'Keyword Search over RDF using Document-centric Information Retrieval Systems': 'Paper.186',
+		'VQuAnDa: Verbalization QUestion ANswering DAtaset': 'Paper.69',
+		'ESBM: An Entity Summarization BenchMark': 'Paper.72',
+		'SemTab 2019: Resources to Benchmark Tabular Data to Knowledge Graph Matching Systems': 'Paper.88',
+		'GEval: a Modular and Extensible Evaluation Framework for Graph Embedding Techniques': 'Paper.191',
+		'YAGO 4: A Reason-able Knowledge Base': 'Paper.110',
+		'A Knowledge Graph for Industry 4.0': 'Paper.169',
+		'MetaLink: A Travel Guide to the LOD Cloud': 'Paper.230',
+		'Applying Knowledge Graphs as Integrated Semantic Information Model for the Computerized Engineering of Building Automation Systems': 'Paper.102',
+		'Astrea: automatic generation of SHACL shapes from ontologies': 'Paper.180',
+		'SAShA: Semantic-Aware Shilling Attacks on Recommender Systems exploiting Knowledge Graphs': 'Paper.251',
+		'Supporting complex decision making by semantic technologies': 'Paper.11',
+		'On Modeling The Physical World as a Collection of Things: the W3C Thing Description Ontology': 'Paper.43',
+		'Piveau: A Large-scale Open Data Management Platform based on Semantic Web Technologies': 'Paper.60',
+		'Fast and Exact Rule Mining with AMIE 3': 'Paper.120',
+		'Fostering Scientific Meta-Analyses with Knowledge Graphs : a Case-Study': 'Paper.53',
+		'Estimating Characteristic Sets for RDF Dataset Profiles based on Sampling': 'Paper.196',
 	}).reduce((h_out, [s_match, s_paper]) => ({
 		...h_out,
 		[s_match]: `${H_PREFIXES['eswc2020-proceedings']}${s_paper}`,
@@ -92,17 +128,15 @@ let h_papers = {
 		},
 	});
 
-	const session = (s_label, x_start, x_end, g_info) => ({
+	const session = (s_label, x_start, x_end, g_info = {}) => ({
 		[`eswc2020-${s_day}:${namify(s_label)}`]: {
 			'rdfs:label': `@en"${s_label}`,
 			...event('session'),
 			...time(x_start, x_end),
-			'conference:hasLocation': g_info.location,
+			...g_info.location ? {'conference:hasLocation': g_info.location} : {},
 			...(g_info.talks
 				? {
-					'eswc2020:sessionContent': [g_info.talks.map((s_talk) => {
-						let [s_title, s_authors] = s_talk.split(/\s*\n+\s*/);
-
+					'eswc2020:sessionContent': [g_info.talks.map((s_title) => {
 						let sc1_talk = `eswc2020-talks:${org_suffix(s_title)}`;
 
 						let hc2_talk = {
@@ -112,13 +146,12 @@ let h_papers = {
 							// 'eswc2020:paperAuthors': [...people.within(s_authors)],
 						};
 
-						let s_match = s_title.toLowerCase().trim().replace(/([^A-Za-z0-9])+/g, '_');
-						if(!(s_match in h_papers)) {
+						if(!(s_title in h_papers)) {
 							debugger;
 							console.error(`could not find matching paper for talk: "${s_title}"`);
 						}
 						else {
-							hc2_talk['eswc2020:coversPaper'] = '>'+h_papers[s_match];
+							hc2_talk['eswc2020:coversPaper'] = '>'+h_papers[s_title];
 						}
 
 						ds_out.write({
@@ -133,22 +166,13 @@ let h_papers = {
 				}
 				: {}),
 		},
-
-		...(g_info.talks
-			? {
-				...g_info.talks.reduce((h_out, s_talk) => ({
-					...h_out,
-					...people.c3(s_talk.split(/\s*\n+\s*/)[1]),
-				}), {}),
-			}
-			: {}),
 	});
 
 	const lunch = () => ({
 		[`eswc2020-${s_day}:Lunch`]: {
 			'rdfs:label': `@en"Lunch`,
 			...event('meal'),
-			...time(12.5, 14),
+			...time(13, 14),
 		},
 	});
 
@@ -166,12 +190,12 @@ let h_papers = {
 
 	switch(s_day.toLowerCase()) {
 		case 'tuesday': {
-			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-peter-haase/';
+			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-michael-schmidt/';
 
 			ds_out.write({
 				type: 'c3',
 				value: {
-					...people.c3('Peter Haase', {
+					...people.c3('Michael Schmidt', {
 						'conference:holdsRole': sc1_keynote_speaker,
 					}),
 
@@ -181,104 +205,46 @@ let h_papers = {
 						'conference:withRole': 'role:presenter',
 					},
 
-					...talk('Opening Ceremony', 9, 9.5),
+					...talk('Opening Ceremony', 9, 10),
 
 					// keynote
 					[sc1_keynote]: {
-						'rdfs:label': '@en"Keynote: Knowledge Graph Kaleidoscope',
-						'rdfs:description': '@en"In this talk I will provide a perspective on the history, current state and trends of Knowledge Graphs.  This perspective will range from personal experience in academic research in the Semantic Web community  to applications and uptake of knowledge graphs in industry. The talk will be presented as a knowledge graph itself –  with real-life data and examples to be interactively explored and to see what is possible with knowledge graph technology today.',
+						'rdfs:label': '@en"Graph first, semantics follows',
+						'rdfs:description': '@en"Organizations that want to build new applications using the relationships in their data are confronted with a choice between RDF and property graph models. Today, this choice may have long-ranging ramifications (e.g., when applications must interoperate with other systems), where instead it would be desirable to have users benefit from the best of each world. Motivated by real use cases in the context of Amazon Neptune, a fully managed graph database service that supports both SPARQL queries for RDF as well as Apache TinkerPop Gremlin queries for property graphs, we will highlight aspects that cause organizations to prefer property graphs over RDF (or vice versa) when building their graph applications. Advocating a “graph first, semantics follows” paradigm, we encourage the community to work towards a unification of existing graph data modeling and management approaches. Alongside, this includes exploring improvements of the Semantic Web technology stack for graph use cases (e.g., advanced path queries, graph analytics, and machine learning) and a stronger focus on its usage in the enterprise context. With the ongoing proliferation of graph databases in the industry, a shift in focus towards interdisciplinary, enterprise grade graph data management research could open up a unique chance for the community to make Semantic Web technologies mainstream, starting out from within the enterprise rather than the Web.',
 						...event('talk'),
-						...time(9.5, 10.5),
-						'eswc2020:presenter': 'eswc2020-persons:Peter_Haase',
+						...time(17, 18),
+						'eswc2020:presenter': 'eswc2020-persons:Michael_Schmidt',
 					},
 
-					...coffee('morning', 10.5, 11),
+					...session('Workshops / Tutorials', 10, 11, {}),
+					...session('PhD Symposium', 10, 11, {}),
 
-					...session('Best of Resources', 11, 12.5, {
-						location: SC1_EMERALD_1,
-						talks: [
-							`AYNEC: All You Need for Evaluating Completion Techniques in Knowledge Graphs
-								Daniel Ayala, Agustin Borrego, Inma Hernandez, Carlos R. Rivero and David Ruiz`,
-							`EVENTSKG: A 5-Star Dataset of Top-ranked Events in Eight Computer Science Communities
-								Said Fathalla, Christoph Lange and Sören Auer`,
-							`A Software Framework and Datasets for the Analysis of Graph Measures on RDF Graphs
-								Matthäus Zloch, Maribel Acosta, Daniel Hienert, Stefan Dietze and Stefan Conrad`,
-						],
-					}),
+					...coffee('morning', 11, 11.5),
+
+					...session('Workshops / Tutorials', 11.5, 13, {}),
+					...session('PhD Symposium', 11.5, 13, {}),
 
 					...lunch(),
 
-					...session('Querying and Learning on SW', 14, 15.5, {
-						location: SC1_EMERALD_1,
-						talks: [
-							`Boosting DL Concept Learners
-								Nicola Fanizzi | Giuseppe Rizzo | Claudia d’Amato`,
-							`Generating Semantic Aspects for Queries
-								Dhruv Gupta | Klaus Berberich | Jannik Strötgen | Demetrios Zeinalipour-Yazti`,
-							`Reformulation-based query answering for RDF graphs with RDFS ontologies
-								Maxime Buron | François Goasdoué | Ioana Manolescu | Marie-Laure Mugnier`,
-						],
-					}),
-
-					...session('Linked Prediction: Methods and Resources', 14, 15.5, {
-						location: SC1_EMERALD_2,
-						talks: [
-							`Link Prediction in Knowledge Graphs with Concepts of Nearest Neighbours
-								Sebastien Ferre`,
-							`Link Prediction Using Multi Part Embeddings
-								Sameh Mohamed | Vit Novacek`,
-							`MMKG: Multi-Modal Knowledge Graphs
-								Ye Liu | Hui Li | Alberto Garcia Duran | Mathias Niepert | Daniel Oñoro-Rubio | David S. Rosenblum`,
-						],
-					}),
-
-					...session('Neural Networks: Semantic Web Applications', 14, 15.5, {
-						location: SC1_ADRIA,
-						talks: [
-							`Incorporating Joint Embeddings into Goal-Oriented Dialogues with Multi-Task Learning
-								Firas Kassawat | Debanjan Chaudhuri | Jens Lehmann`,
-							`Knowledge Based Short Text Categorization Using Entity and Category Embeddings
-								Rima Türker | Lei Zhang | Maria Koutraki | Harald Sack`,
-							`A Hybrid Approach for Aspect-Based Sentiment Analysis Using a Lexicalized Domain Ontology and Attentional Neural Models
-								Olaf Wallaart | Flavius Frasincar`,
-						],
-					}),
+					...session('Workshops / Tutorials', 14, 15.5, {}),
+					...session('PhD Symposium', 14, 15.5, {}),
 
 					...coffee('afternoon', 15.5, 16),
 
-					...session('Minute Madness', 16, 17, {
-						location: SC1_EMERALD_1,
-					}),
-
-					...session('Evaluations and Lessons Learned', 16, 17.5, {
-						location: SC1_EMERALD_2,
-						talks: [
-							`BeSEPPI: Semantic-Based Benchmarking of Property Path Implementations
-								Adrian Skubella | Daniel Janke | Steffen Staab`,
-							`QED: Out-of-the-box Datasets for SPARQL Query Evaluation
-								Veronika Thost | Julian Dolby`,
-							`Challenges of Constructing a Railway Knowledge Graph
-								Stefan Bischof | Gottfried Schenner`,
-						],
-					}),
-
-					[`eswc2020-${s_day}:Welcome_Reception`]: {
-						a: 'conference:SocialEvent',
-						'rdfs:label': `@en"Welcome reception with poster & demo session`,
-						...time(19, 22),
-					},
+					...session('Workshops / Tutorials', 16, 17, {}),
+					...session('PhD Symposium', 16, 17, {}),
 				},
 			});
 			break;
 		}
 
 		case 'wednesday': {
-			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-diana-maynard/';
+			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-john-f-sowa/';
 
 			ds_out.write({
 				type: 'c3',
 				value: {
-					...people.c3('Diana Maynard', {
+					...people.c3('John F. Sowa', {
 						'conference:holdsRole': sc1_keynote_speaker,
 					}),
 
@@ -288,106 +254,46 @@ let h_papers = {
 						'conference:withRole': 'role:presenter',
 					},
 
+					...talk('Minute Madness', 9, 10),
+
 					// keynote
 					[sc1_keynote]: {
-						'rdfs:label': '@en"Adding value to NLP: a little semantics goes a long way',
-						'rdfs:description': '@en"Natural language processing technology is now ubiquitous, even if there are still many challenges to be faced in its development. From sentiment analysis to machine translation to chatbots; from medical systems to online shopping to fake news; even if not visibly apparent, NLP tools are now lurking hidden in the depths of an enormous number and range of real-world systems and applications. Techniques have advanced in many directions in the last 20 years thanks primarily to developments in machine learning and deep learning technologies, and to the concomitant creation of and attention to language resources. In this talk, I shall examine the role of semantics in NLP applications. It is perhaps surprising that despite recent advances in Semantic Web technology and NLP, researchers and practitioners in domains ranging from journalism to rocket science have yet to grasp their potential, and are still manually grappling feral spreadsheets and databases. I shall discuss how NLP infused with even small amounts of semantics can be a drastic game-changer in fields as diverse as crisis communication, politics, journalism, medicine, literature, and history, using examples from some of our recent projects and applications.',
+						'rdfs:label': '@en"Language, Ontology, and the Semantic Web',
+						'rdfs:description': '@en"In 2000, Tim Berners-Lee proposed a vision for the Semantic Web that was more ambitious than the results delivered in 2005. Research in the past 15 years produced advanced technology in artificial intelligence, language processing, and reasoning methods, both formal and informal. But many systems are proprietary, incompatible with one another, and too complex for widespread adoption. Among the most important requirements, trusted systems were never adequately implemented. This talk surveys promising developments and suggests ways of adapting them to the Semantic Web.',
 						...event('talk'),
-						...time(9.5, 10.5),
-						'eswc2020:presenter': 'eswc2020-persons:Diana_Maynard',
+						...time(17, 18),
+						'eswc2020:presenter': 'eswc2020-persons:John_F._Sowa',
 					},
 
-					...coffee('morning', 10.5, 11),
+					...session('Workshops / Tutorials', 10, 11, {}),
+					...session('PhD Symposium', 10, 11, {}),
 
-					...session('Best of In-Use', 11, 12.5, {
-						location: SC1_EMERALD_1,
-						talks: [
-							`Using Shape Expressions (ShEx) to Share RDF Data Models and to Guide Curation with Rigorous Validation
-								Katherine Thornton | Harold Solbrig | Gregory Stupp | Jose Emilio Labra Gayo | Daniel Mietchen | Eric Prud’Hommeaux | Andra Waagmeester`,
-							`TinderBook: Fall in Love with Culture
-								Enrico Palumbo | Alberto Buzio | Andrea Gaiardo | Giuseppe Rizzo | Raphaël Troncy | Elena Baralis`,
-							`Legislative document content extraction based on Semantic Web technologies – A use case about processing the History of the Law
-								Francisco Cifuentes-Silva | Jose Emilio Labra Gayo`,
-						],
-					}),
+					...coffee('morning', 11, 11.5),
+
+					...session('Workshops / Tutorials', 11.5, 13, {}),
+					...session('PhD Symposium', 11.5, 13, {}),
 
 					...lunch(),
 
-					...session('Enhancing Semantic Resources', 14, 15.5, {
-						location: SC1_EMERALD_1,
-						talks: [
-							`Explore and Exploit – Dictionary Expansion with Human-in-the-Loop
-								Anna Lisa Gentile | Daniel Gruhl | Petar Ristoski | Steve Welch`,
-							`Aligning Metadata with Ontology Terms Using Clustering and Embeddings
-								Rafael S Gonçalves | Maulik R Kamdar | Mark A Musen`,
-							`Retrieving Textual Evidence for Knowledge Graph Facts
-								Gonenc Ercan | Shady Elbassuoni | Katja Hose`,
-						],
-					}),
-
-					...session('Ontology Design, Validation and Licensing', 14, 15.5, {
-						location: SC1_EMERALD_2,
-						talks: [
-							`CORAL: A corpus of ontological requirements annotated with Lexico-Syntactic Patterns
-								Alba Fernández-Izquierdo | María Poveda-Villalón | Raúl García-Castro`,
-							`SHACL Constraint Validation over Ontology-enhanced KGs via Rewriting
-								Ognjen Savkovic | Evgeny Kharlamov | Steffen Lamparter`,
-							`Modelling the Compatibility of Licenses
-								Benjamin Moreau | Patricia Serrano Alvarado | Matthieu Perrin | Emmanuel Desmontils`,
-						],
-					}),
-
-					...session('EU Project Networking', 14, 15.5, {
-						location: SC1_ADRIA,
-					}),
+					...session('Workshops / Tutorials', 14, 15.5, {}),
+					...session('PhD Symposium', 14, 15.5, {}),
 
 					...coffee('afternoon', 15.5, 16),
 
-					...session('SE and Applications', 16, 17.5, {
-						location: SC1_EMERALD_1,
-						talks: [
-							`The Location Index: A Semantic Web Spatial Data Infrastructure
-								Nicholas John Car | Paul Box | Ashley Sommer`,
-							`BiographySampo – Publishing and Enriching Biographies on the Semantic Web for Digital Humanties Research
-								Eero Hyvönen | Petri Leskinen | Minna Tamper | Heikki Rantala | Esko Ikkala | Jouni Tuominen | Kirsi Keravuori`,
-							`ToCo: An ontology for representing hybrid telecommunication networks
-								Qianru Zhou | Alasdair Gray | Steve Mclaughlin`,
-						],
-					}),
-
-					...session('Research and Scholarly Data', 16, 17.5, {
-						location: SC1_EMERALD_2,
-						talks: [
-							`Disclosing Citation Meanings for Augmented Research Retrieval and Exploration
-								Roger Ferrod | Claudio Schifanella | Luigi Di Caro | Mario Cataldi`,
-							`RVO – The Research Variable Ontology
-								Madhushi Bandara | Fethi A. Rabhi | Ali Behnaz`,
-							`Predicting Entity Mentions in Scientific Literature
-								Yalun Zheng | Jon Ezeiza | Mehdi Farzanehpour | Jacopo Urbani`,
-						],
-					}),
-
-					...session('EU Project Networking', 16, 17.5, {
-						location: SC1_ADRIA,
-					}),
-
-					[`eswc2020-${s_day}:Gala_Dinner`]: {
-						a: ['conference:SocialEvent', 'conference:Meal'],
-						'rdfs:label': `@en"Gala_Dinner`,
-						...time(19, 22),
-					},
+					...session('Workshops / Tutorials', 16, 17, {}),
+					...session('PhD Symposium', 16, 17, {}),
 				},
 			});
 			break;
 		}
 
 		case 'thursday': {
-			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-daniele-quercia/';
+			let sc1_keynote = '>https://2020.eswc-conferences.org/keynote-uli-sattler/';
 
 			ds_out.write({
 				type: 'c3',
 				value: {
-					...people.c3('Daniele Quercia', {
+					...people.c3('Uli Slattler', {
 						'conference:holdsRole': sc1_keynote_speaker,
 					}),
 
@@ -399,84 +305,149 @@ let h_papers = {
 
 					// keynote
 					[sc1_keynote]: {
-						// 'rdfs:label': '@en"Adding value to NLP: a little semantics goes a long way',
-						// 'rdfs:description': '@en"Natural language processing technology is now ubiquitous, even if there are still many challenges to be faced in its development. From sentiment analysis to machine translation to chatbots; from medical systems to online shopping to fake news; even if not visibly apparent, NLP tools are now lurking hidden in the depths of an enormous number and range of real-world systems and applications. Techniques have advanced in many directions in the last 20 years thanks primarily to developments in machine learning and deep learning technologies, and to the concomitant creation of and attention to language resources. In this talk, I shall examine the role of semantics in NLP applications. It is perhaps surprising that despite recent advances in Semantic Web technology and NLP, researchers and practitioners in domains ranging from journalism to rocket science have yet to grasp their potential, and are still manually grappling feral spreadsheets and databases. I shall discuss how NLP infused with even small amounts of semantics can be a drastic game-changer in fields as diverse as crisis communication, politics, journalism, medicine, literature, and history, using examples from some of our recent projects and applications.',
+						'rdfs:label': '@en"Modularity in OWL',
+						'rdfs:description': '@en"The semantic web ontology language OWL is widely used in a range of applications, and supported by a broad range of tools, including editors, IDEs, APIs, and reasoners. Engineering ontologies (e.g., building, re-using, maintaining) remains, however, a complex task – and modularity is an obvious mechanism to make this task more manageable. In this talk, I will try to give an overview of work in this area. Firstly, we consider the task of extracting, from one ontology, a small/suitable fragment that captures a given topic (usually described in terms of its signature). The question of suitability versus size here is interesting, and has given rise to different notions of modules and their properties and algorithms for their extraction. Secondly, it would be extremely useful if we could “modularize” a large ontology into suitable coherent fragments (OWL has an “imports” construct that supports some kind of modular working with an ontology). Thirdly, if we have such a nice, modular ontology, how can a group of domain experts work independently on these without undesired side effects. Fourth and finally, we will briefly talk about whether/which form of modularity can be used and how to optimize reasoning.',
 						...event('talk'),
-						...time(9.5, 10.5),
-						'eswc2020:presenter': 'eswc2020-persons:Daniele_Quercia',
+						...time(9, 10),
+						'eswc2020:presenter': 'eswc2020-persons:Uli_Slattler',
 					},
 
-					...coffee('morning', 10.5, 11),
-
-					...session('Best of Research', 11, 12.5, {
-						location: SC1_EMERALD_1,
+					...session('Session 1: Query Processing', 10, 10.333, {
 						talks: [
-							`Learning URI Selection Criteria to Improve the Crawling of Linked Open Data
-								Hai Huang | Fabien Gandon`,
-							`Latent Relational Model for Relation Extraction
-								Gaetano Rossiello | Alfio Gliozzo | Nicolas Fauceglia | Giovanni Semeraro`,
-							`Mini-ME Swift: the first OWL reasoner for iOS
-								Michele Ruta | Floriano Scioscia | Filippo Gramegna | Ivano Bilenchi | Eugenio Di Sciascio`,
+							`Processing SPARQL Aggregates Queries with Web Preemption`,
+							`Equivalent Rewritings on Path Views with Binding Patterns`,
+							`StreamPipes Connect: Semantics-Based Edge Adapters for the Industrial IoT`,
+						],
+					}),
+
+					...session('Session 2: Knowledge Extraction and Recommendation 1', 10, 10.333, {
+						talks: [
+							`Entity Extraction from Wikipedia List Pages`,
+							`Building Linked Spatio-Temporal Data from Vectorized Historical Maps`,
+							`SchemaTree: Maximum-likelihood Property Recommendation for Wikidata`,
+						],
+					}),
+
+					...session('Session 3: Knowledge Extraction and Recommendation 2', 10.333, 10.666, {
+						talks: [
+							`Entity Summarization with User Feedback`,
+							`Detecting Synonymous Properties by Shared Data-driven Definitions`,
+							`Incremental Multi-source Entity Resolution for Knowledge Graph Completion`,
+						],
+					}),
+
+					...session('Session 4: Machine Learning', 10.333, 10.666, {
+						talks: [
+							`Hyperbolic Knowledge Graph Embeddings for Knowledge Base Completion`,
+							`Unsupervised Bootstrapping of Active Learning for Entity Resolution`,
+							`Embedding-based Recommendations on Scholarly Knowledge Graphs`,
+						],
+					}),
+
+					...session('Session 5: Natural Language Processing', 10.666, 11, {
+						talks: [
+							`SASOBUS: Semi-automatic Sentiment Domain Ontology Building Using Synsets`,
+							`Partial Domain Adaptation for Relation Extraction Based on Adversarial Learning`,
+							`Entity Linking and Lexico-Semantic Patterns for Ontology Learning`,
+						],
+					}),
+
+					...session('Session 6: Reasoning', 10.666, 11, {
+						talks: [
+							`Hybrid Reasoning Over Large Knowledge Bases Using On-The-Fly Knowledge Extraction`,
+							`A Simple Method for Inducing Class Taxonomies in Knowledge Graphs`,
+							`Handling Impossible Derivations during Stream Reasoning`,
+						],
+					}),
+
+					...session('Industry track papers', 10, 11, {
+						talks: [
+							`Semantic Data Integration for the SMT Manufacturing Process using SANSA Stack`,
+							`Enabling Digital Business Transformation through an enterprise Knowledge Graph`,
+							`Knowledge Graph-based Legal Search over German Court Cases`,
+							`Enabling FAIR Clinical Data Standards with Linked Data`,
+						],
+					}),
+
+					...coffee('morning', 11, 11.5),
+
+					...session('Session 7: Ontology Engineering and Alignment', 11.5, 11.833, {
+						talks: [
+							`The Knowledge Graph Track at OAEI – Gold Standards, Baselines, and the Golden Hammer Bias`,
+							`Modular Graphical Ontology Engineering Evaluated`,
+							`Investigating Software Usage in the Social Sciences: A Knowledge Graph Approach`,
+						],
+					}),
+
+					...session('Session 8: Search and Question Answering', 11.5, 11.833, {
+						talks: [
+							`QAnswer KG: Creating On-Demand Question Answering Systems on Top of RDF Data`,
+							`Keyword Search over RDF using Document-centric Information Retrieval Systems`,
+							`VQuAnDa: Verbalization QUestion ANswering DAtaset`,
+						],
+					}),
+
+					...session('Session 9: Benchmarking', 11.833, 12.166, {
+						talks: [
+							`ESBM: An Entity Summarization BenchMark`,
+							`SemTab 2019: Resources to Benchmark Tabular Data to Knowledge Graph Matching Systems`,
+							`GEval: a Modular and Extensible Evaluation Framework for Graph Embedding Techniques`,
+						],
+					}),
+
+					...session('Session 10: Knowledge Graphs and Linked Data', 11.833, 12.166, {
+						talks: [
+							`YAGO 4: A Reason-able Knowledge Base`,
+							`A Knowledge Graph for Industry 4.0`,
+							`MetaLink: A Travel Guide to the LOD Cloud`,
+						],
+					}),
+
+					...session('Session 11: Knowledge Graphs and Constraints', 12.166, 12.5, {
+						talks: [
+							`Applying Knowledge Graphs as Integrated Semantic Information Model for the Computerized Engineering of Building Automation Systems`,
+							`Astrea: automatic generation of SHACL shapes from ontologies`,
+							`SAShA: Semantic-Aware Shilling Attacks on Recommender Systems exploiting Knowledge Graphs`,
+						],
+					}),
+
+					...session('Session 12: In use', 12.166, 12.5, {
+						talks: [
+							`Supporting complex decision making by semantic technologies`,
+							`On Modeling The Physical World as a Collection of Things: the W3C Thing Description Ontology`,
+							`Piveau: A Large-scale Open Data Management Platform based on Semantic Web Technologies`,
+						],
+					}),
+
+					...session('Session 13: Mining and analysis', 12.5, 12.833, {
+						talks: [
+							`Fast and Exact Rule Mining with AMIE 3`,
+							`Fostering Scientific Meta-Analyses with Knowledge Graphs : a Case-Study`,
+							`Estimating Characteristic Sets for RDF Dataset Profiles based on Sampling`,
 						],
 					}),
 
 					...lunch(),
 
-					// ...session('Ontologies: Reasoning and Learning', 14, 15.5, {
-					// 	location: SC1_EMERALD_1,
-					// 	talks: [
-					// 		`Deontic reasoning for legal ontologies
-					// 			Cheikh Kacfah Emani | Yannis Haralambous`,
-					// 		`GConsent: A Consent Ontology based on the GDPR
-					// 			Harshvardhan J. Pandit | Christophe Debruyne | Declan O’sullivan | Dave Lewis`,
-					// 		`A Hybrid Graph Model for Distant Supervision Relation Extraction
-					// 			Shangfu Duan | Huan Gao | Bing Liu | Guilin Qi`,
-					// 	],
-					// }),
+					...session('Posters and demos with PhD posters', 14, 16),
 
-					...session('Ontologies: Reasoning and Learning', 14, 15.5, {
-						location: SC1_EMERALD_1,
-						talks: [
-							`Deontic reasoning for legal ontologies
-								Cheikh Kacfah Emani | Yannis Haralambous`,
-							`A Decentralized Architecture for Sharing and Querying Semantic Data
-								Christian Aebeloe | Gabriela Montoya | Katja Hose`,
-							`A Recommender System for Complex Real-World Applications with Nonlinear Dependencies and Knowledge Graph Context
-								Marcel Hildebrandt | Swathi Shyam Sunder | Serghei Mogoreanu | Mitchell Joblin | Ingo Thon | Akhil Mehta | Volker Tresp`,
-						],
-					}),
-
-					...session('Querying and Searching', 14, 15.5, {
-						location: SC1_EMERALD_2,
-						talks: [
-							`A Decentralized Architecture for Sharing and Querying Semantic Data
-								Christian Aebeloe | Gabriela Montoya | Katja Hose`,
-							`An Ontology-Based Interactive Approach for Understanding User Queries
-								Giorgos Stoilos | Szymon Wartak | Damir Juric | Jonathan Moore | Mohammad Khodadadi`,
-							`Using Knowledge Graphs to Search an Enterprise Data Lake
-								Stefan Schmid | Cory Henson | Tuan Tran`,
-						],
-					}),
-
-					...session('KG Applications', 14, 15.5, {
-						location: SC1_ADRIA,
-						talks: [
-							`A Recommender System for Complex Real-World Applications with Nonlinear Dependencies and Knowledge Graph Context
-								Marcel Hildebrandt | Swathi Shyam Sunder | Serghei Mogoreanu | Mitchell Joblin | Ingo Thon | Akhil Mehta | Volker Tresp`,
-							`Injecting Domain Knowledge in Electronic Medical Records to Improve Hospitalization Prediction
-								Raphaël Gazzotti | Catherine Faron Zucker | Fabien Gandon | Virginie Lacroix-Hugues | David Darmon`,
-							`NOVA: a Knowledge Base for the Node-RED IoT Ecosystem
-								Arne Bröring | Victor Charpenay | Darko Anicic | Sebastien Puech`,
-						],
-					}),
+					...session('Panel Discussion', 16, 17),
 
 					[`eswc2020-${s_day}:Closing_Ceremony`]: {
 						a: ['conference:SocialEvent'],
 						'rdfs:label': `@en"Closing Ceremony`,
-						...time(15.5, 14),
+						...time(17, 18),
 					},
+				},
+			});
+			break;
+		}
 
-					...coffee('afternoon', 14, 15),
+		case 'friday': {
+			ds_out.write({
+				type: 'c3',
+				value: {
+					...session('Town hall meeting', 10, 11, {}),
 				},
 			});
 			break;

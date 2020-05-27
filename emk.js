@@ -12,7 +12,7 @@ const PD_SRC_CORE = path.join(PD_SRC, 'core');
 module.exports = {
 	defs: {
 		workshop_tutorial: fs.readdirSync(PD_SRC_WORKSHOPS_TUTORIALS),
-		day: ['tuesday', 'wednesday', 'thursday'],
+		day: ['tuesday', 'wednesday', 'thursday', 'friday'],
 	},
 
 	tasks: {
@@ -31,7 +31,7 @@ module.exports = {
 				deps: [
 					'build/core/*',
 					'build/workshops_tutorials/*',
-					//'build/program/*', // TODO
+					'build/program/*',
 					'build/papers/*',
 				],
 				run: /* syntax: bash */ `
@@ -58,19 +58,19 @@ module.exports = {
 				}),
 			},
 
-			program: { // TODO
-//				':day.ttl': ({day:s_day}) => ({
-//					deps: [
-//						path.join(PD_SRC_PROGRAM, 'gen.js'),
-//						'build/papers/proceedings.ttl',
-//					],
-//					run: /* syntax: bash */ `
-//						node $1 '${s_day}' < $2 > $@
-//					`,
-//				}),
+			program: {
+				':day.ttl': ({day:s_day}) => ({
+					deps: [
+						path.join(PD_SRC_PROGRAM, 'gen.js'),
+						'build/papers/proceedings.ttl',
+					],
+					run: /* syntax: bash */ `
+						node $1 '${s_day}' < $2 > $@
+					`,
+				}),
 			},
 
-			papers: { // TODO
+			papers: {
 				'proceedings.ttl': () => ({
 					deps: [
 						'proceedings.js',

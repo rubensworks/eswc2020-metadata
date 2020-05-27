@@ -23,6 +23,7 @@ module.exports = {
 	'eswc2020-tuesday': P_IRI_ESWC2020+'/program/tuesday/',
 	'eswc2020-wednesday': P_IRI_ESWC2020+'/program/wednesday/',
 	'eswc2020-thursday': P_IRI_ESWC2020+'/program/thursday/',
+	'eswc2020-friday': P_IRI_ESWC2020+'/program/friday/',
 	'hotel-knossos': 'https://www.aldemarknossosroyal.gr/events/conferences/',
 	owl: 'http://www.w3.org/2002/07/owl#',
 	fr: 'http://purl.org/spar/fr/',
