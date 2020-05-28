@@ -12,16 +12,16 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "Modular Ontology Engineering with CoModIDE"@en ;
 	conference:description """CoModIDE is a plugin for Protégé that enables graphical drag-and-drop editing of ontologies, with built in support for Ontology Design Patterns (ODPs). CoModIDE allows for simple construction and maintenance of modular ontologies; moreover, by taking an opinionated position on how to render OWL axioms on a graphical canvas, and which axioms to generate from constructs on said canvas, CoModIDE represents an attempt to develop the fine-grained method guidance we believe is missing from ODP usage methodologies.
 
@@ -31,7 +31,7 @@ This tutorial aims to illustrate to participants how to use CoModIDE for both ap
     To illustrate the utility of modular ontology engineering to researchers, such that they can use and spread these methods and tools in projects with industry.
 """@en ;
 	conference:hasSubEvent <#Ex1>, <#Ex2>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	eswc2020:day eswc2020:Day.Tuesday ;
 	.
 
 # -------------------------------------

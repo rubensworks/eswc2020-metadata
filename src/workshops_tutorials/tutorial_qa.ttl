@@ -12,22 +12,22 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "Constructing Question Answering Systems over Knowledge Graphs"@en ;
 	conference:description """Knowledge Graphs are designed to be easily consumed by machines, but they are not easily accessible by end-users. Question Answering (QA) over Knowledge Graphs (KGs) is seen as a technology able to bridge the gap between end-users and Knowledge Graphs. In the last years a lot of research was carried out to solve the problem of QA over KGs, but constructing a QA system over a new KG for non-expert users is still not easy.
 
 The aim of this tutorial is to address this issue. We will show how recently developed technologies, like QAnswer and Qanary, allow constructing, customizing, evaluating, and optimizing QA systems on RDF datasets using a lightweight approach."""@en ;
 	conference:hasSubEvent <#Introduction>, <#Keynote>, <#Understanding>, <#Learning>, <#Handson>, <#Constructing>, <#Handson2>, <#Gathering>, <#Handson3>, <#Presentation>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	eswc2020:day eswc2020:Day.Wednesday ;
 	.
 
 # -------------------------------------
@@ -92,66 +92,60 @@ The aim of this tutorial is to address this issue. We will show how recently dev
 # -------------------------------------
 <#Introduction> a conference:Session ;
 	rdfs:label "Introduction and people gathering"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T09:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T09:15:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Keynote> a conference:Session ;
 	rdfs:label "Keynote and introduction into the field of Question Answering (general principles and variations)"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T09:45:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Understanding> a conference:Session ;
 	rdfs:label "Understanding the tasks of QA over KG"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T09:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T10:15:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Learning> a conference:Session ;
 	rdfs:label "Learning how to model data for Question Answering using the QAnswer approach"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T10:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T11:00:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Handson> a conference:Session ;
 	rdfs:label "Hands-on session I: Apply the QAnswer approach on prepared data sets"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T11:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T11:30:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Constructing> a conference:Session ;
 	rdfs:label "Constructing, customizing and quality measuring of a QA system using the Qanary methodology"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T14:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T14:30:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Handson2> a conference:Session ;
 	rdfs:label "Hands-on session II: Construct, customize, evaluate and optimize a complete Question Answering system"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T14:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T15:00:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Gathering> a conference:Session ;
 	rdfs:label "Gathering and discussion of the participants to defined particular goals for developing an individual Question Answering system"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T15:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T15:15:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Handson3> a conference:Session ;
 	rdfs:label "Hands-on session III: Split into individual groups developing a Question Answering system focussing on different topics tutored by the tutorial organizers"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T15:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T16:45:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#Presentation> a conference:Session ;
 	rdfs:label "Presentation of final results"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T16:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T17:00:00.000+02:00"^^xsd:dateTime ;
 	.

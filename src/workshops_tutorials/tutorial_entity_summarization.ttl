@@ -12,20 +12,20 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label """Entity Summarization in Knowledge Graphs: Algorithms, Evaluation, and Applications"@en ;
 	conference:description "The concise representation format and graph nature of knowledge graphs have resulted in creating many novel Web applications and enhancing existing ones. However, in a knowledge graph, dozens or hundreds of facts describing an entity could exceed the capacity of a typical user interface and overload users with excessive amounts of information. This has motivated fruitful research on entity summarization—automated generation of compact summaries for entities to satisfy users’ information needs efficiently and effectively. Over the recent years, researchers have contributed to this problem by proposing approaches ranging from pure ranking and mining techniques to machine and deep learning techniques. The state of the art has continuously improved and at the same time made it harder for the community and new comers to the problem to keep up with the recent and old contributions in the space. Moreover, even though knowledge graphs are becoming popular among academia and industry, there is no effort to date to educate and discuss on recent trends and basic building blocks of this problem domain. This tutorial specifically aims to fill this gap."""@en ;
-	conference:hasSubEvent <#Opening>, <#Introduction>, <#Generic>, <#Specific>, <#QA>, <#Frameworks>, <#Evaluation>, <#Entity>, <#Conclusion>, <#QA2>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	conference:hasSubEvent <#Video>, <#QA>;
+	eswc2020:day eswc2020:Day.Wednesday ;
 	.
 
 # -------------------------------------
@@ -96,63 +96,15 @@
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#Opening> a conference:Session ;
-	rdfs:label "Opening"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#Introduction> a conference:Session ;
-	rdfs:label "Introduction to knowledge graphs and entity summarization"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#Generic> a conference:Session ;
-	rdfs:label "Generic technical features for entity summarization"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#Specific> a conference:Session ;
-	rdfs:label "Specific technical features for entity summarization"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+<#Video> a conference:Session ;
+	rdfs:label "Video presentation"@en ;
+	conference:startDate "2020-06-03T14:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T16:00:00.000+02:00"^^xsd:dateTime ;
 	.
 
 <#QA> a conference:Session ;
 	rdfs:label "Q&A"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#Frameworks> a conference:Session ;
-	rdfs:label "Frameworks for feature combination and representative algorithms"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#Evaluation> a conference:Session ;
-	rdfs:label "Evaluation methods and results"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#Entity> a conference:Session ;
-	rdfs:label "Entity summarization with user feedback"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#Conclusion> a conference:Session ;
-	rdfs:label "Conclusion and future directions"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
-	.
-
-<#QA2> a conference:Session ;
-	rdfs:label "Q&A"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:startDate "2020-06-03T16:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T16:45:00.000+02:00"^^xsd:dateTime ;
 	.
 
