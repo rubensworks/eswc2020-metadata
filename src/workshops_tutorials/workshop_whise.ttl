@@ -12,20 +12,20 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "Workshop on Humanities in the Semantic web (WHiSe III)"@en ;
 	conference:description """The WHiSe workshop series aims at strengthening communication between scholars in the Digital Humanities and Semantic Web communities. It debuted at ESWC 2016 and remained co-located with the largest international conferences in Semantic Web research, resulting in 23 published papers across two proceedings volumes. Many of these papers have presented mature technologies, adoption stories and contributions to a harmonic ecosystem for Semantic data-intensive technologies in the Humanities. WHiSe III continues the tradition and also explores the potential for novel SW questions emerging from the needs of humanists and a reflection on their processes."""@en ;
-	conference:hasSubEvent <#TODO>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	conference:hasSubEvent <#Welcome>, <#Sesion1>, <#Keynote>, <#Session2>, <#Session3>;
+	eswc2020:day eswc2020:Day.Tuesday ;
 	.
 
 # -------------------------------------
@@ -96,21 +96,32 @@
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
+<#Welcome> a conference:Session ;
+	rdfs:label "Welcome and introduction"@en ;
 	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T09:20:00.000+02:00"^^xsd:dateTime ;
 	.
 
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
-	eswc2020:sessionContent (
-		[
-			a conference:Talk ;
-			rdfs:label "TODO"@en ;
-			eswc2020:paperAuthors "TODO" ;
-		]
-	) ;
+<#Session1> a conference:Session ;
+	rdfs:label "Session 1: Linked Data and Libraries"@en ;
+	conference:startDate "2020-06-02T09:20:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Keynote> a conference:Session ;
+	rdfs:label "Keynote: The Semantic Web in Digital Humanities Ecosystems"@en ;
+	conference:startDate "2020-06-02T11:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T13:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Session2> a conference:Session ;
+	rdfs:label "Session 2 − Social History"@en ;
+	conference:startDate "2020-06-02T14:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T15:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Session3> a conference:Session ;
+	rdfs:label "Session 3: Language"@en ;
+	conference:startDate "2020-06-02T16:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T17:00:00.000+02:00"^^xsd:dateTime ;
 	.

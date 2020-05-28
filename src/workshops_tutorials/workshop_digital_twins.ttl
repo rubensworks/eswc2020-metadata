@@ -12,24 +12,24 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "International Workshop on Semantic Digital Twins"@en ;
 	conference:description """The concept of digital twin, as a virtual replica of a physical entity, has gained traction recently in a range of domains such as industry, construction, energy, health or transport. Digital Twins can be used to view the status of the twinned physical object, without the need to interrogate the object itself. The digital twin can be queried by other software without the need to query the device itself thus relieving pressure on devices, which typically have very limited computational capabilities. Digital twins can also be used for monitoring and diagnostics to optimize device performance without impacting on the physical device.
 
 Digital twins require unambiguous descriptions of both the entity and its digital counterpart, as well as the ability to integrate data from heterogeneous sources of information (including real-time data) and to interact with the physical world. Given these requirements, semantic technologies will play a significant role in bringing digital twins to reality.
 
 The aims of the SeDIT workshop are twofold. Firstly, to initiate discussion about current trends and future challenges of semantic digital twins. Secondly, to support communication and collaboration with the goal of aligning the various efforts within the community and accelerating innovation in all the associated fields."""@en ;
-	conference:hasSubEvent <#TODO>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	conference:hasSubEvent <#Welcome>, <#Keynote>, <#Paper1>, <#Paper2>, <#Paper3>, <#Paper4>, <#Paper5>, <#WrapUp>;
+	eswc2020:day eswc2020:Day.Wednesday ;
 	.
 
 # -------------------------------------
@@ -116,21 +116,51 @@ The aims of the SeDIT workshop are twofold. Firstly, to initiate discussion abou
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+<#Welcome> a conference:Session ;
+	rdfs:label "Welcome"@en ;
+	conference:startDate "2020-06-03T10:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T10:10:00.000+02:00"^^xsd:dateTime ;
 	.
 
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
-	eswc2020:sessionContent (
-		[
-			a conference:Talk ;
-			rdfs:label "TODO"@en ;
-			eswc2020:paperAuthors "TODO" ;
-		]
-	) ;
+<#Keynote> a conference:Session ;
+	rdfs:label "Keynote: Ljiljana Stojanovic: Cognitive Digital Twins: Challenges and opportunities for semantic technologies "@en ;
+	conference:startDate "2020-06-03T10:10:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T10:40:00.000+02:00"^^xsd:dateTime ;
 	.
+
+<#Paper1> a conference:Session ;
+	rdfs:label "Digital Twins and Semantic Data Fusion for Security in a Healthcare Environment"@en ;
+	conference:startDate "2020-06-03T10:40:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T11:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper2> a conference:Session ;
+	rdfs:label "Towards Integrated Data Control for Digital Twins in Industry 4.0"@en ;
+	conference:startDate "2020-06-03T11:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T11:50:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper3> a conference:Session ;
+	rdfs:label "A Reference Architecture for Smart Building Digital Twin"@en ;
+	conference:startDate "2020-06-03T11:50:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T12:10:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper4> a conference:Session ;
+	rdfs:label "Mechanical Testing Ontology for Digital-Twins: a roadmap based on EMMO"@en ;
+	conference:startDate "2020-06-03T12:10:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T12:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper5> a conference:Session ;
+	rdfs:label "Towards Actionable Cognitive Digital Twins for Manufacturing"@en ;
+	conference:startDate "2020-06-03T12:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T12:50:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#WrapUp> a conference:Session ;
+	rdfs:label "Closing"@en ;
+	conference:startDate "2020-06-03T12:50:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T13:00:00.000+02:00"^^xsd:dateTime ;
+	.
+

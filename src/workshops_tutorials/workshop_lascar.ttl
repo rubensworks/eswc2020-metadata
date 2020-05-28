@@ -12,20 +12,20 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "Workshop on Large Scale RDF Analytics LASCAR II"@en ;
 	conference:description """The second workshop on Large Scale RDF Analytics (LASCAR) invites papers and posters related to the challenges and solutions to deal with the enormous growth of linked data. LASCAR targets the advancements in large scale and distributed processing for the semantic web technologies. We will particularly welcome research efforts exploring the use of generic big data frameworks like Apache Spark, Apache Flink, or specialized libraries like Giraph, Tinkerpop, SparkSQL etc. in Semantic Web technologies. The goal is to demonstrate the use of existing frameworks and libraries to exploit Knowledge Graph processing and to discuss the solutions to the challenges and issues arising therein. Moreover, we will organize a related talk by an expert speaker, and also arrange a panel discussion among experts and scientists working in the area of distributed semantic analytics. LASCAR targets a range of research topics covering large scale processing of Knowledge Graphs, like querying, inference, and analytics, therefore we expect a wider audience interested in attending the workshop."""@en ;
-	conference:hasSubEvent <#TODO>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	conference:hasSubEvent <#Welcome>, <#Keynote>, <#Session1>, <#Session2>, <#WrapUp>;
+	eswc2020:day eswc2020:Day.Wednesday ;
 	.
 
 # -------------------------------------
@@ -110,21 +110,32 @@
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+<#Welcome> a conference:Session ;
+	rdfs:label "Welcome"@en ;
+	conference:startDate "2020-06-03T09:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T09:15:00.000+02:00"^^xsd:dateTime ;
 	.
 
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
-	eswc2020:sessionContent (
-		[
-			a conference:Talk ;
-			rdfs:label "TODO"@en ;
-			eswc2020:paperAuthors "TODO" ;
-		]
-	) ;
+<#Keynote> a conference:Session ;
+	rdfs:label "Keynote"@en ;
+	conference:startDate "2020-06-03T09:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T10:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Session1> a conference:Session ;
+	rdfs:label "Paper session 1"@en ;
+	conference:startDate "2020-06-03T10:05:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T10:25:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Session2> a conference:Session ;
+	rdfs:label "Paper session 2"@en ;
+	conference:startDate "2020-06-03T11:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T11:45:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#WrapUp> a conference:Session ;
+	rdfs:label "Wrap up + Panel discussion"@en ;
+	conference:startDate "2020-06-03T12:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T12:30:00.000+02:00"^^xsd:dateTime ;
 	.

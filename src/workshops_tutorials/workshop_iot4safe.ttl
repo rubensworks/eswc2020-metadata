@@ -12,22 +12,22 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "IoT infrastructures for safety in pervasive environments"@en ;
 	conference:description """Internet of Things (IoT) platforms have received a significant amount of attention due to the simplicity and efficiency they bring in creating business value, linking the IoT endpoints to applications and analytics. They are essentially the linchpin in a holistic IoT solution because they enable data generated at endpoints to be collected and analysed, spawning the growth of big data analytics and applications. The rapid increase in the number of network-enabled devices and sensors deployed in physical environments, enriched with information processing capabilities, has allowed the interconnection of people, processes, data and devices, offering enormous potential across many sectors. The large societal and personal impact of pervasive, mobile and interconnected entities in the web, is already apparent in health, smart factories and cities, security, environmental, agriculture and retail applications. For example, in smart cities, IoT technologies are used from collecting and interrogating city-centre parking metrics, to the use of so-called ‘smart’ street lighting to generate efficiencies. One of the most compelling, however, use case is the technology’s use in a safety context. In this context, the challenge is to use humans and devices interchangeably to achieve operational goals and respond to emergency situations, such as natural disasters, vandalisms or missing people in overcrowded places. At the same time, pervasive technologies and eHealth systems seem to offer a promising solution for accessible and affordable self-management of health problems, both in living and working environments. Wearable devices and ambient sensors can be transformed into meaningful lifestyle and work-style monitoring tools, extracting personalised partners and detecting problematic situations to foster a healthy and safe home and working environments.
 
 This workshop provides the opportunity to discuss specific research and technical topics in applying IoT technologies in pervasive environments, with a special emphasis on safety in high-risk environments, such as in the healthcare domain (home care and occupational health), public events, food supply chain, energy industries, intelligent transportation, and building & infrastructure management. The main objective is to stimulate and foster active exchange and interaction on formal ontologies for the semantic enrichment, representation and linking of sensor data, events and resources, context-aware and real-time discovery, reasoning, interpretation and composition of data sources for building high-level applications."""@en ;
-	conference:hasSubEvent <#TODO>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	conference:hasSubEvent <#Welcome>, <#Keynote>, <#Paper1>, <#Paper2>, <#Paper3>, <#Paper4>, <#Paper5>, <#WrapUp>;
+	eswc2020:day eswc2020:Day.Tuesday ;
 	.
 
 # -------------------------------------
@@ -128,21 +128,50 @@ This workshop provides the opportunity to discuss specific research and technica
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+<#Welcome> a conference:Session ;
+	rdfs:label "Welcome note by the organizers"@en ;
+	conference:startDate "2020-06-02T10:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T10:15:00.000+02:00"^^xsd:dateTime ;
 	.
 
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
+<#Keynote> a conference:Session ;
+	rdfs:label "Invited Keynote Speech Connexions project presentation"@en ;
+	conference:startDate "2020-06-02T10:10:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T10:40:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper1> a conference:Session ;
+	rdfs:label "An IoT approach for optimizing routing and safety"@en ;
+	conference:startDate "2020-06-02T10:40:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper2> a conference:Session ;
+	rdfs:label "Private incident reporting using onion networks"@en ;
+	conference:startDate "2020-06-02T11:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T11:50:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper3> a conference:Session ;
+	rdfs:label "Ontology-based Reasoning for Critical Incidents in Public Events"@en ;
+	conference:startDate "2020-06-02T11:50:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T12:10:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper4> a conference:Session ;
+	rdfs:label "A survey on the available blockchain platforms and protocols for Supply Chain Management"@en ;
+	conference:startDate "2020-06-02T12:10:00.000+02:00"^^xsd:dateTime ;
 	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
-	eswc2020:sessionContent (
-		[
-			a conference:Talk ;
-			rdfs:label "TODO"@en ;
-			eswc2020:paperAuthors "TODO" ;
-		]
-	) ;
+	.
+
+<#Paper5> a conference:Session ;
+	rdfs:label "A Framework for Handling Internet of Things Data with Confidentiality and Blockchain Support"@en ;
+	conference:startDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T12:50:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#WrapUp> a conference:Session ;
+	rdfs:label "Wrap up"@en ;
+	conference:startDate "2020-06-02T12:50:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T13:00:00.000+02:00"^^xsd:dateTime ;
 	.

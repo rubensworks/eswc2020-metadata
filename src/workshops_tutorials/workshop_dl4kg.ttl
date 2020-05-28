@@ -12,22 +12,22 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "Deep Learning for Knowledge Graphs (DL4KG)"@en ;
 	conference:description """Over the past years there has been a rapid growth in the use and the importance of Knowledge Graphs (KGs) along with their application to many important tasks. KGs are large networks of real-world entities described in terms of their semantic types and their relationships to each other. On the other hand, Deep Learning methods have also become an important area of research, achieving some important breakthrough in various research fields, especially Natural Language Processing (NLP) and Image Recognition.
 
 In order to pursue more advanced methodologies, it has become critical that the communities related to Deep Learning, Knowledge Graphs, and NLP join their forces in order to develop more effective algorithms and applications. This workshop, in the wake of other similar efforts at previous Semantic Web conferences such as ESWC2018 as DL4KGs and ISWC2018, ESWC2019, aims to reinforce the relationships between these communities and foster inter-disciplinary research in the areas of KG, Deep Learning, and Natural Language Processing."""@en ;
-	conference:hasSubEvent <#TODO>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	conference:hasSubEvent <#Welcome>, <#Keynote>, <#Paper1>, <#Paper2>, <#Paper3>, <#Paper4>, <#Paper6>, <#LightningTalk1>, <#Paper7>, <#LightningTalk2>, <#WrapUp>;
+	eswc2020:day eswc2020:Day.Tuesday ;
 	.
 
 # -------------------------------------
@@ -137,21 +137,75 @@ In order to pursue more advanced methodologies, it has become critical that the 
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+<#Welcome> a conference:Session ;
+	rdfs:label "Welcome"@en ;
+	conference:startDate "2020-06-02T10:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T10:10:00.000+02:00"^^xsd:dateTime ;
 	.
 
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
-	eswc2020:sessionContent (
-		[
-			a conference:Talk ;
-			rdfs:label "TODO"@en ;
-			eswc2020:paperAuthors "TODO" ;
-		]
-	) ;
+<#Keynote> a conference:Session ;
+	rdfs:label "Invited Talk by Michalis Vazirgiannis"@en ;
+	conference:startDate "2020-06-02T10:10:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
 	.
+
+<#Paper1> a conference:Session ;
+	rdfs:label "Affinity Dependent Negative Sampling for Knowledge Graph Embeddings"@en ;
+	conference:startDate "2020-06-02T11:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T12:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper2> a conference:Session ;
+	rdfs:label "Probing a Semantic Dependency Parser for Translational Relation Embeddings"@en ;
+	conference:startDate "2020-06-02T12:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T12:25:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper3> a conference:Session ;
+	rdfs:label "Towards Exploiting Implicit Human Feedback for Improving RDF2vec Embeddings"@en ;
+	conference:startDate "2020-06-02T12:25:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T12:55:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper4> a conference:Session ;
+	rdfs:label "Semantic Entity Enrichment by leveraging Multi-lingual Descriptions for Link Prediction"@en ;
+	conference:startDate "2020-06-02T14:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T14:25:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper5> a conference:Session ;
+	rdfs:label "DeepLENS: Deep Learning for Entity Summarization"@en ;
+	conference:startDate "2020-06-02T14:25:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T14:50:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper6> a conference:Session ;
+	rdfs:label "Entity Type Prediction in Knowledge Graphs using Embeddings"@en ;
+	conference:startDate "2020-06-02T14:50:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T15:15:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#LightningTalk1> a conference:Session ;
+	rdfs:label "Lightning Talk"@en ;
+	conference:startDate "2020-06-02T15:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T15:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper7> a conference:Session ;
+	rdfs:label "Conditional Constraints for Knowledge Graph Embeddings"@en ;
+	conference:startDate "2020-06-02T16:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T16:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#LightningTalk2> a conference:Session ;
+	rdfs:label "Lightning Talk"@en ;
+	conference:startDate "2020-06-02T16:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T16:45:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#WrapUp> a conference:Session ;
+	rdfs:label "Closing"@en ;
+	conference:startDate "2020-06-02T16:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-02T17:00:00.000+02:00"^^xsd:dateTime ;
+	.
+

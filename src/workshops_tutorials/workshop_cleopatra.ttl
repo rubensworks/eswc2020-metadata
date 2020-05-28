@@ -12,24 +12,24 @@
 # -------------------------------------
 # Location (informative)
 # -------------------------------------
-<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
-	conference:description "TODO conference room" ;
-	.
+#<https://www.aldemarknossosroyal.gr/events/conferences/#TODO> a conference:Site ;
+#	conference:description "TODO conference room" ;
+#	.
 
 # -------------------------------------
 # the Workshop itself
 # -------------------------------------
 <#Workshop> a conference:Workshop ;
 	conference:isSubEventOf eswc2020:Conference ;
-	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
+#	conference:hasLocation <https://www.aldemarknossosroyal.gr/events/conferences/#TODO> ;
 	rdfs:label "Workshop on Cross-lingual Event-centric Open Analytics (CLEOPATRA)"@en ;
 	conference:description """The modern society faces an unprecedented number of events that impact countries, communities and economies around the globe, across language, country and community borders. Recent examples include sudden or unexpected events such as terrorist attacks, political shake-ups such as Brexit as well as longer ongoing and evolving topics such as the migration crisis in Europe that regularly spawn events of global importance affecting local communities. These developments result in a vast amount of event-centric, multilingual information available from heterogeneously sources on the Web, in the Web of Data, within Knowledge Graphs, in social media, inside Web archives and in the news sources. Such event-centric information differs across sources, languages and communities, potentially reflecting community-specific aspects, opinions, sentiments and bias.
 
 The theme of the CLEOPATRA workshop – event-centric multilingual analytics – includes a variety of interdisciplinary challenges related to analysis, interaction with and interpretation of vast amounts of event-centric textual, semantic and visual information in multiple languages originating from different communities. The objective of the workshop is to bring together researchers and practitioners interested in the development of methods for analysing event-centric multilingual information.
 
 The CLEOPATRA workshop will be a highly interactive event, which will include keynotes by experts in the relevant fields, poster and demo session, research presentations and discussion."""@en ;
-	conference:hasSubEvent <#TODO>;
-	eswc2020:day eswc2020:Day.Sunday ;
+	conference:hasSubEvent <#Welcome>, <#Keynote>, <#Paper1>, <#Paper2>, <#Paper3>, <#Paper4>, <#Paper5>, <#Paper6>, <#WrapUp>;
+	eswc2020:day eswc2020:Day.Wednesday ;
 	.
 
 # -------------------------------------
@@ -116,21 +116,57 @@ The CLEOPATRA workshop will be a highly interactive event, which will include ke
 # -------------------------------------
 # Workshop schedule
 # -------------------------------------
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T09:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T09:15:00.000+02:00"^^xsd:dateTime ;
+<#Welcome> a conference:Session ;
+	rdfs:label "Welcome session"@en ;
+	conference:startDate "2020-06-03T14:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T14:10:00.000+02:00"^^xsd:dateTime ;
 	.
 
-<#TODO> a conference:Session ;
-	rdfs:label "TODO"@en ;
-	conference:startDate "2020-06-02T11:00:00.000+02:00"^^xsd:dateTime ;
-	conference:endDate "2020-06-02T12:30:00.000+02:00"^^xsd:dateTime ;
-	eswc2020:sessionContent (
-		[
-			a conference:Talk ;
-			rdfs:label "TODO"@en ;
-			eswc2020:paperAuthors "TODO" ;
-		]
-	) ;
+<#Keynote> a conference:Session ;
+	rdfs:label "Keynote – Katja Markert “State-of-the-Art and Challenges in Timeline Summarization”"@en ;
+	conference:startDate "2020-06-03T14:10:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T15:00:00.000+02:00"^^xsd:dateTime ;
 	.
+
+<#Paper1> a conference:Session ;
+	rdfs:label "EventKG+Click: A Dataset of Language-specific Event-centric User Interaction Traces"@en ;
+	conference:startDate "2020-06-03T15:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T15:15:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper2> a conference:Session ;
+	rdfs:label "A Neural-based model to Predict the Future Natural Gas Market Price through Open-domain Event Extraction"@en ;
+	conference:startDate "2020-06-03T15:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T15:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper3> a conference:Session ;
+	rdfs:label "A Feature Analysis for Multimodal News Retrieval"@en ;
+	conference:startDate "2020-06-03T16:00:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T16:15:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper4> a conference:Session ;
+	rdfs:label "Training Multimodal Systems for Classification with Multiple Objectives"@en ;
+	conference:startDate "2020-06-03T16:15:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T16:30:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper5> a conference:Session ;
+	rdfs:label "Exploration of Approaches to Arabic Named Entity Recognition"@en ;
+	conference:startDate "2020-06-03T16:30:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T16:45:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#Paper6> a conference:Session ;
+	rdfs:label "UNER: Universal Named-Entity Recognition Framework"@en ;
+	conference:startDate "2020-06-03T16:45:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T16:55:00.000+02:00"^^xsd:dateTime ;
+	.
+
+<#WrapUp> a conference:Session ;
+	rdfs:label "Closing session"@en ;
+	conference:startDate "2020-06-03T16:55:00.000+02:00"^^xsd:dateTime ;
+	conference:endDate "2020-06-03T17:00:00.000+02:00"^^xsd:dateTime ;
+	.
+
