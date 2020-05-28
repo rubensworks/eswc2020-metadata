@@ -168,7 +168,7 @@ const reviews = indexReviews(fs.readFileSync(process.argv[4], { encoding: 'utf8'
 						[reviewAuthorIri]: {
 							a: 'conference:RoleDuringEvent',
 							'rdfs:label': `@en"${review.reviewer}, Reviewer for Paper ${s_paper_id}`,
-							'conference:isHeldBy': '>' + reviewAuthorPersonIri,
+							'conference:isHeldBy': reviewAuthorPersonIri,
 							'conference:withRole': ['conference:ReviewerRole', 'eswc2020:NonAnonymousReviewerRole'],
 						},
 					},
