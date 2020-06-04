@@ -94,6 +94,10 @@ module.exports = {
 						node $1 < $2 > $@
 					`,
 				}),
+
+				'archived-preprints.ttl': () => ({
+					link: path.join(PD_SRC_PAPERS, 'archived-preprints.ttl'),
+				}),
 			},
 		},
 	},
