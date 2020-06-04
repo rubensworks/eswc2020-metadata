@@ -33,6 +33,48 @@ const trackLabels = {
 	'industry': 'Industry',
 };
 
+const preprints = {
+	'1': true,
+	'17': true,
+	'33': true,
+	'49': true,
+	'65': true,
+	'81': true,
+	'96': true,
+	'112': true,
+	'128': true,
+	'144': true,
+	'160': true,
+	'176': true,
+	'192': true,
+	'208': true,
+	'224': true,
+	'240': true,
+	'256': true,
+	'272': true,
+	'288': true,
+	'304': true,
+	'320': true,
+	'336': true,
+	'352': true,
+	'368': true,
+	'386': true,
+	'402': true,
+	'418': true,
+	'434': true,
+	'450': true,
+	'467': true,
+	'483': true,
+	'499': true,
+	'515': true,
+	'531': true,
+	'544': true,
+	'560': true,
+	'576': true,
+	'592': true,
+	'608': true,
+}
+
 // Keep an index of all accepted papers
 const acceptedPapers = fs.readFileSync(process.argv[2], { encoding: 'utf8' })
 	.split('\n')
@@ -112,6 +154,7 @@ const reviews = indexReviews(fs.readFileSync(process.argv[4], { encoding: 'utf8'
 			});
 
 		const accepted = acceptedPapers.indexOf(s_paper_id) >= 0;
+		const hasPreprint = preprints[s_paper_id];
 		a_submissions.push(sc1_paper);
 		if (accepted) {
 			a_proceedings.push(sc1_paper);
@@ -126,6 +169,7 @@ const reviews = indexReviews(fs.readFileSync(process.argv[4], { encoding: 'utf8'
 					...accepted ? { 'conference:isPartOf': 'eswc2020:Proceedings' } : {},
 					//'eswc2020:pdf': `^xsd:anyUri"${H_PREFIXES['eswc2020-object']}${si_paper}.pdf`,
 					'dct:issued': new Date(submission.Time),
+					...hasPreprint ? { 'eswc2020:preprint': '>https://preprints.2020.eswc-conferences.org/12123' + paperIdToString(s_paper_id) + '.pdf' } : {},
 					'eswc2020:authorList': [a_author_items.map(g => g.c1)],
 					'eswc2020:submission': `eswc2020-submissions:Paper.${s_paper_id}`,
 					'eswc2020:track': makeTrack(submission.Track),
@@ -284,4 +328,8 @@ function indexReviews(reviewsRaw, reviewersRaw) {
 	}
 
 	return index;
+}
+
+function paperIdToString(id) {
+	return `${id}`.padStart(4, '0');
 }
