@@ -1,158 +1,158 @@
 [
    [
-      "10.1007/978-3-030-21348-0_1",
-      "A Decentralized Architecture for Sharing and Querying Semantic Data"
+      "10.1007/978-3-030-49461-2_1",
+      "Handling Impossible Derivations during Stream Reasoning"
    ],
    [
-      "10.1007/978-3-030-21348-0_2",
-      "Reformulation-Based Query Answering for RDF Graphs with RDFS Ontologies"
+      "10.1007/978-3-030-49461-2_2",
+      "Modular Graphical Ontology Engineering Evaluated"
    ],
    [
-      "10.1007/978-3-030-21348-0_3",
-      "A Hybrid Graph Model for Distant Supervision Relation Extraction"
+      "10.1007/978-3-030-49461-2_3",
+      "Fast and Exact Rule Mining with AMIE 3"
    ],
    [
-      "10.1007/978-3-030-21348-0_4",
-      "Retrieving Textual Evidence for Knowledge Graph Facts"
+      "10.1007/978-3-030-49461-2_4",
+      "A Simple Method for Inducing Class Taxonomies in Knowledge Graphs"
    ],
    [
-      "10.1007/978-3-030-21348-0_5",
-      "Boosting DL Concept Learners"
+      "10.1007/978-3-030-49461-2_5",
+      "Hybrid Reasoning Over Large Knowledge Bases Using On-The-Fly Knowledge Extraction"
    ],
    [
-      "10.1007/978-3-030-21348-0_6",
-      "Link Prediction in Knowledge Graphs with Concepts of Nearest Neighbours"
+      "10.1007/978-3-030-49461-2_6",
+      "Partial Domain Adaptation for Relation Extraction Based on Adversarial Learning"
    ],
    [
-      "10.1007/978-3-030-21348-0_7",
-      "Disclosing Citation Meanings for Augmented Research Retrieval and Exploration"
+      "10.1007/978-3-030-49461-2_7",
+      "SASOBUS: Semi-automatic Sentiment Domain Ontology Building Using Synsets"
    ],
    [
-      "10.1007/978-3-030-21348-0_8",
-      "Injecting Domain Knowledge in Electronic Medical Records to Improve Hospitalization Prediction"
+      "10.1007/978-3-030-49461-2_8",
+      "Keyword Search over RDF using Document-centric Information Retrieval Systems"
    ],
    [
-      "10.1007/978-3-030-21348-0_9",
-      "Explore and Exploit. Dictionary Expansion with Human-in-the-Loop"
+      "10.1007/978-3-030-49461-2_9",
+      "Entity Linking and Lexico-Semantic Patterns for Ontology Learning"
    ],
    [
-      "10.1007/978-3-030-21348-0_10",
-      "Aligning Biomedical Metadata with Ontologies Using Clustering and Embeddings"
+      "10.1007/978-3-030-49461-2_10",
+      "Estimating Characteristic Sets for RDF Dataset Profiles based on Sampling"
    ],
    [
-      "10.1007/978-3-030-21348-0_11",
-      "Generating Semantic Aspects for Queries"
+      "10.1007/978-3-030-49461-2_11",
+      "SchemaTree: Maximum-likelihood Property Recommendation for Wikidata"
    ],
    [
-      "10.1007/978-3-030-21348-0_12",
-      "A Recommender System for Complex Real-World Applications with Nonlinear Dependencies and Knowledge Graph Context"
+      "10.1007/978-3-030-49461-2_12",
+      "Hyperbolic Knowledge Graph Embeddings for Knowledge Base Completion"
    ],
    [
-      "10.1007/978-3-030-21348-0_13",
-      "Learning URI Selection Criteria to Improve the Crawling of Linked Open Data"
+      "10.1007/978-3-030-49461-2_13",
+      "Unsupervised Bootstrapping of Active Learning for Entity Resolution"
    ],
    [
-      "10.1007/978-3-030-21348-0_14",
-      "Deontic Reasoning for Legal Ontologies"
+      "10.1007/978-3-030-49461-2_14",
+      "Processing SPARQL Aggregates Queries with Web Preemption"
    ],
    [
-      "10.1007/978-3-030-21348-0_15",
-      "Incorporating Joint Embeddings into Goal-Oriented Dialogues with Multi-task Learning"
+      "978-3-030-49461-2_15",
+      "Embedding-based Recommendations on Scholarly Knowledge Graphs"
    ],
    [
-      "10.1007/978-3-030-21348-0_16",
-      "Link Prediction Using Multi Part Embeddings"
+      "10.1007/978-3-030-49461-2_16",
+      "Investigating Software Usage in the Social Sciences: A Knowledge Graph Approach"
    ],
    [
-      "10.1007/978-3-030-21348-0_17",
-      "Modelling the Compatibility of Licenses"
+      "10.1007/978-3-030-49461-2_17",
+      "Fostering Scientific Meta-Analyses with Knowledge Graphs : a Case-Study"
    ],
    [
-      "10.1007/978-3-030-21348-0_18",
-      "GConsent - A Consent Ontology Based on the GDPR"
+      "10.1007/978-3-030-49461-2_18",
+      "SAShA: Semantic-Aware Shilling Attacks on Recommender Systems exploiting Knowledge Graphs"
    ],
    [
-      "10.1007/978-3-030-21348-0_19",
-      "Latent Relational Model for Relation Extraction"
+      "10.1007/978-3-030-49461-2_19",
+      "Entity Extraction from Wikipedia List Pages"
    ],
    [
-      "10.1007/978-3-030-21348-0_20",
-      "Mini-ME Swift: The First Mobile OWL Reasoner for iOS"
+      "10.1007/978-3-030-49461-2_20",
+      "The Knowledge Graph Track at OAEI - Gold Standards, Baselines, and the Golden Hammer Bias"
    ],
    [
-      "10.1007/978-3-030-21348-0_21",
-      "Validation of SHACL Constraints over KGs with OWL 2 QL Ontologies via Rewriting"
+      "10.1007/978-3-030-49461-2_21",
+      "Detecting Synonymous Properties by Shared Data-driven Definitions"
    ],
    [
-      "10.1007/978-3-030-21348-0_22",
-      "An Ontology-Based Interactive System for Understanding User Queries"
+      "10.1007/978-3-030-49461-2_22",
+      "Entity Summarization with User Feedback"
    ],
    [
-      "10.1007/978-3-030-21348-0_23",
-      "Knowledge-Based Short Text Categorization Using Entity and Category Embedding"
+      "10.1007/978-3-030-49461-2_23",
+      "Incremental Multi-source Entity Resolution for Knowledge Graph Completion"
    ],
    [
-      "10.1007/978-3-030-21348-0_24",
-      "A Hybrid Approach for Aspect-Based Sentiment Analysis Using a Lexicalized Domain Ontology and Attentional Neural Models"
+      "10.1007/978-3-030-49461-2_24",
+      "Building Linked Spatio-Temporal Data from Vectorized Historical Maps"
    ],
    [
-      "10.1007/978-3-030-21348-0_25",
-      "Predicting Entity Mentions in Scientific Literature"
+      "10.1007/978-3-030-49461-2_25",
+      "QAnswer KG: Creating On-Demand Question Answering Systems on Top of RDF Data"
    ],
    [
-      "10.1007/978-3-030-21348-0_26",
-      "AYNEC: All You Need for Evaluating Completion Techniques in Knowledge Graphs"
+      "10.1007/978-3-030-49461-2_26",
+      "Equivalent Rewritings on Path Views with Binding Patterns"
    ],
    [
-      "10.1007/978-3-030-21348-0_27",
-      "RVO - The Research Variable Ontology"
+      "10.1007/978-3-030-49461-2_27",
+      "A Knowledge Graph for Industry 4.0"
    ],
    [
-      "10.1007/978-3-030-21348-0_28",
-      "EVENTSKG: A 5-Star Dataset of Top-Ranked Events in Eight Computer Science Communities"
+      "10.1007/978-3-030-49461-2_28",
+      "MetaLink: A Travel Guide to the LOD Cloud"
    ],
    [
-      "10.1007/978-3-030-21348-0_29",
-      "CORAL: A Corpus of Ontological Requirements Annotated with Lexico-Syntactic Patterns"
+      "10.1007/978-3-030-49461-2_29",
+      "Astrea: automatic generation of SHACL shapes from ontologies"
    ],
    [
-      "10.1007/978-3-030-21348-0_30",
-      "MMKG: Multi-modal Knowledge Graphs"
+      "10.1007/978-3-030-49461-2_30",
+      "SemTab 2019: Resources to Benchmark Tabular Data to Knowledge Graph Matching Systems"
    ],
    [
-      "10.1007/978-3-030-21348-0_31",
-      "BeSEPPI: Semantic-Based Benchmarking of Property Path Implementations"
+      "10.1007/978-3-030-49461-2_31",
+      "VQuAnDa: Verbalization QUestion ANswering DAtaset"
    ],
    [
-      "10.1007/978-3-030-21348-0_32",
-      "QED: Out-of-the-Box Datasets for SPARQL Query Evaluation"
+      "10.1007/978-3-030-49461-2_32",
+      "ESBM: An Entity Summarization BenchMark"
    ],
    [
-      "10.1007/978-3-030-21348-0_33",
-      "ToCo: An Ontology for Representing Hybrid Telecommunication Networks"
+      "10.1007/978-3-030-49461-2_33",
+      "A Modular and Extensible Evaluation Framework for Graph Embedding Techniques"
    ],
    [
-      "10.1007/978-3-030-21348-0_34",
-      "A Software Framework and Datasets for the Analysis of Graph Measures on RDF Graphs"
+      "10.1007/978-3-030-49461-2_34",
+      "YAGO 4: A Reason-able Knowledge Base"
    ],
    [
-      "10.1007/978-3-030-21348-0_35",
-      "The Location Index: A Semantic Web Spatial Data Infrastructure"
+      "10.1007/978-3-030-49461-2_35",
+      "On Modeling The Physical World as a Collection of Things: the W3C Thing Description Ontology"
    ],
    [
-      "10.1007/978-3-030-21348-0_36",
-      "Legislative Document Content Extraction Based on Semantic Web Technologies"
+      "10.1007/978-3-030-49461-2_36",
+      "Applying Knowledge Graphs as Integrated Semantic Information Model for the Computerized Engineering of Building Automation Systems"
    ],
    [
-      "10.1007/978-3-030-21348-0_37",
-      "BiographySampo – Publishing and Enriching Biographies on the Semantic Web for Digital Humanities Research"
+      "10.1007/978-3-030-49461-2_37",
+      "Supporting complex decision making by semantic technologies"
    ],
    [
-      "10.1007/978-3-030-21348-0_38",
-      "Tinderbook: Fall in Love with Culture"
+      "10.1007/978-3-030-49461-2_38",
+      "Piveau: A Large-scale Open Data Management Platform based on Semantic Web Technologies"
    ],
    [
-      "10.1007/978-3-030-21348-0_39",
-      "Using Shape Expressions (ShEx) to Share RDF Data Models and to Guide Curation with Rigorous Validation"
+      "10.1007/978-3-030-49461-2_39",
+      "StreamPipes Connect: Semantics-Based Edge Adapters for the Industrial IoT"
    ]
 ]

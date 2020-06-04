@@ -83,17 +83,17 @@ module.exports = {
 						node $1 $3 $4 $5 < $2 > $@
 					`,
 				}),
-//
-//				'dois.ttl': () => ({
-//					deps: [
-//						'src/papers/dois.js',
-//						'build/papers/proceedings.ttl',
-//						'src/papers/dois.json',
-//					],
-//					run: /* syntax: bash */ `
-//						node $1 < $2 > $@
-//					`,
-//				}),
+
+				'dois.ttl': () => ({
+					deps: [
+						'src/papers/dois.js',
+						'build/papers/proceedings.ttl',
+						'src/papers/dois.json',
+					],
+					run: /* syntax: bash */ `
+						node $1 < $2 > $@
+					`,
+				}),
 			},
 		},
 	},

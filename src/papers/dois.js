@@ -31,11 +31,15 @@ process.stdin.pipe(ttl_read({
 						},
 					},
 				});
+				delete h_dois[s_title];
 			}
 		}
 	},
 
 	eof() {
+		if (Object.keys(h_dois).length > 0) {
+			console.error('Could not find a DOIs for papers by title:\n  ' + Object.keys(h_dois).join('\n  '));
+		}
 		ds_out.end();
 	},
 }));
